@@ -1,4 +1,16 @@
 <view>
+
+  <text class='h1'> 你的性别 </text>
+  <view class='wrap'>
+  <view class='checkbox-con'>
+  <radio-group bindchange="radioChange">
+    <label class="{{item.checked?'checkbox checked':'checkbox'}}" wx:for="{{genderArray}}" bindtap='bindtapGender' data-index="{{index}}" wx:key="item.name">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>
+  </radio-group>
+  </view>
+  </view>
+
   <input style='margin-top: 40rpx;' placeholder="请输入姓名" value="{{name}}" bindinput="bindKeyInputName" />
   <input style='margin-top: 40rpx;' placeholder="请输入年龄" value="{{age}}" bindinput="bindKeyInputAge" />
   <button style='margin-top: 40rpx;' bindtap='insertData'>插入数据</button>
@@ -8,5 +20,5 @@
 
   <text style='margin-top: 40rpx;'>
      姓名：{{nameResult}}  </text>
-  <text style='margin-top: 80rpx;'>
+  <text style='margin-top: 100rpx;'>
      年龄：{{ageResult}}  </text></view>
