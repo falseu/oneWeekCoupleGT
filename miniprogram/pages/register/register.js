@@ -38,18 +38,27 @@ Page({  /**
         })
         return
       }
+      console.log(isNaN(that.data.gender))
+      if (that.data.gender == '') {
+        wx.showModal({
+          title: '错误',
+          content: '请选择你的性别',
+          showCancel: false
+        })
+        return
+      }
       //  向test数据集添加记录
       this.test.add({        // data 字段表示需新增的 JSON 数据
         data: {
-          name: that.data.name, age: age, gender: that.gender
+          name: that.data.name, age: age, gender: that.data.gender
         },        //  数据插入成功，调用该函数
         success: function (res) {
           console.log(res)
-          wx.showModal({
-            title: '成功', content: '成功插入记录', showCancel: false
-          })
           that.setData({
             name: '', age: '', gender: ''
+          })
+          wx.redirectTo({
+            url: '../register2/register2'
           })
         }
       })
@@ -99,7 +108,7 @@ Page({  /**
         item.checked = false
       })
       checkboxArr[index].checked = true;//改变当前选中的checked值
-      this.gender = checkboxArr[index].name;
+      this.data.gender = checkboxArr[index].name;
       this.setData({
         genderArray: checkboxArr
       });
