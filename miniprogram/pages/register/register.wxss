@@ -42,3 +42,20 @@
   align-items: center;
   font-size: 40rpx;
 }
+
+.h2{
+  margin-top: 30rpx;
+  color: #888888;
+  font-size: 28rpx;
+}
+
+.placeholder{
+ width: 550rpx;
+ height: 72rpx;
+ line-height: 72rpx;
+ font-size: 28rpx;
+ color: #888888;
+ border: 1rpx solid #CECECE;
+ border-radius: 5rpx;
+ display: inline-block;
+}

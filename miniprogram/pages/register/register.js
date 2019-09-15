@@ -1,7 +1,7 @@
 
 const app = getApp()
 Page({  /**
-   * 页面的初始数据
+   * init
    */
   db: undefined, test: undefined, data: {
     name: '', age: '', recordId: '', nameResult: '', ageResult: '', gender: '', 
@@ -27,7 +27,7 @@ Page({  /**
       }
     })
 
-  },  // 单击“插入数据”按钮调用该函数
+  },  // 单击“下一步”按钮调用该函数
   insertData: function () {
     var that = this
     try {     //  将年龄转换为整数类型值
@@ -41,7 +41,7 @@ Page({  /**
       //  向test数据集添加记录
       this.test.add({        // data 字段表示需新增的 JSON 数据
         data: {
-          name: that.data.name, age: age
+          name: that.data.name, age: age, gender: that.gender
         },        //  数据插入成功，调用该函数
         success: function (res) {
           console.log(res)
@@ -49,7 +49,7 @@ Page({  /**
             title: '成功', content: '成功插入记录', showCancel: false
           })
           that.setData({
-            name: '', age: ''
+            name: '', age: '', gender: ''
           })
         }
       })
@@ -99,6 +99,7 @@ Page({  /**
         item.checked = false
       })
       checkboxArr[index].checked = true;//改变当前选中的checked值
+      this.gender = checkboxArr[index].name;
       this.setData({
         genderArray: checkboxArr
       });
@@ -108,8 +109,5 @@ Page({  /**
       this.setData({
         checkValue: checkValue
       });
-    },
-    confirm: function () {// 提交
-      console.log(this.data.checkValue)//所有选中的项的value
-  }
+    }
 })

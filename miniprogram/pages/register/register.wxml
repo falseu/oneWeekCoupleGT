@@ -11,9 +11,18 @@
   </view>
   </view>
 
-  <input style='margin-top: 40rpx;' placeholder="请输入姓名" value="{{name}}" bindinput="bindKeyInputName" />
-  <input style='margin-top: 40rpx;' placeholder="请输入年龄" value="{{age}}" bindinput="bindKeyInputAge" />
-  <button style='margin-top: 40rpx;' bindtap='insertData'>插入数据</button>
+  <text class="h1">我的信息</text>
+
+  <view class='wrap'>
+  <text class="h2">姓名</text>
+  <input class='placeholder' placeholder="请输入姓名" value="{{name}}" bindinput="bindKeyInputName" />
+  </view>
+
+  <view class='wrap'>
+  <text class='h2'>年龄</text>
+  <input class="placeholder" placeholder="请输入年龄" value="{{age}}" bindinput="bindKeyInputAge" />
+  <button type="primary" style="margin-top: 30rpx;" bindtap='insertData'>下一步</button>
+  </view>
   <input style='margin-top: 40rpx;' placeholder="请输入记录ID" value="{{recordId}}" bindinput="bindKeyInputId" />
 
   <button style='margin-top: 40rpx;' bindtap='queryData'>查询数据</button>
