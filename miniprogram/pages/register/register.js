@@ -4,8 +4,34 @@ Page({  /**
    * init
    */
   db: undefined, test: undefined, data: {
-    name: '', age: '', recordId: '', nameResult: '', ageResult: '', gender: '', 
-    genderArray: [{name:'male', value:'男', checked: false}, {name:'female', value:'女', checked: false}]
+    name: '', age: '', recordId: '', nameResult: '', ageResult: '', gender: '', merits: [],
+    genderArray: [{name:'男', value:'男', checked: false}, {name:'女', value:'女', checked: false}],
+    meritArray: [
+      {
+        name: '颜值',
+        checked: false
+      },
+      {
+        name: '性格',
+        checked: false
+      },
+      {
+        name: '责任感',
+        checked: false
+      },
+      {
+        name: '聪明',
+        checked: false
+      },
+      {
+        name: '经济条件',
+        checked: false
+      }, 
+      {
+        name: '情商',
+        checked: false
+      }
+    ]
   },  /**
    * 生命周期函数--监听页面加载
    */
@@ -38,7 +64,8 @@ Page({  /**
         })
         return
       }
-      console.log(isNaN(that.data.gender))
+      
+      // 是否已经选择gender
       if (that.data.gender == '') {
         wx.showModal({
           title: '错误',
@@ -47,10 +74,28 @@ Page({  /**
         })
         return
       }
+
+      // 向merits加数据
+      this.data.merits = []
+      for (var merit of this.data.meritArray) {
+        if (merit.checked) {
+          this.data.merits.push(merit.name)
+        }
+      }
+      // merits没有三个报错
+      if (this.data.merits.length != 3) {
+        wx.showModal({
+          title: '错误',
+          content: '请选择三个优点',
+          showCancel: false
+        })
+        return
+      }
+
       //  向test数据集添加记录
       this.test.add({        // data 字段表示需新增的 JSON 数据
         data: {
-          name: that.data.name, age: age, gender: that.data.gender
+          name: that.data.name, age: age, gender: that.data.gender, merits: this.data.merits
         },        //  数据插入成功，调用该函数
         success: function (res) {
           console.log(res)
@@ -108,15 +153,27 @@ Page({  /**
         item.checked = false
       })
       checkboxArr[index].checked = true;//改变当前选中的checked值
-      this.data.gender = checkboxArr[index].name;
       this.setData({
-        genderArray: checkboxArr
+        genderArray: checkboxArr,
+        gender: checkboxArr[index].name
       });
     },
     radioChange: function (e) {
       var checkValue = e.detail.value;
       this.setData({
         checkValue: checkValue
+      });
+    },
+    bindtapMerit: function(e) {
+      var index = e.currentTarget.dataset.index;//获取当前点击的下标
+      var checkboxArr = this.data.meritArray;//选项集合
+      if (checkboxArr[index].checked) {
+        checkboxArr[index].checked = false
+      } else {
+        checkboxArr[index].checked = true
+      }
+      this.setData({
+        meritArray: checkboxArr,
       });
     }
 })
