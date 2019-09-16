@@ -13,7 +13,7 @@
  line-height: 72rpx;
  font-size: 28rpx;
  color: #888888;
- border: 1rpx solid #CECECE;
+ border: 3rpx solid #CECECE;
  border-radius: 5rpx;
  display: inline-block;
  margin: 0 10rpx 10rpx 0;
