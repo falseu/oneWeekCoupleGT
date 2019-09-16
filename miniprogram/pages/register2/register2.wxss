@@ -22,7 +22,7 @@
 .checked{
  color: #1A92EC;
  background: rgba(49,165,253,0.08);
- border: 1rpx solid #31A5FD;
+ border: 3rpx solid #31A5FD;
 }
 .checkbox checkbox{
  display: none
