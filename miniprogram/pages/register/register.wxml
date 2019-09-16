@@ -34,11 +34,4 @@
   </view>
   <button type="primary" style="margin-top: 30rpx;" bindtap='insertData'>下一步</button>
   </view>
-  <input style='margin-top: 40rpx;' placeholder="请输入记录ID" value="{{recordId}}" bindinput="bindKeyInputId" />
-
-  <button style='margin-top: 40rpx;' bindtap='queryData'>查询数据</button>
-
-  <text style='margin-top: 40rpx;'>
-     姓名：{{nameResult}}  </text>
-  <text style='margin-top: 100rpx;'>
-     年龄：{{ageResult}}  </text></view>
+</view>

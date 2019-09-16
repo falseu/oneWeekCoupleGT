@@ -1,0 +1,27 @@
+<view>
+
+  <text class='h1'>TA的性别</text>
+  <view class='wrap'>
+  <view class='checkbox-con'>
+  <radio-group bindchange="radioChange">
+    <label class="{{item.checked?'checkbox checked':'checkbox'}}" wx:for="{{genderArray}}" bindtap='bindtapGender' data-index="{{index}}" wx:key="item.name">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>
+  </radio-group>
+  </view>
+  </view>
+
+  <text class="h1">TA的信息</text>
+
+  <view class="wrap">
+  <text class='h2'>我最大的优点（选三个)</text>
+  <view class='checkbox-con'>
+  <radio-group bindchange="radioChange">
+    <label class="{{item.checked?'checkbox checked':'checkbox'}}" wx:for="{{meritArray}}" bindtap='bindtapMerit' data-index="{{index}}" wx:key="item.name">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.name}}
+    </label>
+  </radio-group>
+  </view>
+  <button type="primary" style="margin-top: 30rpx;" bindtap='insertData'>进入GT一周CP</button>
+  </view>
+</view>
