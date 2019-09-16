@@ -11,7 +11,7 @@
 
 加油！
 
-# Pages 详解
+# Pages结构
 - register: 修改用户本人的信息
 - register2: 修改用户对TA的要求的信息
 
