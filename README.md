@@ -15,6 +15,17 @@
 - register: 修改用户本人的信息
 - register2: 修改用户要求的信息
 
+# 数据库结构
+- env: owcp-gt
+  - user:
+    - _openid: 微信用户唯一openid
+    - name: 名字
+    - age: 年龄
+    - gender: 性别
+    - merits: 自己最大的三个优点
+    - expecedGender: TA的性别
+    - expectedMerits: TA最大的三个优点
+
 # 云开发 quickstart
 
 这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
