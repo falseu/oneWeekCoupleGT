@@ -35,6 +35,8 @@ Page({  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    // 从app.globalData.myData中读取第一页register的信息
     this.setData({
       name: app.globalData.myData.name,
       age: app.globalData.myData.age,
@@ -99,7 +101,7 @@ Page({  /**
         return
       }
 
-      // 更新app.globaldata
+      // 更新app.globaldata.myData
       app.globalData.myData = this.data
 
       //  向test数据集添加记录

@@ -77,7 +77,7 @@ Page({  /**
         return
       }
 
-      //更新app.globaldata
+      //更新app.globaldata.myData
       app.globalData.myData = this.data
 
       //跳转页面
@@ -113,14 +113,12 @@ Page({  /**
         genderArray: checkboxArr,
         gender: checkboxArr[index].name
       });
-    },
-    radioChange: function (e) {
+  }, radioChange: function (e) {
       var checkValue = e.detail.value;
       this.setData({
         checkValue: checkValue
       });
-    },
-    bindtapMerit: function(e) {
+  }, bindtapMerit: function(e) {
       var index = e.currentTarget.dataset.index;//获取当前点击的下标
       var checkboxArr = this.data.meritArray;//选项集合
       if (checkboxArr[index].checked) {
@@ -131,5 +129,5 @@ Page({  /**
       this.setData({
         meritArray: checkboxArr,
       });
-    }
+  }
 })
