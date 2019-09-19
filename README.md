@@ -11,13 +11,18 @@
 
 加油！
 
+# UI 参考：
+- https://share.proto.io/DTZHCD/
+
 # Pages结构
+- welcome: 初始界面，判断用户是否注册
 - register: 修改用户本人的信息
 - register2: 修改用户对TA的要求的信息
 
 # 数据库结构
-- env: owcp-gt
+- 云端数据库 env: owcp-gt
   - user:
+    - id: 每条记录的id
     - openid: 微信用户唯一openid
     - name: 名字
     - age: 年龄
