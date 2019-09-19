@@ -1,7 +1,5 @@
 # GT一周CP
 
-现在用的是云开发 quickstart模板
-
 前往以下网址下载开发工具 (stable build)
   https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html
   在wechat devtools中打开这个项目，大家可以在模拟器中点击每个项目，了解小程序的运行
@@ -9,7 +7,7 @@
 小程序开发指南
   https://developers.weixin.qq.com/miniprogram/dev/framework/
 
-加油！
+# 完成修改后请大家务必更新以下信息！
 
 # UI 参考：
 - https://share.proto.io/DTZHCD/
@@ -30,6 +28,12 @@
     - merits: 自己最大的三个优点
     - expecedGender: TA的性别
     - expectedMerits: TA最大的三个优点
+
+- 本地数据库
+	- app.js.globalData.myData: 数据库的user信息
+		- 更新时间：
+			- welcome.onLoad, 当用户已经register过, 从云端数据库获取user信息并更新
+			- register2.insertData, 用户首次register, 跳转页面之前更新
 
 # 云开发 quickstart
 
