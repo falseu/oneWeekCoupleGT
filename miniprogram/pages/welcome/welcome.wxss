@@ -1,1 +1,14 @@
 /* pages/welcome/welcome.wxss */
+
+.h1 {
+  color: white;
+  font-size: 70rpx;
+  text-align:center;
+  align-items:center;
+  justify-content: center;
+  margin-top: 280rpx;
+}
+
+Page {
+  background-color: #03bfff;
+}
