@@ -26,6 +26,9 @@
     - age: 年龄
     - gender: 性别
     - merits: 自己最大的三个优点
+    - expectedAge: TA的年龄，如果用户没有填写，默认为0
+    - expectedHeight: TA的身高，如果用户没有填写，默认为0
+    - expectedWeight: TA的体重，如果用户没有填写，默认为0
     - expecedGender: TA的性别
     - expectedMerits: TA最大的三个优点
 
