@@ -23,6 +23,16 @@
   <input class="placeholder" placeholder="请输入年龄" value="{{age}}" bindinput="bindKeyInputAge" />
   </view>
 
+  <view class='wrap'>
+  <text class='h2'>身高 厘米</text>
+  <input class="placeholder" placeholder="请输入身高" value="{{height}}" bindinput="bindKeyInputHeight" />
+  </view>
+
+  <view class='wrap'>
+  <text class='h2'>体重 公斤</text>
+  <input class="placeholder" placeholder="请输入体重" value="{{weight}}" bindinput="bindKeyInputWeight" />
+  </view>
+
   <view class="wrap">
   <text class='h2'>我最大的优点（选三个)</text>
   <view class='checkbox-con'>

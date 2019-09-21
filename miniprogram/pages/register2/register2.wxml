@@ -13,8 +13,23 @@
 
   <text class="h1">TA的信息</text>
 
+  <view class='wrap'>
+  <text class='h2'>年龄</text>
+  <input class="placeholder" placeholder="请输入年龄" value="{{expectedAge}}" bindinput="bindKeyInputExpectedAge" />
+  </view>
+
+  <view class='wrap'>
+  <text class='h2'>身高 厘米</text>
+  <input class="placeholder" placeholder="请输入身高" value="{{expectedHeight}}" bindinput="bindKeyInputExpectedHeight" />
+  </view>
+
+  <view class='wrap'>
+  <text class='h2'>体重 公斤</text>
+  <input class="placeholder" placeholder="请输入体重" value="{{expectedWeight}}" bindinput="bindKeyInputExpectedWeight" />
+  </view>
+
   <view class="wrap">
-  <text class='h2'>我最大的优点（选三个)</text>
+  <text class='h2'>TA最大的优点（选三个)</text>
   <view class='checkbox-con'>
   <radio-group bindchange="radioChange">
     <label class="{{item.checked?'checkbox checked':'checkbox'}}" wx:for="{{meritArray}}" bindtap='bindtapMerit' data-index="{{index}}" wx:key="item.name">

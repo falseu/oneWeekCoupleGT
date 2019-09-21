@@ -4,7 +4,7 @@ Page({  /**
    * init
    */
   db: undefined, test: undefined, data: {
-    name: '', age: '', gender: '', expectedGender: '', merits: [], expectedMerits: [],
+    name: '', age: '', gender: '', height: '', weight: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', merits: [], expectedMerits: [],
     genderArray: [{name:'男', value:'男', checked: false}, {name:'女', value:'女', checked: false}],
     meritArray: [
       {
@@ -12,7 +12,7 @@ Page({  /**
         checked: false
       },
       {
-        name: '性格',
+        name: '性格好',
         checked: false
       },
       {
@@ -41,11 +41,48 @@ Page({  /**
   // 单击“下一步”按钮调用该函数
   insertData: function () {
     var that = this
-    try {     //  将年龄转换为整数类型值
-      var age = parseInt(that.data.age)     //  如果输入的年龄不是数字，会显示错误对话框，并退出该函数
+    try {     
+      //  将年龄转换为int
+      var age = parseInt(this.data.age)     //  如果输入的年龄不是数字，会显示错误对话框，并退出该函数
       if (isNaN(age)) {        //  显示错误对话框
         wx.showModal({
           title: '错误', content: '请输入正确的年龄', showCancel: false
+        })
+        return
+      }
+
+      // 将身高转换为int
+      var height = parseInt(this.data.height)     //  如果输入的身高不是数字，会显示错误对话框，并退出该函数
+      if (isNaN(height)) {        //  显示错误对话框
+        wx.showModal({
+          title: '错误', content: '请输入正确的身高', showCancel: false
+        })
+        return
+      }
+
+
+      // 将体重转换为int
+      var weight = parseInt(that.data.weight)     //  如果输入的体重不是数字，会显示错误对话框，并退出该函数
+      if (isNaN(weight)) {        //  显示错误对话框
+        wx.showModal({
+          title: '错误', content: '请输入正确的体重', showCancel: false
+        })
+        return
+      }
+
+      //update data 信息，string 改为int
+      this.setData({
+        age: age,
+        height: height,
+        weight: weight 
+      })
+
+      // 是否填写姓名
+      if (this.data.name == '') {
+        wx.showModal({
+          title: '错误',
+          content: '请填写你的姓名',
+          showCancel: false
         })
         return
       }
@@ -97,11 +134,13 @@ Page({  /**
     this.setData({
       name: e.detail.value
     })
-  }, bindKeyInputAge: function (e) {
+  }, 
+  bindKeyInputAge: function (e) {
     this.setData({
       age: e.detail.value
     })
-  }, bindtapGender: function (e) {
+  }, 
+  bindtapGender: function (e) {
       var index = e.currentTarget.dataset.index;//获取当前点击的下标
       var checkboxArr = this.data.genderArray;//选项集合
       if (checkboxArr[index].checked) return;//如果点击的当前已选中则返回
@@ -113,12 +152,14 @@ Page({  /**
         genderArray: checkboxArr,
         gender: checkboxArr[index].name
       });
-  }, radioChange: function (e) {
+  }, 
+  radioChange: function (e) {
       var checkValue = e.detail.value;
       this.setData({
         checkValue: checkValue
       });
-  }, bindtapMerit: function(e) {
+  }, 
+  bindtapMerit: function(e) {
       var index = e.currentTarget.dataset.index;//获取当前点击的下标
       var checkboxArr = this.data.meritArray;//选项集合
       if (checkboxArr[index].checked) {
@@ -129,5 +170,15 @@ Page({  /**
       this.setData({
         meritArray: checkboxArr,
       });
+  }, 
+  bindKeyInputHeight: function (e) {
+    this.setData({
+      height: e.detail.value
+    })
+  }, 
+  bindKeyInputWeight: function (e) {
+    this.setData({
+      weight: e.detail.value
+    })
   }
 })

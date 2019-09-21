@@ -4,7 +4,7 @@ Page({  /**
    * init
    */
   db: undefined, test: undefined, data: {
-    name: '', age: '', recordId: '', gender: '', expectedGender: '', merits: [], expectedMerits: [], genderArray: [{ name: '男', value: '男', checked: false }, { name: '女', value: '女', checked: false }],
+    name: '', age: '', recordId: '', gender: '', height: '', weight: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '',  merits: [], expectedMerits: [], genderArray: [{ name: '男', value: '男', checked: false }, { name: '女', value: '女', checked: false }],
     meritArray: [
       {
         name: '颜值',
@@ -42,6 +42,8 @@ Page({  /**
       age: app.globalData.myData.age,
       gender: app.globalData.myData.gender,
       merits: app.globalData.myData.merits,
+      weight: app.globalData.myData.weight,
+      height: app.globalData.myData.height,
     })
     console.log(this.data)
     var that = this
@@ -50,7 +52,7 @@ Page({  /**
       name: 'login', data: {}, success: res => {
         console.log('[云函数] [login] user openid: ', res.result.openid)
         app.globalData.openid = res.result.openid
-        wx.cloud.init({ env: 'owcp-gt' })
+        //wx.cloud.init({ env: 'owcp-gt' })
         that.db = wx.cloud.database()
         that.test = that.db.collection('user')
       }, fail: err => {
@@ -65,24 +67,68 @@ Page({  /**
   // 单击“下一步”按钮调用该函数
   insertData: function () {
     var that = this
-    try {     //  将年龄转换为整数类型值
-      var age = parseInt(that.data.age)     //  如果输入的年龄不是数字，会显示错误对话框，并退出该函数
-      if (isNaN(age)) {        //  显示错误对话框
-        wx.showModal({
-          title: '错误', content: '请输入正确的年龄', showCancel: false
-        })
-        return
-      }
-
-      // 是否已经选择gender
-      if (that.data.gender == '') {
+    try { 
+      // 是否已经选择Expectedgender
+      if (that.data.expectedGender == '') {
         wx.showModal({
           title: '错误',
-          content: '请选择你的性别',
+          content: '请选择TA的性别',
           showCancel: false
         })
         return
       }
+
+      // 年龄未填，设为0，否则查看年龄是否为数字
+      if (this.data.expectedAge == '') {
+        this.setData({
+          expectedAge: 0
+        })
+      } else {
+        var expectedAge = parseInt(this.data.expectedAge)
+        if (isNaN(expectedAge)) {
+          wx.showModal({
+            title: '错误', content: '请输入正确的年龄', showCancel: false
+          })
+          return
+        }
+      }
+
+      // 身高未填，设为0，否则查看身高是否为数字
+      if (this.data.expectedHeight == '') {
+        this.setData({
+          expectedHeight: 0
+        })
+      } else {
+        var expectedHeight = parseInt(this.data.expectedHeight)
+        if (isNaN(expectedHeight)) {
+          wx.showModal({
+            title: '错误', content: '请输入正确的体重', showCancel: false
+          })
+          return
+        }
+      }
+
+      // 体重未填，设为0，否则查看体重是否为数字
+      if (this.data.expectedWeight == '') {
+        this.setData({
+          expectedWeight: 0
+        })
+      } else {
+        var expectedWeight = parseInt(this.data.expectedWeight)
+        if (isNaN(expectedWeight)) {
+          wx.showModal({
+            title: '错误', content: '请输入正确的体重', showCancel: false
+          })
+          return
+        }
+      }
+
+      // update data信息，string to int
+      this.setData({
+        expectedAge: expectedAge,
+        expectedHeight: expectedHeight,
+        expectedWeight: expectedWeight
+      })
 
       // 向expectedMerits加数据
       this.data.expectedMerits = []
@@ -107,13 +153,10 @@ Page({  /**
       //  向test数据集添加记录
       this.test.add({        // data 字段表示需新增的 JSON 数据
         data: {
-          name: that.data.name, age: age, gender: that.data.gender, merits: this.data.merits, expectedGender: this.data.expectedGender, expectedMerits: this.data.expectedMerits
+          name: this.data.name, age: this.data.age, gender: this.data.gender, height: this.data.height, weight: this.data.weight, expectedAge: this.data.expectedAge, expectedHeight: this.data.expectedWeight, expectedWeight: this.data.expectedWeight, merits: this.data.merits, expectedGender: this.data.expectedGender, expectedMerits: this.data.expectedMerits
         },        //  数据插入成功，调用该函数
         success: function (res) {
           console.log(res)
-          that.setData({
-            name: '', age: '', gender: '', expectedMerits: []
-          })
           wx.redirectTo({
             url: '../index/index'
           })
@@ -158,5 +201,20 @@ Page({  /**
     this.setData({
       meritArray: checkboxArr,
     });
+  },
+  bindKeyInputExpectedAge: function (e) {
+    this.setData({
+      expectedAge: e.detail.value
+    })
+  },
+  bindKeyInputExpectedHeight: function (e) {
+    this.setData({
+      expectedHeight: e.detail.value
+    })
+  },
+  bindKeyInputExpectedWeight: function (e) {
+    this.setData({
+      expectedWeight: e.detail.value
+    })
   }
 })

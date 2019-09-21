@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -43,6 +43,14 @@
 					"id": -1,
 					"name": "pages/welcome/welcome",
 					"pathName": "pages/welcome/welcome",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/register/register",
+					"pathName": "pages/register/register",
+					"query": "",
 					"scene": null
 				}
 			]
