@@ -24,7 +24,6 @@ Page({
         console.log(res.data)
       }
     })
-    
 
     // 获取用户信息
     wx.getSetting({

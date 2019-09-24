@@ -17,25 +17,37 @@ const db = cloud.database()
  */
 exports.main = (event, context) => {
   console.log(event)
-  console.log(context)
-  var _match
+  console.log("context")
+  //var _match
 
 
   // 可执行其他自定义逻辑
   // console.log 的内容可以在云开发云函数调用日志查看
 
   // 获取 WX Context (微信调用上下文)，包括 OPENID、APPID、及 UNIONID（需满足 UNIONID 获取条件）
-  const wxContext = cloud.getWXContext()
-  const useropenid = wxContext.OPENID
+  //const wxContext = cloud.getWXContext()
+  //const useropenid = wxContext.OPENID
+  const _openid = 0000010000
 
-  try {
-    return await db.collection('user').get({
-      success: function (res) {
-        console.log(res)
-      }
-    })
-  } catch (e) {
-    console.log(e)
+  // db.collection("user").get({
+  //   success: function(res) {
+  //     users = res.data
+  //   }
+  // })
+
+  // try {
+  //   return await db.collection('user').update({
+  //     data: {
+  //       age: 100
+  //     }
+  //   })
+  // } catch (e) {
+  //   console.log(e)
+  // }
+
+  return {
+    //users: users
+    openid: _openid
   }
 
   

@@ -169,6 +169,20 @@ Page({  /**
       })
 
     }
+    wx.cloud.callFunction({
+      name: 'newUserUpdateDatabase',
+      data: {},
+      success: res => {
+        console.log('[云函数] [login] user openid: reg2', res.result.openid)
+        //app.globalData.openid = res.result.openid
+      },
+      fail: err => {
+        console.error('[云函数] [login] 调用失败 reg2', err)
+        wx.navigateTo({
+          url: '../deployFunctions/deployFunctions',
+        })
+      }
+    })
   },
 
   //  下面的函数用于当更新input组件中的值时同时更新对应变量的值
