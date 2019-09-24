@@ -157,18 +157,7 @@ Page({  /**
         success: function (res) {
           console.log(res)
           // TODO： 更新database, call newUserUpdateDatabase
-          wx.cloud.callFunction({
-            name: 'newUserUpdateDatabase', data: {
-              //uid: this.data.openid
-              //uid: this.data.name
-            }, 
-            success: res => {
-              // console.log('[云函数] [login] user openid: ', res.result.openid)
-              // app.globalData.openid = res.result.openid
-              // that.db = wx.cloud.database()
-              // that.test = that.db.collection('user')
-            }
-          })
+
           wx.redirectTo({
             url: '../index/index'
           })

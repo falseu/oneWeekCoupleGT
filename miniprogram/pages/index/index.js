@@ -2,7 +2,7 @@
 const app = getApp()
 
 Page({
-  data: {
+  db: undefined, data: {
     avatarUrl: './user-unlogin.png',
     userInfo: {},
     logged: false,
@@ -17,6 +17,14 @@ Page({
       })
       return
     }
+
+    var db = wx.cloud.database()
+    db.collection('user').get ({
+      success: function(res) {
+        console.log(res.data)
+      }
+    })
+    
 
     // 获取用户信息
     wx.getSetting({
