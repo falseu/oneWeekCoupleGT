@@ -90,6 +90,9 @@ Page({  /**
           })
           return
         }
+        this.setData({
+          expectedAge: expectedAge
+        })
       }
 
       // 身高未填，设为0，否则查看身高是否为数字
@@ -105,6 +108,9 @@ Page({  /**
           })
           return
         }
+        this.setData({
+          expectedHeight: expectedHeight
+        })
       }
 
       // 体重未填，设为0，否则查看体重是否为数字
@@ -120,14 +126,10 @@ Page({  /**
           })
           return
         }
+        this.setData({
+          expectedWeight: expectedWeight
+        })
       }
-
-      // update data信息，string to int
-      this.setData({
-        expectedAge: expectedAge,
-        expectedHeight: expectedHeight,
-        expectedWeight: expectedWeight
-      })
 
       // 向expectedMerits加数据
       this.data.expectedMerits = []
@@ -152,7 +154,7 @@ Page({  /**
       //  向test数据集添加记录
       this.test.add({        // data 字段表示需新增的 JSON 数据
         data: {
-          name: this.data.name, age: this.data.age, gender: this.data.gender, height: this.data.height, weight: this.data.weight, expectedAge: this.data.expectedAge, expectedHeight: this.data.expectedWeight, expectedWeight: this.data.expectedWeight, merits: this.data.merits, expectedGender: this.data.expectedGender, expectedMerits: this.data.expectedMerits, match: this.data.match
+          name: this.data.name, age: this.data.age, gender: this.data.gender, height: this.data.height, weight: this.data.weight, expectedAge: this.data.expectedAge, expectedHeight: this.data.expectedHeight, expectedWeight: this.data.expectedWeight, merits: this.data.merits, expectedGender: this.data.expectedGender, expectedMerits: this.data.expectedMerits, match: this.data.match
         },        //  数据插入成功，调用该函数
         success: function (res) {
           console.log(res)
