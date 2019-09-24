@@ -30,7 +30,7 @@ Page({  /**
         name: '情商',
         checked: false
       }
-    ]
+    ], match: {}
   },  /**
    * 生命周期函数--监听页面加载
    */
@@ -45,7 +45,6 @@ Page({  /**
       weight: app.globalData.myData.weight,
       height: app.globalData.myData.height,
     })
-    console.log(this.data)
     var that = this
     //  调用login云函数获取openid
     wx.cloud.callFunction({
@@ -153,10 +152,23 @@ Page({  /**
       //  向test数据集添加记录
       this.test.add({        // data 字段表示需新增的 JSON 数据
         data: {
-          name: this.data.name, age: this.data.age, gender: this.data.gender, height: this.data.height, weight: this.data.weight, expectedAge: this.data.expectedAge, expectedHeight: this.data.expectedWeight, expectedWeight: this.data.expectedWeight, merits: this.data.merits, expectedGender: this.data.expectedGender, expectedMerits: this.data.expectedMerits
+          name: this.data.name, age: this.data.age, gender: this.data.gender, height: this.data.height, weight: this.data.weight, expectedAge: this.data.expectedAge, expectedHeight: this.data.expectedWeight, expectedWeight: this.data.expectedWeight, merits: this.data.merits, expectedGender: this.data.expectedGender, expectedMerits: this.data.expectedMerits, match: this.data.match
         },        //  数据插入成功，调用该函数
         success: function (res) {
           console.log(res)
+          // TODO： 更新database, call newUserUpdateDatabase
+          wx.cloud.callFunction({
+            name: 'newUserUpdateDatabase', data: {
+              //uid: this.data.openid
+              //uid: this.data.name
+            }, 
+            success: res => {
+              // console.log('[云函数] [login] user openid: ', res.result.openid)
+              // app.globalData.openid = res.result.openid
+              // that.db = wx.cloud.database()
+              // that.test = that.db.collection('user')
+            }
+          })
           wx.redirectTo({
             url: '../index/index'
           })
