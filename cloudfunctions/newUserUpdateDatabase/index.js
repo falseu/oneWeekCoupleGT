@@ -4,7 +4,9 @@
 const cloud = require('wx-server-sdk')
 
 // 初始化 cloud
-cloud.init()
+cloud.init({
+  env: cloud.DYNAMIC_CURRENT_ENV
+})
 
 const db = cloud.database()
 
@@ -19,6 +21,12 @@ exports.main = (event, context) => {
   console.log(event)
   console.log("context")
   //var _match
+  db.collection('user').update({
+    data:{
+      age: 100
+    }
+  })
+  return db.collection('user').get()
 
 
   // 可执行其他自定义逻辑
@@ -34,21 +42,6 @@ exports.main = (event, context) => {
   //     users = res.data
   //   }
   // })
-
-  // try {
-  //   return await db.collection('user').update({
-  //     data: {
-  //       age: 100
-  //     }
-  //   })
-  // } catch (e) {
-  //   console.log(e)
-  // }
-
-  return {
-    //users: users
-    openid: _openid
-  }
 
   
   // return {
