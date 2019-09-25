@@ -77,6 +77,23 @@ Page({  /**
         return
       }
 
+      // 向expectedMerits加数据
+      this.data.expectedMerits = []
+      for (var merit of this.data.meritArray) {
+        if (merit.checked) {
+          this.data.expectedMerits.push(merit.name)
+        }
+      }
+      // expectedMerits没有三个报错
+      if (this.data.expectedMerits.length != 3) {
+        wx.showModal({
+          title: '错误',
+          content: '请选择三个优点',
+          showCancel: false
+        })
+        return
+      }
+
       // 年龄未填，设为0，否则查看年龄是否为数字
       if (this.data.expectedAge == '') {
         this.setData({
@@ -131,23 +148,6 @@ Page({  /**
         })
       }
 
-      // 向expectedMerits加数据
-      this.data.expectedMerits = []
-      for (var merit of this.data.meritArray) {
-        if (merit.checked) {
-          this.data.expectedMerits.push(merit.name)
-        }
-      }
-      // expectedMerits没有三个报错
-      if (this.data.expectedMerits.length != 3) {
-        wx.showModal({
-          title: '错误',
-          content: '请选择三个优点',
-          showCancel: false
-        })
-        return
-      }
-
       // 更新app.globaldata.myData
       app.globalData.myData = this.data
 
@@ -160,6 +160,21 @@ Page({  /**
           console.log(res)
           // TODO： 更新database, call newUserUpdateDatabase
 
+          wx.cloud.callFunction({
+            name: 'newUserUpdateDatabase',
+            data: {},
+            success: res => {
+              console.log('[云函数] [login] user openid: reg2', res.result.openid)
+              //app.globalData.openid = res.result.openid
+            },
+            fail: err => {
+              console.error('[云函数] [login] 调用失败 reg2', err)
+              wx.navigateTo({
+                url: '../deployFunctions/deployFunctions',
+              })
+            }
+          })
+
           wx.redirectTo({
             url: '../index/index'
           })
@@ -171,20 +186,7 @@ Page({  /**
       })
 
     }
-    wx.cloud.callFunction({
-      name: 'newUserUpdateDatabase',
-      data: {},
-      success: res => {
-        console.log('[云函数] [login] user openid: reg2', res.result.openid)
-        //app.globalData.openid = res.result.openid
-      },
-      fail: err => {
-        console.error('[云函数] [login] 调用失败 reg2', err)
-        wx.navigateTo({
-          url: '../deployFunctions/deployFunctions',
-        })
-      }
-    })
+    
   },
 
   //  下面的函数用于当更新input组件中的值时同时更新对应变量的值
