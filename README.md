@@ -46,3 +46,7 @@
 - 文件存储：在小程序前端直接上传/下载云端文件，在云开发控制台可视化管理
 - 云函数：在云端运行的代码，微信私有协议天然鉴权，开发者只需编写业务逻辑代码
 
+- 上传云函数
+  - 安装node.js到本地，网址：nodejs.org/en
+  - 在command prompt中cd到需上传的云函数的directory内，执行 npm install --save wx-server-sdk
+  - 在 devtools中右键需上传的云函数文件夹，“Upload and Deploy: All Files”
