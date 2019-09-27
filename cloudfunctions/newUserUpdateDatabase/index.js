@@ -1,6 +1,9 @@
 // 云函数模板
 // 部署：在 cloud-functions/login 文件夹右击选择 “上传并部署”
 
+//_id,_openid,age,expectedAge,expectedGender,expectedHeight,expectedMerits,expectedWeight,gender,height,match,merits,name,weight
+
+
 const cloud = require('wx-server-sdk')
 
 // 初始化 cloud
@@ -50,5 +53,12 @@ exports.main = (event, context) => {
   //   appid: wxContext.APPID,
   //   unionid: wxContext.UNIONID,
   // }
+  
+}
+calcMatch: function (e) {
+  var matchScore = 100
+  if (_openid.age == e.expectedAge) {
+
+  }
   
 }

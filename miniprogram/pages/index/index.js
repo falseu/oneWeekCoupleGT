@@ -17,13 +17,14 @@ Page({
       })
       return
     }
-
     var db = wx.cloud.database()
     db.collection('user').get ({
       success: function(res) {
         console.log(res.data)
       }
     })
+
+    console.log(app.globalData.myData.name)
 
     // 获取用户信息
     wx.getSetting({
@@ -59,14 +60,14 @@ Page({
       name: 'login',
       data: {},
       success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.openid)
+        console.log('[云函数] [index] user openid: ', res.result.openid)
         app.globalData.openid = res.result.openid
         wx.navigateTo({
           url: '../userConsole/userConsole',
         })
       },
       fail: err => {
-        console.error('[云函数] [login] 调用失败', err)
+        console.error('[云函数] [index] 调用失败', err)
         wx.navigateTo({
           url: '../deployFunctions/deployFunctions',
         })
