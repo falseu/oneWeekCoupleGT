@@ -24,7 +24,9 @@
   "height": 1.0,
   "expectedGender": "男",
   "age": 1.0,
-  "_openid": "oOEx85S-btgkYnspFMDptryiOU7k"
+  "_openid": "oOEx85S-btgkYnspFMDptryiOU7k",
+  "cp": "oOEx85VhS6HKoo-4woNpgp38QcD4",
+  "cp_rate": 0
 }{
   "_id": "3397e9015d8ac2670424e56b2b30ee40",
   "expectedAge": 0.0,
@@ -51,7 +53,9 @@
   "name": "yck",
   "height": 12.0,
   "weight": 12.0,
-  "expectedWeight": 0.0
+  "expectedWeight": 0.0,
+  "cp": "oOEx85S-btgkYnspFMDptryiOU7k",
+  "cp_rate": 0
 }{
   "_id": "3397e9015d8e8b4805f1f4656a7a8c64",
   "age": 26.0,
@@ -78,7 +82,9 @@
     "1af3506e5d8ac45304271b6a393a4a35": 0,
     "3397e9015d8ac2670424e56b2b30ee40": 0,
     "f885cb355d8d4fef0557fc123895ba2a": 51
-  }
+  },
+  "cp": "oOEx85RD0yW7aS_-f9YOOxyr9xSM",
+  "cp_rate": 51
 }{
   "_id": "f885cb355d8d4fef0557fc123895ba2a",
   "expectedWeight": 60.0,
@@ -105,5 +111,7 @@
     "责任感",
     "情商"
   ],
-  "age": 18.0
+  "age": 18.0,
+  "cp": "oOEx85aArRD-FP18WFxfVRIo_Vek",
+  "cp_rate": 51
 }
