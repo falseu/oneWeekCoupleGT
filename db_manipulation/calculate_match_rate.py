@@ -21,9 +21,9 @@ def main():
             p2['match'][p1_id] = res
     file.close()
 
-    with open(read_path, 'w') as file:
+    with open('output.json', 'w') as file:
         for line in data:
-            json.dump(line, file)
+            json.dump(line, file, indent=2, ensure_ascii=False)
     file.close()
 
 def calculate(p1, p2):

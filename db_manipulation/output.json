@@ -1,0 +1,109 @@
+{
+  "_id": "1af3506e5d8ac45304271b6a393a4a35",
+  "gender": "男",
+  "expectedAge": 0.0,
+  "merits": [
+    "颜值",
+    "责任感",
+    "经济条件"
+  ],
+  "expectedMerits": [
+    "颜值",
+    "责任感",
+    "经济条件"
+  ],
+  "weight": 1.0,
+  "expectedHeight": 0.0,
+  "expectedWeight": 0.0,
+  "match": {
+    "3397e9015d8ac2670424e56b2b30ee40": 0,
+    "3397e9015d8e8b4805f1f4656a7a8c64": 0,
+    "f885cb355d8d4fef0557fc123895ba2a": 0
+  },
+  "name": "1",
+  "height": 1.0,
+  "expectedGender": "男",
+  "age": 1.0,
+  "_openid": "oOEx85S-btgkYnspFMDptryiOU7k"
+}{
+  "_id": "3397e9015d8ac2670424e56b2b30ee40",
+  "expectedAge": 0.0,
+  "age": 100.0,
+  "gender": "男",
+  "expectedHeight": 0.0,
+  "match": {
+    "1af3506e5d8ac45304271b6a393a4a35": 0,
+    "3397e9015d8e8b4805f1f4656a7a8c64": 0,
+    "f885cb355d8d4fef0557fc123895ba2a": 0
+  },
+  "_openid": "oOEx85VhS6HKoo-4woNpgp38QcD4",
+  "merits": [
+    "颜值",
+    "责任感",
+    "经济条件"
+  ],
+  "expectedMerits": [
+    "颜值",
+    "责任感",
+    "情商"
+  ],
+  "expectedGender": "女",
+  "name": "yck",
+  "height": 12.0,
+  "weight": 12.0,
+  "expectedWeight": 0.0
+}{
+  "_id": "3397e9015d8e8b4805f1f4656a7a8c64",
+  "age": 26.0,
+  "name": "陈盛康",
+  "height": 178.0,
+  "expectedHeight": 0.0,
+  "merits": [
+    "性格好",
+    "聪明",
+    "情商"
+  ],
+  "_openid": "oOEx85aArRD-FP18WFxfVRIo_Vek",
+  "gender": "男",
+  "weight": 72.0,
+  "expectedAge": 0.0,
+  "expectedGender": "女",
+  "expectedWeight": 0.0,
+  "expectedMerits": [
+    "颜值",
+    "性格",
+    "情商"
+  ],
+  "match": {
+    "1af3506e5d8ac45304271b6a393a4a35": 0,
+    "3397e9015d8ac2670424e56b2b30ee40": 0,
+    "f885cb355d8d4fef0557fc123895ba2a": 51
+  }
+}{
+  "_id": "f885cb355d8d4fef0557fc123895ba2a",
+  "expectedWeight": 60.0,
+  "weight": 50.0,
+  "expectedGender": "男",
+  "expectedMerits": [
+    "责任感",
+    "聪明",
+    "情商"
+  ],
+  "_openid": "oOEx85RD0yW7aS_-f9YOOxyr9xSM",
+  "name": "gry",
+  "height": 170.0,
+  "expectedAge": 18.0,
+  "match": {
+    "1af3506e5d8ac45304271b6a393a4a35": 0,
+    "3397e9015d8ac2670424e56b2b30ee40": 0,
+    "3397e9015d8e8b4805f1f4656a7a8c64": 51
+  },
+  "gender": "女",
+  "expectedHeight": 180.0,
+  "merits": [
+    "性格好",
+    "责任感",
+    "情商"
+  ],
+  "age": 18.0
+}
