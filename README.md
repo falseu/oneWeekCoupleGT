@@ -33,6 +33,8 @@
     - expectedMerits: TA最大的三个优点
     - match: key: openid, value: match rate
       - export database json file to /db_manipulation, run db_manipulation/calculate_match_rate.py, import output.json to database
+    - cp: 用户的cp的openid
+    - cp_rate: 用户和cp的匹配度
 
 - 本地数据库
 	- app.js.globalData.myData: 数据库的user信息
