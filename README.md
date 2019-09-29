@@ -31,20 +31,14 @@
     - expectedWeight: TA的体重，如果用户没有填写，默认为0
     - expecedGender: TA的性别
     - expectedMerits: TA最大的三个优点
+    - match: key: openid, value: match rate
+      - export database json file to /db_manipulation, run db_manipulation/calculate_match_rate.py, import output.json to database
 
 - 本地数据库
 	- app.js.globalData.myData: 数据库的user信息
 		- 更新时间：
 			- welcome.onLoad, 当用户已经register过, 从云端数据库获取user信息并更新
 			- register2.insertData, 用户首次register, 跳转页面之前更新
-
-# 云开发 quickstart
-
-这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
-
-- 数据库：一个既可在小程序前端操作，也能在云函数中读写的 JSON 文档型数据库
-- 文件存储：在小程序前端直接上传/下载云端文件，在云开发控制台可视化管理
-- 云函数：在云端运行的代码，微信私有协议天然鉴权，开发者只需编写业务逻辑代码
 
 - 上传云函数
   - 安装node.js到本地，网址：nodejs.org/en
