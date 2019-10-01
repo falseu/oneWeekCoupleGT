@@ -33,10 +33,20 @@ Page({
 
             //如果user已经register, 进入index界面, 未注册进入register界面
             if (res.data.length) {
-              app.globalData.myData = res.data
-              wx.navigateTo({
-                url: '../index/index',
-              })
+              app.globalData.myData = res.data[0]
+              console.log(res.data[0])
+              if (res.data[0].cp == '') {
+                wx.navigateTo({
+                  url: '../user_info_display/user_info_display',
+                })
+              } else {
+                wx.navigateTo({
+                  url: '../cp_info_display/cp_info',
+                })
+              }
+              // wx.navigateTo({
+              //   url: '../user_info_display/user_info_display',
+              // })
             } else {
               wx.navigateTo({
                 url: '../register/register',

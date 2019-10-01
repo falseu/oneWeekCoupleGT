@@ -164,8 +164,8 @@ Page({  /**
             name: 'newUserUpdateDatabase',
             data: {},
             success: res => {
-              console.log('[云函数] [login] user openid: reg2', res.result.openid)
-              //app.globalData.openid = res.result.openid
+              // console.log('[云函数] [login] user openid: reg2', res.result.openid)
+              // app.globalData.openid = res.result.openid
             },
             fail: err => {
               console.error('[云函数] [login] 调用失败 reg2', err)
@@ -176,7 +176,7 @@ Page({  /**
           })
 
           wx.redirectTo({
-            url: '../index/index'
+            url: '../user_info_display/user_info_display'
           })
         }
       })
