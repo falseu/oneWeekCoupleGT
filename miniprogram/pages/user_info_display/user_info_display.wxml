@@ -1,0 +1,36 @@
+<view>
+
+  <text class="h1">我的信息</text>
+
+  <view class='wrap'>
+  <text class="h2">姓名: </text>
+  <text>{{name}}</text>
+  </view>
+
+  <view class='wrap'>
+  <text class="h2">性别: </text>
+  <text>{{gender}}</text>
+  </view>
+
+  <view class='wrap'>
+  <text class='h2'>年龄: </text>
+  <text>{{age}}</text>
+  </view>
+
+  <view class='wrap'>
+  <text class='h2'>身高(厘米): </text>
+  <text>{{height}}</text>
+  </view>
+
+  <view class='wrap'>
+  <text class='h2'>体重(公斤): </text>
+  <text>{{weight}}</text>
+  </view>
+
+  <view class="wrap">
+  <text class='h2'>我的标准: </text>
+  <text>{{expectedMerits}}</text>
+  </view>
+
+
+</view>

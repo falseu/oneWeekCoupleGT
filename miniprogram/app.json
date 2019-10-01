@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/welcome/welcome",
+    "pages/user_info_display/user_info_display",
+    "pages/welcome/welcome",    
     "pages/register/register",
     "pages/register2/register2",
     "pages/index/index",
