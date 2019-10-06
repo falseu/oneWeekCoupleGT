@@ -1,2 +1,26 @@
 <!--miniprogram/pages/cp_info_display/cp_info.wxml-->
-<text>miniprogram/pages/cp_info_display/cp_info.wxml</text>
+<!--miniprogram/pages/cp_info_display/cp_info.wxml-->
+<view>
+
+ <text class="h1">我的CP</text>
+
+  <view class='wrap'>
+  <text>我的名字：</text>
+  <text>{{name}}</text>
+  </view>
+
+  <view class='wrap'>
+  <text>匹配度：</text>
+  <text>{{cpRate}}</text>
+  </view>
+
+  <view class='wrap'>
+  <text>CP名字：</text>
+  <text>{{cpName}}</text>
+  </view>
+
+  <button type="任务一" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="bindViewTap" hover-class="other-button-hover"> 任务一 </button>
+
+</view>
+
