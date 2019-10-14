@@ -14,7 +14,7 @@ Page({
    */
   onLoad: function (options) {
     this.task = app.globalData.tasks[options.index]
-    console.log(this.task)
+    console.log(app.globalData.cpData)
     this.setData({
       title: this.task.title,
       description: this.task.description

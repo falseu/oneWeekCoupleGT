@@ -10,7 +10,7 @@ var cp_info = undefined;
 
 Page({
   data: {
-    name: '', cpName: '', cpRate: '', taskArray: undefined,
+    name: '', cpName: '', cpRate: '', taskArray: undefined
   },
 
   bindViewTap: function (event) {
@@ -21,6 +21,10 @@ Page({
 
   onLoad: function (options) {
 
+    wx.showLoading({
+      title: '加载中...',
+    })
+
     var that = this;
 
     openid = app.globalData.openid
@@ -28,10 +32,7 @@ Page({
     user_info = app.globalData.myData
     var cp_openid = user_info.cp;
 
-    console.log(user_info)
-    console.log(cp_openid)
-
-    this.setData({
+    that.setData({
       name: user_info.name,
       cpRate: user_info.cp_rate
     })
@@ -42,19 +43,23 @@ Page({
       success: res => {
         cp_info = res.data[0]
 
-        this.setData({
+        that.setData({
           cpName: cp_info.name,
         })
+
+        app.globalData.cpData = res.data[0]
+        console.log(globalData.cpData)
       }
     })
 
     db.collection('task').get().then(
       res => {
-        this.setData({
+        that.setData({
           taskArray: res.data
         })
         app.globalData.tasks = res.data
-      }
+        wx.hideLoading()
+      },
     )
   },
 })

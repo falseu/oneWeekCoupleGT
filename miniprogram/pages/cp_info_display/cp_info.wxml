@@ -22,9 +22,6 @@
   <!-- <view> wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName"> 
       {{idx}}: {{itemName.title}}
   </view> -->
-
-
-
   
   <button wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" type="任务一" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="bindViewTap" hover-class="other-button-hover" id="{{idx}}"> {{itemName.title}} </button>
