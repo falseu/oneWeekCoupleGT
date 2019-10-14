@@ -18,9 +18,16 @@
   <text>CP名字：</text>
   <text>{{cpName}}</text>
   </view>
+  
+  <!-- <view> wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName"> 
+      {{idx}}: {{itemName.title}}
+  </view> -->
 
-  <button type="任务一" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="bindViewTap" hover-class="other-button-hover"> 任务一 </button>
+
+
+  
+  <button wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" type="任务一" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="bindViewTap" hover-class="other-button-hover">{{itemName.title}} </button>
 
 </view>
 

@@ -10,7 +10,7 @@ var cp_info = undefined;
 
 Page({
   data: {
-    name: '', cpName: '', cpRate: '',
+    name: '', cpName: '', cpRate: '', taskArray: undefined,
   },
   bindViewTap: function () {
     wx.navigateTo({
@@ -38,7 +38,7 @@ Page({
       _openid: user_info.cp,
     }).get({
       success: res => {
-        console.log(res.data)
+        //console.log(res.data)
         cp_info = res.data[0]
 
         this.setData({
@@ -46,5 +46,17 @@ Page({
         })
       }
     })
+
+    db.collection('task').get().then(
+      res => {
+        console.log(res.data)
+        this.setData({
+          taskArray: res.data
+        })
+      }
+    )
+
+    console.log(taskArray)
+    app.globalData.data.mytask = this.taskArray
   },
 })
