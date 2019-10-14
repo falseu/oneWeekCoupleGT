@@ -16,6 +16,8 @@
 - welcome: 初始界面，判断用户是否注册
 - register: 修改用户本人的信息
 - register2: 修改用户对TA的要求的信息
+- cp_info_display: 有CP时，显示本人和TA的名字以及任务完成度
+- taskDescription: 任务界面，根据用户点击历史显示相应的任务内容
 
 # 数据库结构
 - 云端数据库 env: owcp-gt
