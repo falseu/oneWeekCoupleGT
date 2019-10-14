@@ -12,11 +12,13 @@ Page({
   data: {
     name: '', cpName: '', cpRate: '', taskArray: undefined,
   },
-  bindViewTap: function () {
+
+  bindViewTap: function (event) {
     wx.navigateTo({
-      url: '../firstTask/firstTask'
+      url: '../firstTask/firstTask?index=' + event.target.id,
     })
   },
+
   onLoad: function (options) {
 
     var that = this;
@@ -38,7 +40,6 @@ Page({
       _openid: user_info.cp,
     }).get({
       success: res => {
-        //console.log(res.data)
         cp_info = res.data[0]
 
         this.setData({
@@ -49,14 +50,11 @@ Page({
 
     db.collection('task').get().then(
       res => {
-        console.log(res.data)
         this.setData({
           taskArray: res.data
         })
+        app.globalData.tasks = res.data
       }
     )
-
-    console.log(taskArray)
-    app.globalData.data.mytask = this.taskArray
   },
 })

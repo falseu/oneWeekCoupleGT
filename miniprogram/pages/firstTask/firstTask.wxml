@@ -1,1 +1,8 @@
-<text>这是第一个任务的界面</text>
+
+<view>
+  <text class='h1'> {{title}} </text>
+
+  <view class='wrap'>
+    <text> {{description}} </text>
+  </view>
+</view>

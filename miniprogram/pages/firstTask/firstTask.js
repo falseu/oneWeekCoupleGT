@@ -1,17 +1,24 @@
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    task: undefined, title: '', description: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.task = app.globalData.tasks[options.index]
+    console.log(this.task)
+    this.setData({
+      title: this.task.title,
+      description: this.task.description
+    })
   },
 
   /**
