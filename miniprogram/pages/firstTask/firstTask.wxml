@@ -6,10 +6,12 @@
     <text> {{description}} </text>
   </view>
 
+  <view wx:if="{{finished==true}}" class='wrap'>
   <image class="widget__arrow" src="{{imageUrl}}" mode="aspectFill">
-</image>
+  </image>
+  </view>
 
-  <view class='wrap'>
+  <view wx:if="{{upload==true}}" class='wrap'>
     <button type='primary'style="margin-top: 30rpx;" bindtap='uploadPhoto'>
     上传照片
     </button>

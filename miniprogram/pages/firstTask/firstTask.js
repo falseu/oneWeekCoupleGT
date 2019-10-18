@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    task: undefined, title: '', description: '', imageUrl: ''
+    task: undefined, title: '', description: '', imageUrl: '', finished: false, upload: false
   },
 
   /**
@@ -34,13 +34,17 @@ Page({
     }
     if (id == undefined) {
       wx.hideLoading()
+      this.setData({
+        upload: true
+      })
     } else {
       wx.cloud.downloadFile({
         fileID: id
       }).then(res => {
         console.log(res.tempFilePath)
         this.setData({
-          imageUrl: res.tempFilePath
+          imageUrl: res.tempFilePath,
+          finished: true,
         })
         wx.hideLoading()
       }).catch(error => {
