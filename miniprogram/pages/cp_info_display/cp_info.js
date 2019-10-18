@@ -10,7 +10,7 @@ var cp_info = undefined;
 
 Page({
   data: {
-    name: '', cpName: '', cpRate: '', taskArray: undefined
+    name: '', cpName: '', cpRate: '', taskArray: undefined, ready: false
   },
 
   bindViewTap: function (event) {
@@ -55,7 +55,8 @@ Page({
     db.collection('task').get().then(
       res => {
         that.setData({
-          taskArray: res.data
+          taskArray: res.data,
+          ready: true
         })
         app.globalData.tasks = res.data
         wx.hideLoading()

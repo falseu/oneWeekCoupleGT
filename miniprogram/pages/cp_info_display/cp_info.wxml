@@ -1,6 +1,6 @@
 <!--miniprogram/pages/cp_info_display/cp_info.wxml-->
 <!--miniprogram/pages/cp_info_display/cp_info.wxml-->
-<view>
+<view wx:if="{{ready==true}}">
 
  <text class="h1">我的CP</text>
 
