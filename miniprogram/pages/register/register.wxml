@@ -19,6 +19,11 @@
   </view>
 
   <view class='wrap'>
+  <text class="h2">微信号 (请填写真实的微信号，仅你的CP可见，方便你的CP添加好友)</text>
+  <input class='placeholder' placeholder="请输入微信号" value="{{wechatId}}" bindinput="bindKeyInputWechatId" />
+  </view>
+
+  <view class='wrap'>
   <text class='h2'>年龄</text>
   <input class="placeholder" placeholder="请输入年龄" value="{{age}}" bindinput="bindKeyInputAge" />
   </view>

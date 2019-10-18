@@ -37,11 +37,11 @@ Page({
               app.globalData.images = {}
               console.log(res.data[0])
               if (res.data[0].cp == '') {
-                wx.navigateTo({
+                wx.reLaunch({
                   url: '../user_info_display/user_info_display',
                 })
               } else {
-                wx.navigateTo({
+                wx.reLaunch({
                   url: '../cp_info_display/cp_info',
                 })
               }
@@ -49,7 +49,7 @@ Page({
               //   url: '../user_info_display/user_info_display',
               // })
             } else {
-              wx.navigateTo({
+              wx.reLaunch({
                 url: '../register/register',
               })
             }

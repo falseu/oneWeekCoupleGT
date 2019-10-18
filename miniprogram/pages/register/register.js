@@ -4,7 +4,7 @@ Page({  /**
    * init
    */
   db: undefined, test: undefined, data: {
-    name: '', age: '', gender: '', height: '', weight: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', merits: [], expectedMerits: [],
+    name: '', age: '', gender: '', height: '', weight: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', wechatId: '', merits: [], expectedMerits: [],
     genderArray: [{name:'男', value:'男', checked: false}, {name:'女', value:'女', checked: false}],
     meritArray: [
       {
@@ -82,6 +82,16 @@ Page({  /**
         wx.showModal({
           title: '错误',
           content: '请填写你的姓名',
+          showCancel: false
+        })
+        return
+      }
+
+      // 是否填写微信号
+      if (this.data.wechatId == '') {
+        wx.showModal({
+          title: '错误',
+          content: '请填写你的微信号',
           showCancel: false
         })
         return
@@ -179,6 +189,11 @@ Page({  /**
   bindKeyInputWeight: function (e) {
     this.setData({
       weight: e.detail.value
+    })
+  },
+  bindKeyInputWechatId: function (e) {
+    this.setData({
+      wechatId: e.detail.value
     })
   }
 })

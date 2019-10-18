@@ -14,9 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.showLoading({
-      title: '加载中',
-    })
+    var that = this
     idx = options.index
     this.task = app.globalData.tasks[idx]
     this.setData({
@@ -24,44 +22,60 @@ Page({
       description: this.task.description
     })
 
-    // if image is in app.globalData.images, load this image
-    if (app.globalData.images["task" + idx.toString()] != undefined) {
-      this.setData({
-        imageUrl: app.globalData.images["task" + idx.toString()],
-        finished: true
-      })
-      wx.hideLoading()
-    } else {
-      // if image not downloaded, try to download uploaded photo, store it in app.globalData.images
-      var arr = app.globalData.myData.taskImages
-      var id = undefined
-      for (var i = 0; i < arr.length; i++) {
-        if (parseInt(arr[i]) == idx) {
-          id = arr[i + 1]
+    // if image is in app.globalData.images, load this image to the page
+    wx.getStorage({
+      key: "task" + idx.toString(),
+      success: function(res) {
+        that.setData({
+          imageUrl: res.data,
+          finished: true
+        })
+        wx.hideLoading()
+      },
+      // if image is not in app.globalData.images
+      fail: e => {
+        wx.showLoading({
+          title: '加载中',
+        })
+        var arr = app.globalData.myData.taskImages
+        var id = undefined
+        for (var i = 0; i < arr.length; i++) {
+          if (parseInt(arr[i]) == idx) {
+            id = arr[i + 1]
+          }
+        }
+
+        // if this image was never uploaded, let the user upload the image, else download the image to localstorage
+        if (id == undefined) {
+          wx.hideLoading()
+          this.setData({
+            upload: true
+          })
+        } else {
+          wx.cloud.downloadFile({
+            fileID: id
+          }).then(res => {
+            console.log(res.tempFilePath)
+            // load image to wx.localstorage
+            wx.setStorage({
+              key: "task" + idx.toString(),
+              data: res.tempFilePath,
+            })
+
+            //app.globalData.images["task" + idx.toString()] = res.tempFilePath
+            this.setData({
+              imageUrl: res.tempFilePath,
+              finished: true,
+            })
+            wx.hideLoading()
+          }).catch(error => {
+            console.error(error)
+            wx.hideLoading()
+          })
         }
       }
-      if (id == undefined) {
-        wx.hideLoading()
-        this.setData({
-          upload: true
-        })
-      } else {
-        wx.cloud.downloadFile({
-          fileID: id
-        }).then(res => {
-          console.log(res.tempFilePath)
-          app.globalData.images["task" + idx.toString()] = res.tempFilePath
-          this.setData({
-            imageUrl: res.tempFilePath,
-            finished: true,
-          })
-          wx.hideLoading()
-        }).catch(error => {
-          console.error(error)
-          wx.hideLoading()
-        })
-      }
-    }
+    })
+
   },
 
   uploadPhoto: function () {
@@ -90,13 +104,12 @@ Page({
           cloudPath,
           filePath,
           success: res => {
-            // image fileID copy to app.globaldata.myData.taskImages
-            // app.globalData.myData.taskImages.push(idx.toString())
-            // app.globalData.myData.taskImages.push(res.fileID)
-            // console.log(app.globalData.myData.taskImages)
 
-            // load image to app.globalData.imageUrl after selecting it
-            app.globalData.images["task" + idx.toString()] = filePath
+            // load image to wx.localstorage
+            wx.setStorage({
+              key: "task" + idx.toString(),
+              data: filePath,
+            })
 
             // image fileID upload to database.taskImages
             wx.cloud.callFunction({

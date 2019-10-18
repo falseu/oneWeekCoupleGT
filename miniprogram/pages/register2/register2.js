@@ -4,7 +4,7 @@ Page({  /**
    * init
    */
   db: undefined, test: undefined, data: {
-    name: '', age: '', recordId: '', gender: '', height: '', weight: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '',  merits: [], expectedMerits: [], genderArray: [{ name: '男', value: '男', checked: false }, { name: '女', value: '女', checked: false }],
+    name: '', age: '', recordId: '', gender: '', height: '', weight: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', wechatId: '', merits: [], expectedMerits: [], genderArray: [{ name: '男', value: '男', checked: false }, { name: '女', value: '女', checked: false }],
     meritArray: [
       {
         name: '颜值',
@@ -44,6 +44,7 @@ Page({  /**
       merits: app.globalData.myData.merits,
       weight: app.globalData.myData.weight,
       height: app.globalData.myData.height,
+      wechatId: app.globalData.myData.wechatId
     })
     var that = this
     //  调用login云函数获取openid
@@ -154,7 +155,7 @@ Page({  /**
       //  向test数据集添加记录
       this.test.add({        // data 字段表示需新增的 JSON 数据
         data: {
-          name: this.data.name, age: this.data.age, gender: this.data.gender, height: this.data.height, weight: this.data.weight, expectedAge: this.data.expectedAge, expectedHeight: this.data.expectedHeight, expectedWeight: this.data.expectedWeight, merits: this.data.merits, expectedGender: this.data.expectedGender, expectedMerits: this.data.expectedMerits, match: this.data.match, cp: this.data.cp, taskImages: this.data.taskImages
+          name: this.data.name, age: this.data.age, gender: this.data.gender, height: this.data.height, weight: this.data.weight, expectedAge: this.data.expectedAge, expectedHeight: this.data.expectedHeight, expectedWeight: this.data.expectedWeight, merits: this.data.merits, expectedGender: this.data.expectedGender, expectedMerits: this.data.expectedMerits, match: this.data.match, cp: this.data.cp, taskImages: this.data.taskImages, wechatId: this.data.wechatId
         },        //  数据插入成功，调用该函数
         success: function (res) {
           console.log(res)
