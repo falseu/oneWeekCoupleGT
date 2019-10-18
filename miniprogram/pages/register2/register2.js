@@ -30,7 +30,7 @@ Page({  /**
         name: '情商',
         checked: false
       }
-    ], match: {}, cp: ''
+    ], match: {}, cp: '', taskImages: []
   },  /**
    * 生命周期函数--监听页面加载
    */
@@ -154,7 +154,7 @@ Page({  /**
       //  向test数据集添加记录
       this.test.add({        // data 字段表示需新增的 JSON 数据
         data: {
-          name: this.data.name, age: this.data.age, gender: this.data.gender, height: this.data.height, weight: this.data.weight, expectedAge: this.data.expectedAge, expectedHeight: this.data.expectedHeight, expectedWeight: this.data.expectedWeight, merits: this.data.merits, expectedGender: this.data.expectedGender, expectedMerits: this.data.expectedMerits, match: this.data.match, cp: this.data.cp
+          name: this.data.name, age: this.data.age, gender: this.data.gender, height: this.data.height, weight: this.data.weight, expectedAge: this.data.expectedAge, expectedHeight: this.data.expectedHeight, expectedWeight: this.data.expectedWeight, merits: this.data.merits, expectedGender: this.data.expectedGender, expectedMerits: this.data.expectedMerits, match: this.data.match, cp: this.data.cp, taskImages: this.data.taskImages
         },        //  数据插入成功，调用该函数
         success: function (res) {
           console.log(res)

@@ -25,7 +25,7 @@ Page({
       name: user_info.name,
       age: user_info.age,
       gender: user_info.gender,
-      height: user_info.age,
+      height: user_info.height,
       weight: user_info.weight,
       expectedMerits: user_info.expectedMerits
     })

@@ -37,12 +37,16 @@
       - export database json file to /db_manipulation, run db_manipulation/calculate_match_rate.py, import output.json to database
     - cp: 用户的cp的openid
     - cp_rate: 用户和cp的匹配度
+    - taskImages: [tasknumber, imageUrl]
 
 - 本地数据库
-	- app.js.globalData.myData: 数据库的user信息
+	- app.globalData.myData: 数据库的user信息
 		- 更新时间：
 			- welcome.onLoad, 当用户已经register过, 从云端数据库获取user信息并更新
 			- register2.insertData, 用户首次register, 跳转页面之前更新
+      - firstTask.uploadImage, 更新本地的taskImage信息
+  - app.globalData.openid
+
 
 - 上传云函数
   - 安装node.js到本地，网址：nodejs.org/en
