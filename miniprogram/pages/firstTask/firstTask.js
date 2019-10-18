@@ -77,10 +77,8 @@ Page({
           filePath,
           success: res => {
             // image fileID copy to app.globaldata.myData.taskImages
-            arr = []
-            arr.push(idx.toString())
-            arr.push(res.fileID)
-            app.globalData.myData.taskImages.push(arr)
+            app.globalData.myData.taskImages.push(idx.toString())
+            app.globalData.myData.taskImages.push(res.fileID)
             console.log(app.globalData.myData.taskImages)
 
             // image fileID upload to database.taskImages
