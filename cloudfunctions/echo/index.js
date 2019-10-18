@@ -1,8 +1,25 @@
 const cloud = require('wx-server-sdk')
+cloud.init({
+  env: cloud.DYNAMIC_CURRENT_ENV
+})
+const db = cloud.database()
+const _ = db.command
 
 exports.main = async (event, context) => {
-  // event.userInfo 是已废弃的保留字段，在此不做展示
-  // 获取 OPENID 等微信上下文请使用 cloud.getWXContext()
-  delete event.userInfo
-  return event
+  try {
+    arr = []
+    arr.push(event.index)
+    arr.push(event.id)
+    console.log(arr)
+    return await db.collection('user').where({
+      _openid: event.openid
+    })
+      .update({
+        data: {
+          taskImages: _.push(arr)
+        }
+      })
+  } catch (e) {
+    console.error(e)
+  }
 }

@@ -21,7 +21,7 @@ Page({
       name: 'login', data: {}, success: res => {
         console.log('[云函数] [login] user openid: ', res.result.openid)
 
-        // get openid
+        // 初始化app.globaldata
         app.globalData.openid = res.result.openid
 
         const db = wx.cloud.database()
