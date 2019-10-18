@@ -34,6 +34,7 @@ Page({
             //如果user已经register, 进入index界面, 未注册进入register界面
             if (res.data.length) {
               app.globalData.myData = res.data[0]
+              app.globalData.images = {}
               console.log(res.data[0])
               if (res.data[0].cp == '') {
                 wx.navigateTo({

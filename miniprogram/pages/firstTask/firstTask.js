@@ -24,33 +24,43 @@ Page({
       description: this.task.description
     })
 
-    // try to download uploaded photo
-    var arr = app.globalData.myData.taskImages
-    var id = undefined
-    for (var i = 0; i < arr.length; i++) {
-      if (parseInt(arr[i]) == idx) {
-        id = arr[i + 1]
-      } 
-    }
-    if (id == undefined) {
-      wx.hideLoading()
+    // if image is in app.globalData.images, load this image
+    if (app.globalData.images["task" + idx.toString()] != undefined) {
       this.setData({
-        upload: true
+        imageUrl: app.globalData.images["task" + idx.toString()],
+        finished: true
       })
+      wx.hideLoading()
     } else {
-      wx.cloud.downloadFile({
-        fileID: id
-      }).then(res => {
-        console.log(res.tempFilePath)
+      // if image not downloaded, try to download uploaded photo, store it in app.globalData.images
+      var arr = app.globalData.myData.taskImages
+      var id = undefined
+      for (var i = 0; i < arr.length; i++) {
+        if (parseInt(arr[i]) == idx) {
+          id = arr[i + 1]
+        }
+      }
+      if (id == undefined) {
+        wx.hideLoading()
         this.setData({
-          imageUrl: res.tempFilePath,
-          finished: true,
+          upload: true
         })
-        wx.hideLoading()
-      }).catch(error => {
-        console.error(error)
-        wx.hideLoading()
-      })
+      } else {
+        wx.cloud.downloadFile({
+          fileID: id
+        }).then(res => {
+          console.log(res.tempFilePath)
+          app.globalData.images["task" + idx.toString()] = res.tempFilePath
+          this.setData({
+            imageUrl: res.tempFilePath,
+            finished: true,
+          })
+          wx.hideLoading()
+        }).catch(error => {
+          console.error(error)
+          wx.hideLoading()
+        })
+      }
     }
   },
 
@@ -81,15 +91,19 @@ Page({
           filePath,
           success: res => {
             // image fileID copy to app.globaldata.myData.taskImages
-            app.globalData.myData.taskImages.push(idx.toString())
-            app.globalData.myData.taskImages.push(res.fileID)
-            console.log(app.globalData.myData.taskImages)
+            // app.globalData.myData.taskImages.push(idx.toString())
+            // app.globalData.myData.taskImages.push(res.fileID)
+            // console.log(app.globalData.myData.taskImages)
+
+            // load image to app.globalData.imageUrl after selecting it
+            app.globalData.images["task" + idx.toString()] = filePath
 
             // image fileID upload to database.taskImages
             wx.cloud.callFunction({
-              name: 'echo',
+              name: 'uploadTaskImage',
               data: {
                 openid: app.globalData.openid,
+                cp: app.globalData.myData.cp,
                 index: idx,
                 id: res.fileID
               },
