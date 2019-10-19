@@ -48,8 +48,8 @@
 				},
 				{
 					"id": 2,
-					"name": "pages/register/register",
-					"pathName": "pages/register/register",
+					"name": "pages/register2/register2",
+					"pathName": "pages/register2/register2",
 					"query": "",
 					"scene": null
 				}

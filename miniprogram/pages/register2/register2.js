@@ -4,7 +4,7 @@ Page({  /**
    * init
    */
   db: undefined, test: undefined, data: {
-    name: '', age: '', recordId: '', gender: '', height: '', weight: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', wechatId: '', merits: [], expectedMerits: [], genderArray: [{ name: '男', value: '男', checked: false }, { name: '女', value: '女', checked: false }],
+    name: '', age: '', recordId: '', gender: '', height: '', weight: '', expectedGender: '', expectedAgeLowerBound: '', expectedAgeUpperBound: '', expectedHeightLowerBound: '', expectedHeightUpperBound: '', expectedWeightLowerBound: '', expectedWeightUpperBound: '', wechatId: '', merits: [], expectedMerits: [], genderArray: [{ name: '男', value: '男', checked: false }, { name: '女', value: '女', checked: false }],
     meritArray: [
       {
         name: '颜值',
@@ -95,57 +95,51 @@ Page({  /**
         return
       }
 
-      // 年龄未填，设为0，否则查看年龄是否为数字
-      if (this.data.expectedAge == '') {
-        this.setData({
-          expectedAge: 0
+      // 查看年龄范围是否valid
+      var lower = parseInt(this.data.expectedAgeLowerBound)
+      var upper = parseInt(this.data.expectedAgeUpperBound)
+      if (isNaN(lower) || isNaN(upper) || lower > upper) {
+        wx.showModal({
+          title: '错误',
+          content: '请输入正确的年龄范围',
         })
+        return
       } else {
-        var expectedAge = parseInt(this.data.expectedAge)
-        if (isNaN(expectedAge)) {
-          wx.showModal({
-            title: '错误', content: '请输入正确的年龄', showCancel: false
-          })
-          return
-        }
         this.setData({
-          expectedAge: expectedAge
+          expectedAgeLowerBound: lower,
+          expectedAgeUpperBound: upper
         })
       }
 
-      // 身高未填，设为0，否则查看身高是否为数字
-      if (this.data.expectedHeight == '') {
-        this.setData({
-          expectedHeight: 0
+      // 查看身高范围是否valid
+      var lower = parseInt(this.data.expectedHeightLowerBound)
+      var upper = parseInt(this.data.expectedHeightUpperBound)
+      if (isNaN(lower) || isNaN(upper) || lower > upper) {
+        wx.showModal({
+          title: '错误',
+          content: '请输入正确的身高范围',
         })
+        return
       } else {
-        var expectedHeight = parseInt(this.data.expectedHeight)
-        if (isNaN(expectedHeight)) {
-          wx.showModal({
-            title: '错误', content: '请输入正确的体重', showCancel: false
-          })
-          return
-        }
         this.setData({
-          expectedHeight: expectedHeight
+          expectedHeightLowerBound: lower,
+          expectedHeightUpperBound: upper
         })
       }
 
-      // 体重未填，设为0，否则查看体重是否为数字
-      if (this.data.expectedWeight == '') {
-        this.setData({
-          expectedWeight: 0
+      // 查看体重范围是否valid
+      var lower = parseInt(this.data.expectedWeightLowerBound)
+      var upper = parseInt(this.data.expectedWeightUpperBound)
+      if (isNaN(lower) || isNaN(upper) || lower > upper) {
+        wx.showModal({
+          title: '错误',
+          content: '请输入正确的体重范围',
         })
+        return
       } else {
-        var expectedWeight = parseInt(this.data.expectedWeight)
-        if (isNaN(expectedWeight)) {
-          wx.showModal({
-            title: '错误', content: '请输入正确的体重', showCancel: false
-          })
-          return
-        }
         this.setData({
-          expectedWeight: expectedWeight
+          expectedWeightLowerBound: lower,
+          expectedWeightUpperBound: upper
         })
       }
 
@@ -155,7 +149,23 @@ Page({  /**
       //  向test数据集添加记录
       this.test.add({        // data 字段表示需新增的 JSON 数据
         data: {
-          name: this.data.name, age: this.data.age, gender: this.data.gender, height: this.data.height, weight: this.data.weight, expectedAge: this.data.expectedAge, expectedHeight: this.data.expectedHeight, expectedWeight: this.data.expectedWeight, merits: this.data.merits, expectedGender: this.data.expectedGender, expectedMerits: this.data.expectedMerits, match: this.data.match, cp: this.data.cp, taskImages: this.data.taskImages, wechatId: this.data.wechatId
+          name: this.data.name, 
+          age: this.data.age, gender: this.data.gender, 
+          height: this.data.height, 
+          weight: this.data.weight, 
+          expectedAgeLowerBound: this.data.expectedAgeLowerBound, 
+          expectedAgeUpperBound: this.data.expectedAgeUpperBound,
+          expectedHeightLowerBound: this.data.expectedHeightLowerBound, 
+          expectedHeightUpperBound: this.data.expectedHeightUpperBound,
+          expectedWeightLowerBound: this.data.expectedWeightLowerBound, 
+          expectedWeightUpperBound: this.data.expectedWeightUpperBound,
+          merits: this.data.merits, 
+          expectedGender: this.data.expectedGender, 
+          expectedMerits: this.data.expectedMerits, 
+          match: this.data.match, 
+          cp: this.data.cp, 
+          taskImages: this.data.taskImages, 
+          wechatId: this.data.wechatId
         },        //  数据插入成功，调用该函数
         success: function (res) {
           console.log(res)
@@ -222,19 +232,34 @@ Page({  /**
       meritArray: checkboxArr,
     });
   },
-  bindKeyInputExpectedAge: function (e) {
+  bindKeyInputExpectedAgeLowerBound: function (e) {
     this.setData({
-      expectedAge: e.detail.value
+      expectedAgeLowerBound: e.detail.value
     })
   },
-  bindKeyInputExpectedHeight: function (e) {
+  bindKeyInputExpectedAgeUpperBound: function (e) {
     this.setData({
-      expectedHeight: e.detail.value
+      expectedAgeUpperBound: e.detail.value
     })
   },
-  bindKeyInputExpectedWeight: function (e) {
+  bindKeyInputExpectedHeightLowerBound: function (e) {
     this.setData({
-      expectedWeight: e.detail.value
+      expectedHeightLowerBound: e.detail.value
+    })
+  },
+  bindKeyInputExpectedHeightUpperBound: function (e) {
+    this.setData({
+      expectedHeightUpperBound: e.detail.value
+    })
+  },
+  bindKeyInputExpectedWeightLowerBound: function (e) {
+    this.setData({
+      expectedWeightLowerBound: e.detail.value
+    })
+  },
+  bindKeyInputExpectedWeightUpperBound: function (e) {
+    this.setData({
+      expectedWeightUpperBound: e.detail.value
     })
   }
 })

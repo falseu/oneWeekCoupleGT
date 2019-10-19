@@ -49,8 +49,8 @@
   font-size: 28rpx;
 }
 
-.placeholder{
- width: 550rpx;
+.placeholderLeft{
+ width: 150rpx;
  height: 72rpx;
  line-height: 72rpx;
  font-size: 28rpx;
@@ -58,4 +58,28 @@
  border: 1rpx solid #CECECE;
  border-radius: 5rpx;
  display: inline-block;
+}
+
+.placeholderMiddle{
+ width: 30rpx;
+ height: 72rpx;
+ line-height: 72rpx;
+ font-size: 28rpx;
+ color: #888888;
+ border: 0rpx solid #CECECE;
+ border-radius: 5rpx;
+ display: inline-block;
+ margin-left: 100rpx;
+}
+
+.placeholderRight{
+ width: 150rpx;
+ height: 72rpx;
+ line-height: 72rpx;
+ font-size: 28rpx;
+ color: #888888;
+ border: 1rpx solid #CECECE;
+ border-radius: 5rpx;
+ display: inline-block;
+ margin-left: 100rpx;
 }

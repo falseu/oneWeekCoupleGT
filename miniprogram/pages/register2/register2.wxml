@@ -24,18 +24,24 @@
   </view>
 
   <view class='wrap'>
-  <text class='h2'>年龄 (可以不写)</text>
-  <input class="placeholder" placeholder="请输入年龄" value="{{expectedAge}}" bindinput="bindKeyInputExpectedAge" />
+  <text class='h2'>年龄 例如10到20\r\n</text>
+  <input class="placeholderLeft" placeholder="" value="{{expectedAgeLowerBound}}" bindinput="bindKeyInputExpectedAgeLowerBound" />
+  <input class='placeholderMiddle' placeholder="到"></input>
+  <input class='placeholderRight' value="{{expectedAgeUpperBound}}" bindinput="bindKeyInputExpectedAgeUpperBound"></input>
   </view>
 
   <view class='wrap'>
-  <text class='h2'>身高 厘米 (可以不写)</text>
-  <input class="placeholder" placeholder="请输入身高" value="{{expectedHeight}}" bindinput="bindKeyInputExpectedHeight" />
+  <text class='h2'>身高 厘米 例如170到180\r\n</text>
+  <input class="placeholderLeft" placeholder="" value="{{expectedHeightLowerBound}}" bindinput="bindKeyInputExpectedHeightLowerBound" />
+  <input class='placeholderMiddle' placeholder="到"></input>
+  <input class='placeholderRight' value="{{expectedHeightUpperBound}}" bindinput="bindKeyInputExpectedHeightUpperBound"></input>
   </view>
 
   <view class='wrap'>
-  <text class='h2'>体重 公斤 (可以不写)</text>
-  <input class="placeholder" placeholder="请输入体重" value="{{expectedWeight}}" bindinput="bindKeyInputExpectedWeight" />
+  <text class='h2'>体重 公斤 例如50到60\r\n</text>
+  <input class="placeholderLeft" placeholder="" value="{{expectedWeightLowerBound}}" bindinput="bindKeyInputExpectedWeightLowerBound" />
+  <input class='placeholderMiddle' placeholder="到"></input>
+  <input class='placeholderRight' value="{{expectedWeightUpperBound}}" bindinput="bindKeyInputExpectedWeightUpperBound"></input>
   </view>
 
   <button type="primary" style="margin-top: 30rpx;" bindtap='insertData'>进入GT一周CP</button>

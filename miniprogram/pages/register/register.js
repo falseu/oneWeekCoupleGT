@@ -36,6 +36,8 @@ Page({  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // clear storage
+    wx.clearStorage()
   },  
   
   // 单击“下一步”按钮调用该函数
