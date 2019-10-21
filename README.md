@@ -16,8 +16,9 @@
 - welcome: 初始界面，判断用户是否注册
 - register: 修改用户本人的信息
 - register2: 修改用户对TA的要求的信息
+- user_info_display: 没有CP时，显示本人信息
 - cp_info_display: 有CP时，显示本人和TA的名字以及任务完成度
-- taskDescription: 任务界面，根据用户点击历史显示相应的任务内容
+- firstTask: 任务界面，根据用户点击历史显示相应的任务内容，显示/上传任务图片
 
 # 数据库结构
 - 云端数据库 env: owcp-gt
@@ -28,9 +29,9 @@
     - age: 年龄
     - gender: 性别
     - merits: 自己最大的三个优点
-    - expectedAge: TA的年龄，如果用户没有填写，默认为0
-    - expectedHeight: TA的身高，如果用户没有填写，默认为0
-    - expectedWeight: TA的体重，如果用户没有填写，默认为0
+    - expectedAgeLowerBound/UpperBound: TA的年龄最小值/最大值 (inclusive)
+    - expectedHeightLowerBound/UpperBound: TA的身高最小值/最大值 (inclusive)
+    - expectedWeightLowerBound/UpperBound: TA的体重最小值/最大值 (inclusive)
     - expecedGender: TA的性别
     - expectedMerits: TA最大的三个优点
     - match: key: openid, value: match rate
@@ -38,6 +39,9 @@
     - cp: 用户的cp的openid
     - cp_rate: 用户和cp的匹配度
     - taskImages: [tasknumber, imageUrl]
+    - wechatId: 微信号 (加好友用)
+    - avatarUrl: 头像url
+    - image_uploader: 做任务的时候，上传照片的人（1 per cp）
 
 - 本地数据库
 	- app.globalData.myData: 数据库的user信息
