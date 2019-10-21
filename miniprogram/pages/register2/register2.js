@@ -67,7 +67,6 @@ Page({  /**
 
   // 单击“下一步”按钮调用该函数
   insertData: function () {
-    var that = this
     try { 
       // 是否已经选择Expectedgender
       if (that.data.expectedGender == '') {
