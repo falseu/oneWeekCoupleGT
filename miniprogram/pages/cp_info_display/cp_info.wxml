@@ -18,6 +18,11 @@
   <text>CP名字：</text>
   <text>{{cpName}}</text>
   </view>
+
+  <view class="wrap">
+  <image class="widget__arrow" src="{{myAvatarUrl}}" mode="aspectFill"></image>
+  <image class="widget__arrow" src="{{cpAvatarUrl}}" mode="aspectFill"></image>
+  </view>
   
   <!-- <view> wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName"> 
       {{idx}}: {{itemName.title}}

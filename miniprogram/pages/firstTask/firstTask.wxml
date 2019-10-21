@@ -3,7 +3,8 @@
   <text class='h1'> {{title}} </text>
 
   <view class='wrap'>
-    <text> {{description}} </text>
+    <text> {{description}} \r\n</text>
+    <text> 请{{image_uploader}}上传照片 </text>
   </view>
 
   <view wx:if="{{finished==true}}" class='wrap'>

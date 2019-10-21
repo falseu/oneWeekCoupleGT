@@ -1,5 +1,6 @@
 const app = getApp()
 var idx = undefined
+const db = wx.cloud.database()
 
 Page({
 
@@ -7,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    task: undefined, title: '', description: '', imageUrl: '', finished: false, upload: false, ready: false
+    task: undefined, title: '', description: '', imageUrl: '', finished: false, upload: false, ready: false, image_uploader: '', uploader: ''
   },
 
   /**
@@ -17,9 +18,11 @@ Page({
     var that = this
     idx = options.index
     this.task = app.globalData.tasks[idx]
+    this.image_uploader = app.globalData.myData.image_uploader
     this.setData({
       title: this.task.title,
-      description: this.task.description
+      description: this.task.description,
+      image_uploader: this.image_uploader
     })
 
     // if image is in app.globalData.images, load this image to the page
@@ -33,52 +36,73 @@ Page({
         })
         wx.hideLoading()
       },
+
       // if image is not in app.globalData.images
       fail: e => {
         wx.showLoading({
           title: '加载中',
         })
-        var arr = app.globalData.myData.taskImages
-        var id = undefined
-        for (var i = 0; i < arr.length; i++) {
-          if (parseInt(arr[i]) == idx) {
-            id = arr[i + 1]
+        var arr = []
+        // download task_images from image_uploader's database
+        db.collection('user').where({
+          name: this.image_uploader
+        }).get().then(
+          res => {
+            arr = res.data[0].taskImages
+
+            var id = undefined
+            for (var i = 0; i < arr.length; i++) {
+              if (parseInt(arr[i]) == idx) {
+                id = arr[i + 1]
+              }
+            }
+
+            // if this image was never uploaded, let the image_uploader upload the image, else download the image to localstorage
+            if (id == undefined) {
+
+              wx.hideLoading()
+              // if this user is image_uploader, show upload button, otherwise do not show
+              if ((app.globalData.myData.name) == (this.image_uploader)) {
+                this.setData({
+                  upload: true,
+                  ready: true
+                })
+              } else {
+                this.setData({
+                  upload: false,
+                  ready: true
+                })
+              }
+
+            } else {
+
+              // if id is valid, download image from database
+              wx.cloud.downloadFile({
+                fileID: id
+              }).then(res => {
+                console.log(res.tempFilePath)
+                // load image to wx.localstorage
+                wx.setStorage({
+                  key: "task" + idx.toString(),
+                  data: res.tempFilePath,
+                })
+
+                //app.globalData.images["task" + idx.toString()] = res.tempFilePath
+                this.setData({
+                  imageUrl: res.tempFilePath,
+                  finished: true,
+                  ready: true
+                })
+                wx.hideLoading()
+              }).catch(error => {
+                console.error(error)
+                wx.hideLoading()
+              })
+            }
           }
-        }
-
-        // if this image was never uploaded, let the user upload the image, else download the image to localstorage
-        if (id == undefined) {
-          wx.hideLoading()
-          this.setData({
-            upload: true,
-            ready: true
-          })
-        } else {
-          wx.cloud.downloadFile({
-            fileID: id
-          }).then(res => {
-            console.log(res.tempFilePath)
-            // load image to wx.localstorage
-            wx.setStorage({
-              key: "task" + idx.toString(),
-              data: res.tempFilePath,
-            })
-
-            //app.globalData.images["task" + idx.toString()] = res.tempFilePath
-            this.setData({
-              imageUrl: res.tempFilePath,
-              finished: true,
-              ready: true
-            })
-            wx.hideLoading()
-          }).catch(error => {
-            console.error(error)
-            wx.hideLoading()
-          })
-        }
+        )
       }
     })
-
   },
 
   uploadPhoto: function () {
@@ -195,7 +219,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+
   },
 
   /**

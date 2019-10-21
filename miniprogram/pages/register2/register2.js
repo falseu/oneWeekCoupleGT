@@ -30,7 +30,7 @@ Page({  /**
         name: '情商',
         checked: false
       }
-    ], match: {}, cp: '', taskImages: []
+    ], match: {}, cp: '', taskImages: [], avatarUrl: ''
   },  /**
    * 生命周期函数--监听页面加载
    */
@@ -44,7 +44,8 @@ Page({  /**
       merits: app.globalData.myData.merits,
       weight: app.globalData.myData.weight,
       height: app.globalData.myData.height,
-      wechatId: app.globalData.myData.wechatId
+      wechatId: app.globalData.myData.wechatId,
+      avatarUrl: app.globalData.avatarUrl
     })
     var that = this
     //  调用login云函数获取openid
@@ -164,8 +165,9 @@ Page({  /**
           expectedMerits: this.data.expectedMerits, 
           match: this.data.match, 
           cp: this.data.cp, 
-          taskImages: this.data.taskImages, 
-          wechatId: this.data.wechatId
+          taskImages: this.data.taskImages,
+          wechatId: this.data.wechatId,
+          avatarUrl: this.data.avatarUrl
         },        //  数据插入成功，调用该函数
         success: function (res) {
           console.log(res)

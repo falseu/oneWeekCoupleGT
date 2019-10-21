@@ -12,7 +12,8 @@ exports.main = async (event, context) => {
     arr.push(event.id)
     console.log(arr)
     return await db.collection('user').where({
-      _openid: _.eq(event.openid).or(_.eq(event.cp))
+      //_openid: _.eq(event.openid).or(_.eq(event.cp))
+      _openid: _.eq(event.openid)
     })
       .update({
         data: {

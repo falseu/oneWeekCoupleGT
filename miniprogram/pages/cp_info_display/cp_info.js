@@ -10,7 +10,7 @@ var cp_info = undefined;
 
 Page({
   data: {
-    name: '', cpName: '', cpRate: '', taskArray: undefined, ready: false
+    name: '', cpName: '', cpRate: '', taskArray: undefined, ready: false, myAvatarUrl: '', cpAvatarUrl: ''
   },
 
   bindViewTap: function (event) {
@@ -34,9 +34,11 @@ Page({
 
     that.setData({
       name: user_info.name,
-      cpRate: user_info.cp_rate
+      cpRate: user_info.cp_rate,
+      myAvatarUrl: user_info.avatarUrl
     })
 
+    // get cp data
     db.collection('user').where({
       _openid: user_info.cp,
     }).get({
@@ -45,6 +47,7 @@ Page({
 
         that.setData({
           cpName: cp_info.name,
+          cpAvatarUrl: cp_info.avatarUrl
         })
 
         app.globalData.cpData = res.data[0]
@@ -52,6 +55,7 @@ Page({
       }
     })
 
+    // get tasks
     db.collection('task').get().then(
       res => {
         that.setData({

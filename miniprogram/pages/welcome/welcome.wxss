@@ -12,3 +12,8 @@
 Page {
   background-color: #03bfff;
 }
+
+.wrap{
+ width: 550rpx;
+ margin: 50rpx auto
+}

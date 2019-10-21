@@ -8,15 +8,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    ready: false
+  },
+  bindGetUserInfo: function (e) {
+    var that = this
+    app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
+    console.log(e.detail.userInfo.avatarUrl)
+    wx.reLaunch({
+      url: '../register/register',
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+    var that = this
 
     //获取数据库中user信息
+    setTimeout(function () {
+      
+    }, 400)
     wx.cloud.callFunction({
       name: 'login', data: {}, success: res => {
         console.log('[云函数] [login] user openid: ', res.result.openid)
@@ -45,12 +58,9 @@ Page({
                   url: '../cp_info_display/cp_info',
                 })
               }
-              // wx.navigateTo({
-              //   url: '../user_info_display/user_info_display',
-              // })
             } else {
-              wx.reLaunch({
-                url: '../register/register',
+              that.setData({
+                ready: true
               })
             }
           }

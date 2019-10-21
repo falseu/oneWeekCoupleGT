@@ -12,7 +12,7 @@ Page({  /**
         checked: false
       },
       {
-        name: '性格好',
+        name: '性格',
         checked: false
       },
       {
