@@ -69,7 +69,7 @@ Page({  /**
   insertData: function () {
     try { 
       // 是否已经选择Expectedgender
-      if (that.data.expectedGender == '') {
+      if (this.data.expectedGender == '') {
         wx.showModal({
           title: '错误',
           content: '请选择TA的性别',
@@ -171,21 +171,6 @@ Page({  /**
         success: function (res) {
           console.log(res)
           // TODO： 更新database, call newUserUpdateDatabase
-
-          wx.cloud.callFunction({
-            name: 'newUserUpdateDatabase',
-            data: {},
-            success: res => {
-              // console.log('[云函数] [login] user openid: reg2', res.result.openid)
-              // app.globalData.openid = res.result.openid
-            },
-            fail: err => {
-              console.error('[云函数] [login] 调用失败 reg2', err)
-              wx.navigateTo({
-                url: '../deployFunctions/deployFunctions',
-              })
-            }
-          })
 
           wx.redirectTo({
             url: '../user_info_display/user_info_display'
