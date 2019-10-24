@@ -14,7 +14,7 @@
   </view>
 
   <view class="wrap">
-  <text class='h2'>TA最大的优点（选三个) 必填</text>
+  <text class='h2'>你最看重的三个品质（三个） 必填</text>
   <view class='checkbox-con'>
   <radio-group bindchange="radioChange">
     <label class="{{item.checked?'checkbox checked':'checkbox'}}" wx:for="{{meritArray}}" bindtap='bindtapMerit' data-index="{{index}}" wx:key="item.name">
