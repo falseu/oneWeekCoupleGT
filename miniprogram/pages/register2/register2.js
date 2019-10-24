@@ -172,7 +172,7 @@ Page({  /**
           console.log(res)
           // TODO： 更新database, call newUserUpdateDatabase
 
-          wx.redirectTo({
+          wx.reLaunch({
             url: '../user_info_display/user_info_display'
           })
         }

@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    task: undefined, title: '', description: '', imageUrl: '', finished: false, upload: false, ready: false, image_uploader: '', uploader: ''
+    task: undefined, title: '', description: '', imageUrl: '', finished_image: false, upload_image: false, ready: false, image_uploader: '', upload_text: false, text: '', finished_text: false, upload_text: false
   },
 
   /**
@@ -24,84 +24,88 @@ Page({
       description: this.task.description,
       image_uploader: this.image_uploader
     })
+    this.upload_text = this.task.text
+    this.upload_image = this.task.image
 
-    // if image is in app.globalData.images, load this image to the page
+    // if upload image, load image, or show upload image button
+    if (this.upload_image) {
+      this.load_image()
+    }
+
+    // if upload text, load text, or show upload text button
+    if (this.upload_text) {
+      this.load_text()
+    }
+
+  },
+
+  load_text: function () {
+    var that = this
     wx.getStorage({
-      key: "task" + idx.toString(),
+      key: 'task' + idx.toString(),
       success: function(res) {
         that.setData({
-          imageUrl: res.data,
-          finished: true,
+          text: res.data,
+          finished_text: true,
           ready: true
         })
-        wx.hideLoading()
       },
-
-      // if image is not in app.globalData.images
       fail: e => {
-        wx.showLoading({
-          title: '加载中',
+        that.setData({
+          upload_text: true,
+          ready: true
         })
-        var arr = []
-        // download task_images from image_uploader's database
-        db.collection('user').where({
-          name: this.image_uploader
-        }).get().then(
-          res => {
-            arr = res.data[0].taskImages
-
-            var id = undefined
-            for (var i = 0; i < arr.length; i++) {
-              if (parseInt(arr[i]) == idx) {
-                id = arr[i + 1]
-              }
-            }
-
-            // if this image was never uploaded, let the image_uploader upload the image, else download the image to localstorage
-            if (id == undefined) {
-
-              wx.hideLoading()
-              // if this user is image_uploader, show upload button, otherwise do not show
-              if ((app.globalData.myData.name) == (this.image_uploader)) {
-                this.setData({
-                  upload: true,
-                  ready: true
-                })
-              } else {
-                this.setData({
-                  upload: false,
-                  ready: true
-                })
-              }
-
-            } else {
-
-              // if id is valid, download image from database
-              wx.cloud.downloadFile({
-                fileID: id
-              }).then(res => {
-                console.log(res.tempFilePath)
-                // load image to wx.localstorage
-                wx.setStorage({
-                  key: "task" + idx.toString(),
-                  data: res.tempFilePath,
-                })
-
-                //app.globalData.images["task" + idx.toString()] = res.tempFilePath
-                this.setData({
-                  imageUrl: res.tempFilePath,
-                  finished: true,
-                  ready: true
-                })
-                wx.hideLoading()
-              }).catch(error => {
-                console.error(error)
-                wx.hideLoading()
-              })
-            }
-          }
-        )
       }
+    })
+  },
+
+  uploadText: function () {
+    wx.showLoading({
+      title: '加载中',
+    })
+    var that = this
+    var input = this.data.text
+    if (input == '') {
+      wx.showModal({
+        title: '错误',
+        content: '请输入文字',
+      })
+    }
+    wx.cloud.callFunction({
+      name: 'uploadTaskText',
+      data: {
+        openid: app.globalData.openid,
+        index: idx,
+        text: input
+      },
+      success: (res) => {
+        console.log(res.result)
+        wx.setStorage({
+          key: 'task' + idx.toString(),
+          data: input,
+        })
+        wx.hideLoading()
+        wx.showToast({
+          title: '上传成功',
+          icon: 'none',
+          duration: 1500,
+          success: function () {
+            setTimeout(function () {
+              wx.hideLoading()
+              wx.navigateBack({
+                delta: 1
+              })
+            }, 1500) //延时时间
+          }
+        })
+      },
+      fail: console.error
+    })
+  },
+
+  bindKeyInputTextInput: function (e) {
+    this.setData({
+      text: e.detail.value
     })
   },
 
@@ -185,6 +189,87 @@ Page({
       }
     })
 
+  },
+
+  load_image: function () {
+    var that = this
+    // if image is in app.globalData.images, load this image to the page
+    wx.getStorage({
+      key: "task" + idx.toString(),
+      success: function (res) {
+        that.setData({
+          imageUrl: res.data,
+          finished_image: true,
+          ready: true
+        })
+      },
+
+      // if image is not in app.globalData.images
+      fail: e => {
+        wx.showLoading({
+          title: '加载中',
+        })
+        var arr = []
+        // download task_images from image_uploader's database
+        db.collection('user').where({
+          name: that.image_uploader
+        }).get().then(
+          res => {
+            arr = res.data[0].taskImages
+
+            var id = undefined
+            for (var i = 0; i < arr.length; i++) {
+              if (parseInt(arr[i]) == idx) {
+                id = arr[i + 1]
+              }
+            }
+
+            // if this image was never uploaded, let the image_uploader upload the image, else download the image to localstorage
+            if (id == undefined) {
+
+              wx.hideLoading()
+              // if this user is image_uploader, show upload button, otherwise do not show
+              if ((app.globalData.myData.name) == (that.image_uploader)) {
+                that.setData({
+                  upload_image: true,
+                  ready: true
+                })
+              } else {
+                that.setData({
+                  upload_image: false,
+                  ready: true
+                })
+              }
+
+            } else {
+
+              // if id is valid, download image from database
+              wx.cloud.downloadFile({
+                fileID: id
+              }).then(res => {
+                console.log(res.tempFilePath)
+                // load image to wx.localstorage
+                wx.setStorage({
+                  key: "task" + idx.toString(),
+                  data: res.tempFilePath,
+                })
+
+                //app.globalData.images["task" + idx.toString()] = res.tempFilePath
+                that.setData({
+                  imageUrl: res.tempFilePath,
+                  finished_image: true,
+                  ready: true
+                })
+                wx.hideLoading()
+              }).catch(error => {
+                console.error(error)
+                wx.hideLoading()
+              })
+            }
+          }
+        )
+      }
+    })
   },
 
   /**

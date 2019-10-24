@@ -28,50 +28,50 @@ Page({
 
     //获取数据库中user信息
     setTimeout(function () {
-      
-    }, 400)
-    wx.cloud.callFunction({
-      name: 'login', data: {}, success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.openid)
+      wx.cloud.callFunction({
+        name: 'login', data: {}, success: res => {
+          console.log('[云函数] [login] user openid: ', res.result.openid)
 
-        // 初始化app.globaldata
-        app.globalData.openid = res.result.openid
+          // 初始化app.globaldata
+          app.globalData.openid = res.result.openid
 
-        const db = wx.cloud.database()
-        db.collection('user').where({
-          _openid: app.globalData.openid
-        })
-        .get({
-          success: function (res) {
+          const db = wx.cloud.database()
+          db.collection('user').where({
+            _openid: app.globalData.openid
+          })
+            .get({
+              success: function (res) {
 
-            //如果user已经register, 进入index界面, 未注册进入register界面
-            if (res.data.length) {
-              app.globalData.myData = res.data[0]
-              app.globalData.images = {}
-              console.log(res.data[0])
-              if (res.data[0].cp == '') {
-                wx.reLaunch({
-                  url: '../user_info_display/user_info_display',
-                })
-              } else {
-                wx.reLaunch({
-                  url: '../cp_info_display/cp_info',
-                })
+                //如果user已经register, 进入index界面, 未注册进入register界面
+                if (res.data.length) {
+                  app.globalData.myData = res.data[0]
+                  app.globalData.images = {}
+                  console.log(res.data[0])
+                  if (res.data[0].cp == '') {
+                    wx.reLaunch({
+                      url: '../user_info_display/user_info_display',
+                    })
+                  } else {
+                    wx.reLaunch({
+                      url: '../cp_info_display/cp_info',
+                    })
+                  }
+                } else {
+                  that.setData({
+                    ready: true
+                  })
+                }
               }
-            } else {
-              that.setData({
-                ready: true
-              })
-            }
-          }
-        })
-      }, fail: err => {
-        console.error('[云函数] [login] 调用失败', err)
-        wx.navigateTo({
-          url: '../deployFunctions/deployFunctions',
-        })
-      }
-    })
+            })
+        }, fail: err => {
+          console.error('[云函数] [login] 调用失败', err)
+          wx.navigateTo({
+            url: '../deployFunctions/deployFunctions',
+          })
+        }
+      })
+    }, 1000)
+
 
     //如果user没有register, 进入register页面
   },

@@ -4,17 +4,27 @@
 
   <view class='wrap'>
     <text> {{description}} \r\n</text>
-    <text> 请{{image_uploader}}上传照片 </text>
+    <text wx:if="{{upload_image==true}}"> 请{{image_uploader}}上传照片 </text>
   </view>
 
-  <view wx:if="{{finished==true}}" class='wrap'>
+  <view wx:if="{{finished_image==true}}" class='wrap'>
   <image class="widget__arrow" src="{{imageUrl}}" mode="aspectFill">
   </image>
   </view>
 
-  <view wx:if="{{upload==true}}" class='wrap'>
+  <view wx:if="{{upload_image==true}}" class='wrap'>
     <button type='primary'style="margin-top: 30rpx;" bindtap='uploadPhoto'>
     上传照片
     </button>
+  </view>
+  
+  <view wx:if="{{upload_text==true}}" class='wrap'>
+    <textarea class="textarea" value="{{text}}" placeholder="请输入文字" placeholder-class="placeholder" focus="{{focus}}" maxlength="500" auto-height="{{auto-height}}" show-confirm-bar="{{show-confirm-bar}}" bindinput="bindKeyInputTextInput"></textarea>
+    <button type='primary'style='margin-top: 30rpx;' bindtap='uploadText'>上传</button>
+  </view>
+
+  <view wx:if="{{finished_text==true}}" class='wrap'>
+    <text class="h2">我的回答\r\n</text>
+    <text>{{text}}</text>
   </view>
 </view>

@@ -46,12 +46,21 @@
 .h2{
   margin-top: 30rpx;
   color: #888888;
+  font-size: 34rpx;
+}
+
+.textarea {
   font-size: 28rpx;
+  width: 550rpx;
+  background-color: white;
+  height: 100px;
+  border: 1rpx solid #CECECE;
+  border-radius: 5rpx;
 }
 
 .placeholder{
- width: 550rpx;
  height: 72rpx;
+ width: 550rpx;
  line-height: 72rpx;
  font-size: 28rpx;
  color: #888888;
