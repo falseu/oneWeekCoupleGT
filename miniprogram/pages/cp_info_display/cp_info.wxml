@@ -4,32 +4,19 @@
 
  <text class="h1">我的CP</text>
 
-  <view class='wrap'>
-  <text>我的名字：</text>
-  <text>{{name}}</text>
-  </view>
-
-  <view class='wrap'>
-  <text>匹配度：</text>
-  <text>{{cpRate}}</text>
-  </view>
-
-  <view class='wrap'>
-  <text>CP名字：</text>
-  <text>{{cpName}}</text>
-  </view>
-
   <view class="wrap">
-  <image class="widget__arrow" src="{{myAvatarUrl}}" mode="aspectFill"></image>
-  <image class="widget__arrow" src="{{cpAvatarUrl}}" mode="aspectFill"></image>
+  <image class="icon" style="margin-left:10rpx;" src="{{myAvatarUrl}}" mode="aspectFill"></image>
+  <text style="margin-left:47rpx; color: #888888;">匹配度：</text>
+  <text style="color: #888888;">{{cpRate}}</text>
+  <image class="icon" style="position:absolute;right:10rpx;" src="{{cpAvatarUrl}}" mode="aspectFill"></image>
+  </view>
+
+  <view class='wrap' style="flex-wrap:no-wrap">
+  <text style="margin-left:30rpx;">{{name}}</text>
+  <text style="position:absolute;right:30rpx">{{cpName}}</text>
   </view>
   
-  <!-- <view> wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName"> 
-      {{idx}}: {{itemName.title}}
-  </view> -->
-  
-  <button wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" type="任务一" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+  <button class='button' wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" type="任务一" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="bindViewTap" hover-class="other-button-hover" id="{{idx}}"> {{itemName.title}} </button>
 
 </view>
-

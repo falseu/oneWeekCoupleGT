@@ -70,7 +70,7 @@ Page({
           })
         }
       })
-    }, 1000)
+    }, 1500)
 
 
     //如果user没有register, 进入register页面
