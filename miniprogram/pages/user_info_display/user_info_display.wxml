@@ -63,4 +63,7 @@
   </view>
 
 
+<button type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">重新编辑信息</button>
+
+
 </view>
