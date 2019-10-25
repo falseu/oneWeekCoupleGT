@@ -44,7 +44,7 @@
 
   <view class='wrap'>
   <text class='h2'>自我简介: </text>
-  <text>{{slefIntro}}</text>
+  <text>{{selfIntro}}</text>
   </view>
 
   <view class='wrap'>

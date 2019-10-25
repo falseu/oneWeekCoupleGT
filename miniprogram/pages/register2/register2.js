@@ -42,7 +42,7 @@ Page({  /**
       age: app.globalData.myData.age,
       gender: app.globalData.myData.gender,
       major: app.globalData.myData.major,
-      grade: app.globalData.myData.grade,
+      grade: app.globalData.myData.grades,
       constellations: app.globalData.myData.constellations,
       homeTown: app.globalData.myData.homeTown,
       hobbies: app.globalData.myData.hobbies,
@@ -177,7 +177,8 @@ Page({  /**
           cp: this.data.cp, 
           taskImages: this.data.taskImages,
           wechatId: this.data.wechatId,
-          avatarUrl: this.data.avatarUrl
+          avatarUrl: this.data.avatarUrl,
+          grade: this.data.grade
         },        //  数据插入成功，调用该函数
         success: function (res) {
           console.log(res)
