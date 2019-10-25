@@ -38,6 +38,11 @@
   </view>
 
   <view class='wrap'>
+  <text class='h2'>自我简介: </text>
+  <text>{{slefIntro}}</text>
+  </view>
+
+  <view class='wrap'>
   <text class='h2'>身高(厘米): </text>
   <text>{{height}}</text>
   </view>
