@@ -4,7 +4,7 @@ Page({  /**
    * init
    */
   db: undefined, test: undefined, data: {
-    name: '', age: '', gender: '', height: '', weight: '', major: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', wechatId: '', merits: [], expectedMerits: [],
+    name: '', age: '', gender: '', height: '', weight: '', major: '', grades:'', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', wechatId: '', merits: [], expectedMerits: [],
     genderArray: [{name:'男', value:'男', checked: false}, {name:'女', value:'女', checked: false}],
     meritArray: [
       {
@@ -103,6 +103,16 @@ Page({  /**
         wx.showModal({
           title: '错误',
           content: '请填写你的专业',
+          showCancel: false
+        })
+        return
+      }
+
+      // 是否填写专业
+      if (this.data.grades == '') {
+        wx.showModal({
+          title: '错误',
+          content: '请填写你的年级',
           showCancel: false
         })
         return

@@ -29,6 +29,11 @@
   </view>
 
   <view class='wrap'>
+  <text class="h2">年级</text>
+  <input class='placeholder' placeholder="请输入年级（例如大三，研二）" value="{{grades}}" bindinput="bindKeyInputGrades" />
+  </view>
+
+  <view class='wrap'>
   <text class="h2">家乡</text>
   <input class='placeholder' placeholder="请输入家乡" value="{{homeTown}}" bindinput="bindKeyInputHomeTown" />
   </view>

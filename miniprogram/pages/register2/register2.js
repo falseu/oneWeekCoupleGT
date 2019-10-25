@@ -4,7 +4,7 @@ Page({  /**
    * init
    */
   db: undefined, test: undefined, data: {
-    name: '', age: '', recordId: '', gender: '', height: '', weight: '', major: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAgeLowerBound: '', expectedAgeUpperBound: '', expectedHeightLowerBound: '', expectedHeightUpperBound: '', expectedWeightLowerBound: '', expectedWeightUpperBound: '', wechatId: '', merits: [], expectedMerits: [], genderArray: [{ name: '男', value: '男', checked: false }, { name: '女', value: '女', checked: false }],
+    name: '', age: '', recordId: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAgeLowerBound: '', expectedAgeUpperBound: '', expectedHeightLowerBound: '', expectedHeightUpperBound: '', expectedWeightLowerBound: '', expectedWeightUpperBound: '', wechatId: '', merits: [], expectedMerits: [], genderArray: [{ name: '男', value: '男', checked: false }, { name: '女', value: '女', checked: false }],
     meritArray: [
       {
         name: '颜值',
@@ -42,6 +42,7 @@ Page({  /**
       age: app.globalData.myData.age,
       gender: app.globalData.myData.gender,
       major: app.globalData.myData.major,
+      grade: app.globalData.myData.grade,
       constellations: app.globalData.myData.constellations,
       homeTown: app.globalData.myData.homeTown,
       hobbies: app.globalData.myData.hobbies,

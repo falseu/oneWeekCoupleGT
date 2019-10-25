@@ -23,6 +23,11 @@
   </view>
 
   <view class='wrap'>
+  <text class='h2'>年级: </text>
+  <text>{{grade}}</text>
+  </view>
+
+  <view class='wrap'>
   <text class='h2'>家乡: </text>
   <text>{{homeTown}}</text>
   </view>
