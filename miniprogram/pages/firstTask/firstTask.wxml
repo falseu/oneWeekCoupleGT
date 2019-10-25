@@ -12,7 +12,7 @@
   </image>
   </view>
 
-  <view wx:if="{{upload_image==true}}" class='wrap'>
+  <view wx:if="{{upload_image_button==true}}" class='wrap'>
     <button type='primary'style="margin-top: 30rpx;" bindtap='uploadPhoto'>
     上传照片
     </button>

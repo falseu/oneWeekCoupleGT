@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    task: undefined, title: '', description: '', imageUrl: '', finished_image: false, upload_image: false, ready: false, image_uploader: '', upload_text: false, text: '', finished_text: false, upload_text: false
+    task: undefined, title: '', description: '', imageUrl: '', finished_image: false, upload_image: false, ready: false, image_uploader: '', upload_text: false, text: '', finished_text: false, upload_text: false, upload_image_button: false
   },
 
   /**
@@ -235,11 +235,13 @@ Page({
               if ((app.globalData.myData.name) == (that.image_uploader)) {
                 that.setData({
                   upload_image: true,
+                  upload_image_button: true,
                   ready: true
                 })
               } else {
                 that.setData({
-                  upload_image: false,
+                  upload_image: true,
+                  upload_image_button: false,
                   ready: true
                 })
               }
