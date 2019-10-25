@@ -18,6 +18,26 @@
   </view>
 
   <view class='wrap'>
+  <text class='h2'>专业: </text>
+  <text>{{major}}</text>
+  </view>
+
+  <view class='wrap'>
+  <text class='h2'>家乡: </text>
+  <text>{{homeTown}}</text>
+  </view>
+
+  <view class='wrap'>
+  <text class='h2'>星座: </text>
+  <text>{{constellations}}</text>
+  </view>
+
+  <view class='wrap'>
+  <text class='h2'>兴趣: </text>
+  <text>{{hobbies}}</text>
+  </view>
+
+  <view class='wrap'>
   <text class='h2'>身高(厘米): </text>
   <text>{{height}}</text>
   </view>
