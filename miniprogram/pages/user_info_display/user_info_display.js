@@ -1,6 +1,6 @@
 //https://cloud.tencent.com/developer/article/1380912
 
-const db = wx.cloud.database({});
+const db = wx.cloud.database();
 const cont = db.collection('user');
 const app = getApp()
 var openid = undefined;
@@ -34,4 +34,28 @@ Page({
       expectedMerits: user_info.expectedMerits,
     })
   },
+
+  onPullDownRefresh() {
+    wx.showLoading({
+      title: '加载中',
+    })
+    db.collection('user').where({
+      _openid: app.globalData.openid
+    }).get().then(
+      res => {
+
+        if (res.data[0].cp == '') {
+          wx.hideLoading()
+          return
+        } else {
+          // if user has cp, relaunch to cp_info_display
+          app.globalData.myData = res.data[0]
+          wx.hideLoading()
+          wx.reLaunch({
+            url: '../cp_info_display/cp_info',
+          })
+        }
+      }
+    )
+  }
 })
