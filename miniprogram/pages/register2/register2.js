@@ -4,7 +4,7 @@ Page({  /**
    * init
    */
   db: undefined, test: undefined, data: {
-    name: '', age: '', recordId: '', gender: '', height: '', weight: '', expectedGender: '', expectedAgeLowerBound: '', expectedAgeUpperBound: '', expectedHeightLowerBound: '', expectedHeightUpperBound: '', expectedWeightLowerBound: '', expectedWeightUpperBound: '', wechatId: '', merits: [], expectedMerits: [], genderArray: [{ name: '男', value: '男', checked: false }, { name: '女', value: '女', checked: false }],
+    name: '', age: '', recordId: '', gender: '', height: '', weight: '', major: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAgeLowerBound: '', expectedAgeUpperBound: '', expectedHeightLowerBound: '', expectedHeightUpperBound: '', expectedWeightLowerBound: '', expectedWeightUpperBound: '', wechatId: '', merits: [], expectedMerits: [], genderArray: [{ name: '男', value: '男', checked: false }, { name: '女', value: '女', checked: false }],
     meritArray: [
       {
         name: '颜值',
@@ -41,6 +41,11 @@ Page({  /**
       name: app.globalData.myData.name,
       age: app.globalData.myData.age,
       gender: app.globalData.myData.gender,
+      major: app.globalData.myData.major,
+      constellations: app.globalData.myData.constellations,
+      homeTown: app.globalData.myData.homeTown,
+      hobbies: app.globalData.myData.hobbies,
+      selfIntro: app.globalData.myData.selfIntro,
       merits: app.globalData.myData.merits,
       weight: app.globalData.myData.weight,
       height: app.globalData.myData.height,
@@ -153,6 +158,11 @@ Page({  /**
           age: this.data.age, gender: this.data.gender, 
           height: this.data.height, 
           weight: this.data.weight, 
+          major: this.data.major,
+          constellations: this.data.constellations,
+          homeTown: this.data.homeTown,
+          hobbies: this.data.hobbies,
+          selfIntro: this.data.selfIntro,
           expectedAgeLowerBound: this.data.expectedAgeLowerBound, 
           expectedAgeUpperBound: this.data.expectedAgeUpperBound,
           expectedHeightLowerBound: this.data.expectedHeightLowerBound, 

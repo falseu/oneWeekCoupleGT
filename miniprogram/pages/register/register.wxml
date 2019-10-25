@@ -24,6 +24,31 @@
   </view>
 
   <view class='wrap'>
+  <text class="h2">专业</text>
+  <input class='placeholder' placeholder="请输入专业" value="{{major}}" bindinput="bindKeyInputMajor" />
+  </view>
+
+  <view class='wrap'>
+  <text class="h2">家乡</text>
+  <input class='placeholder' placeholder="请输入家乡" value="{{homeTown}}" bindinput="bindKeyInputHomeTown" />
+  </view>
+
+  <view class='wrap'>
+  <text class="h2">星座</text>
+  <input class='placeholder' placeholder="请输入星座" value="{{constellations}}" bindinput="bindKeyInputConstellations" />
+  </view>
+
+  <view class='wrap'>
+  <text class="h2">爱好</text>
+  <input class='placeholder' placeholder="请输入爱好" value="{{hobbies}}" bindinput="bindKeyInputHobbies" />
+  </view>
+
+  <view class='wrap'>
+  <text class="h2">个人简介</text>
+  <input class='placeholder' placeholder="请输入个人简介" value="{{selfIntro}}" bindinput="bindKeyInputSelfIntro" />
+  </view>
+
+  <view class='wrap'>
   <text class='h2'>年龄</text>
   <input class="placeholder" placeholder="请输入年龄" value="{{age}}" bindinput="bindKeyInputAge" />
   </view>

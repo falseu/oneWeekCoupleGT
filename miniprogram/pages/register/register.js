@@ -4,7 +4,7 @@ Page({  /**
    * init
    */
   db: undefined, test: undefined, data: {
-    name: '', age: '', gender: '', height: '', weight: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', wechatId: '', merits: [], expectedMerits: [],
+    name: '', age: '', gender: '', height: '', weight: '', major: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', wechatId: '', merits: [], expectedMerits: [],
     genderArray: [{name:'男', value:'男', checked: false}, {name:'女', value:'女', checked: false}],
     meritArray: [
       {
@@ -98,6 +98,55 @@ Page({  /**
         })
         return
       }
+      // 是否填写专业
+      if (this.data.major == '') {
+        wx.showModal({
+          title: '错误',
+          content: '请填写你的专业',
+          showCancel: false
+        })
+        return
+      }
+
+      // 是否填写家乡
+      if (this.data.homeTown == '') {
+        wx.showModal({
+          title: '错误',
+          content: '请填写你的家乡',
+          showCancel: false
+        })
+        return
+      }
+
+      // 是否填写星座
+      if (this.data.constellations == '') {
+        wx.showModal({
+          title: '错误',
+          content: '请填写你的星座',
+          showCancel: false
+        })
+        return
+      }
+
+      // 是否填写个人简介
+      if (this.data.selfIntro == '') {
+        wx.showModal({
+          title: '错误',
+          content: '请填写你的个人简介',
+          showCancel: false
+        })
+        return
+      }
+
+      // 是否填写兴趣
+      if (this.data.hobbies == '') {
+        wx.showModal({
+          title: '错误',
+          content: '请填写你的兴趣',
+          showCancel: false
+        })
+        return
+      }
       
       // 是否已经选择gender
       if (that.data.gender == '') {
@@ -145,6 +194,31 @@ Page({  /**
   bindKeyInputName: function (e) {
     this.setData({
       name: e.detail.value
+    })
+  }, 
+  bindKeyInputMajor: function (e) {
+    this.setData({
+      major: e.detail.value
+    })
+  }, 
+  bindKeyInputHobbies: function (e) {
+    this.setData({
+      hobbies: e.detail.value
+    })
+  }, 
+  bindKeyInputConstellations: function (e) {
+    this.setData({
+      constellations: e.detail.value
+    })
+  }, 
+  bindKeyInputHomeTown: function (e) {
+    this.setData({
+      homeTown: e.detail.value
+    })
+  }, 
+  bindKeyInputSelfIntro: function (e) {
+    this.setData({
+      selfIntro: e.detail.value
     })
   }, 
   bindKeyInputAge: function (e) {
