@@ -63,8 +63,58 @@ Page({
           ready: true
         })
         app.globalData.tasks = res.data
+
+        // Change the color of button if the task is finished
+        var taskInfo = app.globalData.myData.taskImages
+
+        var i = 0
+        while (i < taskInfo.length) {
+          this.data.taskArray[taskInfo[i]].color = "#27a623"
+          this.setData({
+            taskArray: this.data.taskArray
+          })
+          i = i + 2
+        }
+        console.log(this.data.taskArray)
         wx.hideLoading()
       },
     )
+  },
+
+  onShow() {
+    if (app.globalData.refresh_cp_info) {
+      this.refresh()
+      app.globalData.refresh_cp_info = false
+    }
+  },
+
+  refresh() {
+    var that = this
+    wx.showLoading({
+      title: '加载中',
+    })
+    db.collection('user').where({
+      _openid: app.globalData.openid
+    }).get().then(
+      res => {
+
+        // Change the color of button if the task is finished
+        var taskInfo = res.data[0].taskImages
+        var i = 0
+        while (i < taskInfo.length) {
+          that.data.taskArray[taskInfo[i]].color = "#27a623"
+          that.setData({
+            taskArray: that.data.taskArray
+          })
+          i = i + 2
+        }
+        console.log(that.data.taskArray)
+        wx.hideLoading()
+      }
+    )
+  },
+
+  onPullDownRefresh: function () {
+    this.refresh()
   },
 })

@@ -90,6 +90,7 @@ Page({
           icon: 'none',
           duration: 1500,
           success: function () {
+            app.globalData.refresh_cp_info = true
             setTimeout(function () {
               wx.hideLoading()
               wx.navigateBack({
@@ -163,6 +164,8 @@ Page({
               icon: 'none',
               duration: 1500,
               success: function () {
+                // refresh cp_info_display
+                app.globalData.refresh_cp_info = true
                 setTimeout(function () {
                   wx.hideLoading()
                   wx.navigateBack({

@@ -16,7 +16,7 @@
   <text style="position:absolute;right:30rpx">{{cpName}}</text>
   </view>
   
-  <button class='button' wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" type="任务一" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+  <button class='button' wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" style="background-color:{{itemName.color}}" type="任务一" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="bindViewTap" hover-class="other-button-hover" id="{{idx}}"> {{itemName.title}} </button>
 
 </view>
