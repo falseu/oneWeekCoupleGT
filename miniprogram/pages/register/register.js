@@ -211,6 +211,11 @@ Page({  /**
       major: e.detail.value
     })
   }, 
+  bindKeyInputGrades: function (e) {
+    this.setData({
+      grades: e.detail.value
+    })
+  }, 
   bindKeyInputHobbies: function (e) {
     this.setData({
       hobbies: e.detail.value
