@@ -18,6 +18,7 @@
 - register2: 修改用户对TA的要求的信息
 - user_info_display: 没有CP时，显示本人信息
 - cp_info_display: 有CP时，显示本人和TA的名字以及任务完成度
+- introductions：活动简介
 - firstTask: 任务界面，根据用户点击历史显示相应的任务内容，显示/上传任务图片
 
 # 数据库结构
@@ -28,6 +29,12 @@
     - name: 名字
     - age: 年龄
     - gender: 性别
+    - major: 专业
+    - grade: 年级
+    - homeTown: 家乡
+    - constallations: 星座
+    - hobbies: 兴趣
+    - selfIntro: 自我简介
     - merits: 自己最大的三个优点
     - expectedAgeLowerBound/UpperBound: TA的年龄最小值/最大值 (inclusive)
     - expectedHeightLowerBound/UpperBound: TA的身高最小值/最大值 (inclusive)

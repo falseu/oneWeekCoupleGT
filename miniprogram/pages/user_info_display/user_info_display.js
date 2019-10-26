@@ -44,11 +44,6 @@ Page({
     })
   },
 
-  //onLoad: function (options) {
-    // clear storage
-    //wx.clearStorage()
-  //},
-
   // 单击“下一步”按钮调用该函数
   insertData: function () {
     var that = this
