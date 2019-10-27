@@ -1,6 +1,6 @@
 <!--miniprogram/pages/selectCp/selectCp.wxml-->
   
-<view wx:for="{{userlist}}" wx:for-index="idx" wx:for-item="user" bindtap="bindViewTapUser" class="cu-list menu-avatar">
+<view wx:for="{{userlist}}" wx:for-index="idx" wx:for-item="user" bindtap="bindViewTapUser" id="{{idx}}" class="cu-list menu-avatar">
   <view class="cu-item">
     <view class="cu-avatar round lg" style="background-image:url({{user.avatar}});"></view>
     <view class="content">

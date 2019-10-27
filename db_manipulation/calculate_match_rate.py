@@ -21,8 +21,8 @@ def main():
             p2_name = p2['name']
             res = int((calculate(p1, p2) + calculate(p2, p1)) / 2)
             res = max(res, 0)
-            p1['match'][p2_name] = {'rate': res, 'avatar': p2['avatarUrl']}
-            p2['match'][p1_name] = {'rate': res, 'avatar': p1['avatarUrl']}
+            p1['match'][p2_name] = {'rate': res, 'avatar': p2['avatarUrl'], 'openid': p2['_openid']}
+            p2['match'][p1_name] = {'rate': res, 'avatar': p1['avatarUrl'], 'openid': p1['_openid']}
             match[(i, j)] = res
 
     # sort match for each user

@@ -20,7 +20,8 @@
     "pages/cp_info_display/cp_info",
     "pages/cp_info_final/cp_info_final",
     "pages/instructions/instructions",
-    "pages/selectCp/selectCp"
+    "pages/selectCp/selectCp",
+    "pages/other_user_info/other_user_info"
   ],
   "window": {
     "backgroundColor": "#1ac6ff",
