@@ -1,0 +1,19 @@
+<!--miniprogram/pages/selectCp/selectCp.wxml-->
+  
+<view wx:for="{{userlist}}" wx:for-index="idx" wx:for-item="user" bindtap="bindViewTapUser" class="cu-list menu-avatar">
+  <view class="cu-item">
+    <view class="cu-avatar round lg" style="background-image:url({{user.avatar}});"></view>
+    <view class="content">
+      <view class="text-grey">{{user.name}}</view>
+      <view class="text-gray text-sm flex">
+        <text class="text-cut">
+						<text class="cuIcon-infofill text-red  margin-right-xs"></text> 匹配度：{{user.rate}}
+        </text>
+      </view>
+    </view>
+    <!-- <view class="action">
+      <view class="text-grey text-xs">22:20</view>
+      <view class="cu-tag round bg-grey sm">5</view>
+    </view> -->
+  </view>
+</view>

@@ -18,7 +18,9 @@
     "pages/im/room/room",
     "pages/user_info_display/user_info_display",
     "pages/cp_info_display/cp_info",
-    "pages/cp_info_final/cp_info_final"
+    "pages/cp_info_final/cp_info_final",
+    "pages/instructions/instructions",
+    "pages/selectCp/selectCp"
   ],
   "window": {
     "backgroundColor": "#1ac6ff",
@@ -27,5 +29,25 @@
     "navigationBarTitleText": "GT一周CP",
     "navigationBarTextStyle": "white"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#35495e",
+    "borderStyle": "white",
+    "backgroundColor": "#f9f9f9",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/selectCp/selectCp"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/cp_info_display/cp_info"
+      },
+      {
+        "text": "规则",
+        "pagePath": "pages/instructions/instructions"
+      }
+    ]
+  }
 }
