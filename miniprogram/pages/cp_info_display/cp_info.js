@@ -2,11 +2,10 @@
 
 const db = wx.cloud.database({});
 const cont = db.collection('user');
-const app = getApp()
+var app = getApp()
 var openid = undefined;
 var user_info = undefined;
 var cp_info = undefined;
-
 
 Page({
   data: {
@@ -21,6 +20,8 @@ Page({
 
   //前往个人信息界面
   viewInfoSelf: function () {
+    app.globalData.showEditButton = false
+    console.log(app.globalData.showEditButton)
     wx.navigateTo({
       url: '../user_info_display/user_info_display',
     })

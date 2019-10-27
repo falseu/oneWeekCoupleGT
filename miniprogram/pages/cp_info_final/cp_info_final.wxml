@@ -1,65 +1,67 @@
-<view class="wrap">
-
-  <text class="h1">TA的信息</text>
-
-  <view class='wrap'>
-  <text class="h2">姓名: </text>
-  <text>{{name}}</text>
-  </view>
-
-  <view class='wrap'>
-  <text class="h2">性别: </text>
-  <text>{{gender}}</text>
-  </view>
-
-  <view class='wrap'>
-  <text class='h2'>年龄: </text>
-  <text>{{age}}</text>
-  </view>
-
-  <view class='wrap'>
-  <text class='h2'>专业: </text>
-  <text>{{major}}</text>
-  </view>
-
-  <view class='wrap'>
-  <text class='h2'>年级: </text>
-  <text>{{grade}}</text>
-  </view>
-
-  <view class='wrap'>
-  <text class='h2'>家乡: </text>
-  <text>{{homeTown}}</text>
-  </view>
-
-  <view class='wrap'>
-  <text class='h2'>星座: </text>
-  <text>{{constellations}}</text>
-  </view>
-
-  <view class='wrap'>
-  <text class='h2'>兴趣: </text>
-  <text>{{hobbies}}</text>
-  </view>
-
-  <view class='wrap'>
-  <text class='h2'>自我简介: </text>
-  <text>{{selfIntro}}</text>
-  </view>
-
-  <view class='wrap'>
-  <text class='h2'>身高(厘米): </text>
-  <text>{{height}}</text>
-  </view>
-
-  <view class='wrap'>
-  <text class='h2'>体重(公斤): </text>
-  <text>{{weight}}</text>
-  </view>
-
+<view wx:if="{{ready==true}}">
   <view class="wrap">
-  <text class='h2'>TA的标准: </text>
-  <text>{{expectedMerits}}</text>
-  </view>
 
+    <text class="h1">TA的信息</text>
+
+    <view class='wrap'>
+    <text class="h2">姓名: </text>
+    <text>{{name}}</text>
+    </view>
+
+    <view class='wrap'>
+    <text class="h2">性别: </text>
+    <text>{{gender}}</text>
+    </view>
+
+    <view class='wrap'>
+    <text class='h2'>年龄: </text>
+    <text>{{age}}</text>
+    </view>
+
+    <view class='wrap'>
+    <text class='h2'>专业: </text>
+    <text>{{major}}</text>
+    </view>
+
+    <view class='wrap'>
+    <text class='h2'>年级: </text>
+    <text>{{grade}}</text>
+    </view>
+
+    <view class='wrap'>
+    <text class='h2'>家乡: </text>
+    <text>{{homeTown}}</text>
+    </view>
+
+    <view class='wrap'>
+    <text class='h2'>星座: </text>
+    <text>{{constellations}}</text>
+    </view>
+
+    <view class='wrap'>
+    <text class='h2'>兴趣: </text>
+    <text>{{hobbies}}</text>
+    </view>
+
+    <view class='wrap'>
+    <text class='h2'>自我简介: </text>
+    <text>{{selfIntro}}</text>
+    </view>
+
+    <view class='wrap'>
+    <text class='h2'>身高(厘米): </text>
+    <text>{{height}}</text>
+    </view>
+
+    <view class='wrap'>
+    <text class='h2'>体重(公斤): </text>
+    <text>{{weight}}</text>
+    </view>
+
+    <view class="wrap">
+    <text class='h2'>TA的标准: </text>
+    <text>{{expectedMerits}}</text>
+    </view>
+
+  </view>
 </view>

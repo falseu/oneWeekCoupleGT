@@ -9,10 +9,14 @@ var cp_info = undefined;
 
 Page({
   data: {
-    name: '', age: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', merits: [], expectedMerits: []
+    ready: false, name: '', age: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', merits: [], expectedMerits: []
   }, 
 
   onLoad: function (options) {
+
+    wx.showLoading({
+      title: '加载中...',
+    })
 
     var that = this;
 
@@ -20,6 +24,10 @@ Page({
 
     user_info = app.globalData.myData
     var cp_openid = user_info.cp;
+
+    that.setData({
+      ready: true
+    })
 
     // get cp data
     db.collection('user').where({
@@ -42,6 +50,7 @@ Page({
           weight: cp_info.weight,
           expectedMerits: cp_info.expectedMerits,
         })
+        wx.hideLoading()
 
         app.globalData.cpData = res.data[0]
         console.log(globalData.cpData)
