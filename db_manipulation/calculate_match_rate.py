@@ -21,9 +21,17 @@ def main():
             p2_name = p2['name']
             res = int((calculate(p1, p2) + calculate(p2, p1)) / 2)
             res = max(res, 0)
-            p1['match'][p2_name] = res
-            p2['match'][p1_name] = res
+            p1['match'][p2_name] = {'rate': res, 'avatar': p2['avatarUrl']}
+            p2['match'][p1_name] = {'rate': res, 'avatar': p1['avatarUrl']}
             match[(i, j)] = res
+
+    # sort match for each user
+    for i in range(0, len(data)):
+        new_list = []
+        for key, value in sorted(data[i]['match'].items(), key=lambda item: item[1]['rate'], reverse=True):
+            value['name'] = key
+            new_list.append(value)
+        data[i]['match'] = new_list
 
     # pair the users according to match_rate
     while match:
