@@ -1,6 +1,6 @@
 <!--miniprogram/pages/cp_info_display/cp_info.wxml-->
 <!--miniprogram/pages/cp_info_display/cp_info.wxml-->
-<view  wx:if="{{ready==true}}" style = "background-image: url(../../images/cpback.png)">
+<view  style = "background-image: url(../../images/cpback.png)" wx:if="{{ready==true}}" >
 
 
 
