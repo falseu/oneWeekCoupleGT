@@ -1,8 +1,21 @@
 /* miniprogram/pages/cp_info_display/cp_info.wxss */
+
+
+
+
 .wrap{
  width: 550rpx;
  margin: 50rpx auto;
  position:relative;
+}
+
+
+.xdt{
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  z-index: 3;
+  left: 40%;
 }
 
 .h1{

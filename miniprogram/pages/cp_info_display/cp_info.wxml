@@ -1,11 +1,14 @@
 <!--miniprogram/pages/cp_info_display/cp_info.wxml-->
 <!--miniprogram/pages/cp_info_display/cp_info.wxml-->
-<view wx:if="{{ready==true}}">
+<view  wx:if="{{ready==true}}">
+<view style="background:url('../../images/cpback.png')"></view>
+
 
  <text class="h1">我的CP</text>
 
   <view class="wrap">
   <image class="icon" style="margin-left:10rpx;" src="{{myAvatarUrl}}" mode="aspectFill" bindtap="viewInfoSelf"></image>
+  <image class = "xdt" src = "../../images/xdt.png"></image>
   <text style="margin-left:47rpx; color: #888888;">匹配度：</text>
   <text style="color: #888888;">{{cpRate}}</text>
   <image class="icon" style="position:absolute;right:10rpx;" src="{{cpAvatarUrl}}" mode="aspectFill" bindtap="viewInfoCP"></image>
