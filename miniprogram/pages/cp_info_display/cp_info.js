@@ -19,6 +19,20 @@ Page({
     })
   },
 
+  //前往个人信息界面
+  viewInfoSelf: function () {
+    wx.navigateTo({
+      url: '../user_info_display/user_info_display',
+    })
+  },
+
+  //前往CP信息界面
+  viewInfoCP: function () {
+    wx.navigateTo({
+      url: '../cp_info_final/cp_info_final',
+    })
+  },
+
   onLoad: function (options) {
 
     wx.showLoading({

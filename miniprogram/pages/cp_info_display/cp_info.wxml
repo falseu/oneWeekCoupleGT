@@ -5,10 +5,10 @@
  <text class="h1">我的CP</text>
 
   <view class="wrap">
-  <image class="icon" style="margin-left:10rpx;" src="{{myAvatarUrl}}" mode="aspectFill"></image>
+  <image class="icon" style="margin-left:10rpx;" src="{{myAvatarUrl}}" mode="aspectFill" bindtap="viewInfoSelf"></image>
   <text style="margin-left:47rpx; color: #888888;">匹配度：</text>
   <text style="color: #888888;">{{cpRate}}</text>
-  <image class="icon" style="position:absolute;right:10rpx;" src="{{cpAvatarUrl}}" mode="aspectFill"></image>
+  <image class="icon" style="position:absolute;right:10rpx;" src="{{cpAvatarUrl}}" mode="aspectFill" bindtap="viewInfoCP"></image>
   </view>
 
   <view class='wrap' style="flex-wrap:no-wrap">
