@@ -1,7 +1,7 @@
 <!--miniprogram/pages/cp_info_display/cp_info.wxml-->
 <!--miniprogram/pages/cp_info_display/cp_info.wxml-->
-<view  wx:if="{{ready==true}}">
-<view style="background-image:url('../../images/cpback.png')"></view>
+<view  wx:if="{{ready==true}}" style = "background-image: url(../../images/cpback.png)">
+
 
 
  <text class="h1">我的CP</text>
@@ -19,6 +19,9 @@
   <text style="position:absolute;right:30rpx">{{cpName}}</text>
   </view>
 
+  <view class = "white">
+  </view>
+
   
   <view class = "taskblock" wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" >
   
@@ -27,6 +30,7 @@
  
   <button class='button' style="background-color:{{itemName.color}}; font-size:13px;" type="任务一" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="bindViewTap" hover-class="other-button-hover" id="{{idx}}"> {{itemName.title}} </button>
+        
   </view>
   
   
