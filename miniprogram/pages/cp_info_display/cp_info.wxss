@@ -1,8 +1,6 @@
 /* miniprogram/pages/cp_info_display/cp_info.wxss */
 
 
-
-
 .wrap{
  width: 550rpx;
  margin: 50rpx auto;
@@ -16,6 +14,7 @@
   position: absolute;
   z-index: 3;
   left: 40%;
+  top:-10%;
 }
 
 .h1{
@@ -39,7 +38,18 @@
 .button{
   background-color: #21BFFC;
   color: white;
-  margin-left:60rpx;
-  margin-right: 60rpx;
-  margin-bottom: 20rpx;
+  top: -10px;
+  margin-left:400rpx;
+  margin-right: 40rpx;
+  margin-bottom: 80rpx;
 }
+
+.taskblock{
+  background-color: rgb(197, 197, 197);
+  margin-left: 110rpx;
+  margin-right:40rpx;
+  border-radius: 5%;
+  margin-top: 60rpx;
+}
+
+

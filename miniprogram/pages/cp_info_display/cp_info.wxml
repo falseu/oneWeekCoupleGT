@@ -1,7 +1,7 @@
 <!--miniprogram/pages/cp_info_display/cp_info.wxml-->
 <!--miniprogram/pages/cp_info_display/cp_info.wxml-->
 <view  wx:if="{{ready==true}}">
-<view style="background:url('../../images/cpback.png')"></view>
+<view style="background-image:url('../../images/cpback.png')"></view>
 
 
  <text class="h1">我的CP</text>
@@ -9,8 +9,8 @@
   <view class="wrap">
   <image class="icon" style="margin-left:10rpx;" src="{{myAvatarUrl}}" mode="aspectFill" bindtap="viewInfoSelf"></image>
   <image class = "xdt" src = "../../images/xdt.png"></image>
-  <text style="margin-left:47rpx; color: #888888;">匹配度：</text>
-  <text style="color: #888888;">{{cpRate}}</text>
+  <text style="margin-left:15%; color: #e20057; ">匹配度：</text>
+  <text style="color: #e20057;">{{cpRate}}</text>
   <image class="icon" style="position:absolute;right:10rpx;" src="{{cpAvatarUrl}}" mode="aspectFill" bindtap="viewInfoCP"></image>
   </view>
 
@@ -18,8 +18,17 @@
   <text style="margin-left:30rpx;">{{name}}</text>
   <text style="position:absolute;right:30rpx">{{cpName}}</text>
   </view>
+
   
-  <button class='button' wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" style="background-color:{{itemName.color}}" type="任务一" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+  <view class = "taskblock" wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" >
+  
+  <text style="position:relative; top:35rpx;" decode='true'>&nbsp;&nbsp;&nbsp;&nbsp;任务内容</text>
+  <text style="position:relative;top:-60rpx; left: -10%" >任务x</text>
+ 
+  <button class='button' style="background-color:{{itemName.color}}; font-size:13px;" type="任务一" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="bindViewTap" hover-class="other-button-hover" id="{{idx}}"> {{itemName.title}} </button>
+  </view>
+  
+  
 
 </view>
