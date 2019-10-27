@@ -17,7 +17,8 @@
     "pages/im/im",
     "pages/im/room/room",
     "pages/user_info_display/user_info_display",
-    "pages/cp_info_display/cp_info"
+    "pages/cp_info_display/cp_info",
+    "pages/cp_info_final/cp_info_final"
   ],
   "window": {
     "backgroundColor": "#1ac6ff",
