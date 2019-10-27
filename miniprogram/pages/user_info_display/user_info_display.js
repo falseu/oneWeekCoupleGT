@@ -2,13 +2,13 @@
 
 const db = wx.cloud.database();
 const cont = db.collection('user');
-const app = getApp()
+var app = getApp()
 var openid = undefined;
-var user_info = undefined;
+var user_info = undefined; 
 
 Page({
   data: {
-    name: '', age: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', merits: [], expectedMerits: []
+    name: '', age: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', merits: [], expectedMerits: [], showbutton: true
   },
 
   onLoad: function (options) {
@@ -32,6 +32,7 @@ Page({
       height: user_info.height,
       weight: user_info.weight,
       expectedMerits: user_info.expectedMerits,
+      showbutton: app.globalData.showEditButton
     })
   },
 
