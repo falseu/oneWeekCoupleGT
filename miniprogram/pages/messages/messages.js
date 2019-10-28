@@ -22,11 +22,36 @@ Page({
   },
 
   TapConfirm(e) {
-    console.log(e)
+    var target = this.data.messages[e.currentTarget.id]
+    wx.showModal({
+      title: '提示',
+      content: '确认要和'+ target.name + '成为CP吗',
+      success: e => {
+        if (e.confirm) {
+          console.log('confirm')
+          //TODO: assign two users cp, update database, relaunch to cp_info
+        } else {
+          console.log('donnot confirm')
+          return
+        }
+      }
+    })
   },
 
   TapDecline(e) {
-    console.log(e)
+    wx.showModal({
+      title: '提示',
+      content: '确认要拒绝吗',
+      success: e => {
+        if (e.confirm) {
+          //TODO: mark as declined, delete from requests list, update database
+          console.log('decline')
+        } else {
+          console.log('donot decline')
+          return
+        }
+      }
+    })
   },
 
   // ListTouch触摸开始
