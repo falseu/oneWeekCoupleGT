@@ -24,6 +24,15 @@
   top:-10%;
 }
 
+.bluedot{
+  position:relative;
+  top: -60rpx;
+  width:20rpx;
+  height: 20rpx;
+  left: -75rpx;
+  z-index: 3;
+}
+
 .h1{
   margin-top: 30rpx;
   display: flex;
