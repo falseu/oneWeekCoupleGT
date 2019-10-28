@@ -13,14 +13,6 @@ Page({
     "background-image": "../../images/cpback.png", 
   },
 
-  onLoad: function () {
-    var that = this;
-    let base64 = wx.getFileSystemManager().readFileSync(this.data.background, 'base64');
-    that.setData({
-      'background-image': 'data:image/jpg;base64,' + base64
-    });
-  },
-
   bindViewTap: function (event) {
     wx.navigateTo({
       url: '../firstTask/firstTask?index=' + event.target.id,
@@ -121,7 +113,8 @@ Page({
       _openid: app.globalData.openid
     }).get().then(
       res => {
-
+        
+        app.globalData.myData = res.data[0]
         // Change the color of button if the task is finished
         var taskInfo = res.data[0].taskImages
         var i = 0
@@ -133,7 +126,7 @@ Page({
           i = i + 2
         }
         console.log(that.data.taskArray)
-        wx.hideLoading()
+        that.onLoad()
       }
     )
   },

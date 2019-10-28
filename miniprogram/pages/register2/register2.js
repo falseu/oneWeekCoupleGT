@@ -180,7 +180,8 @@ Page({  /**
           wechatId: this.data.wechatId,
           avatarUrl: this.data.avatarUrl,
           grade: this.data.grade,
-          requests: this.data.requests
+          requests: this.data.requests,
+          image_uploader: ''
         },        //  数据插入成功，调用该函数
         success: function (res) {
           console.log(res)

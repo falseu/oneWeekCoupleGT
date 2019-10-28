@@ -8,8 +8,8 @@
           <text class="cuIcon-infofill text-red"></text> 申请成为你的CP</view>
       </view>
       <view class="action">
-        <view class="text-grey text-xs">22:20</view>
-        <view class="cu-tag round bg-grey sm">5</view>
+        <view class="text-grey text-xs">{{item.time}}</view>
+        <!-- <view class="cu-tag round bg-grey sm">5</view> -->
       </view>
       <view class="move">
         <view class="bg-grey" bindtap="TapConfirm" id="{{index}}">同意</view>

@@ -14,7 +14,8 @@ exports.main = async (event, context) => {
       .update({
         data: {
           cp_rate: event.rate,
-          cp: event.otherid
+          cp: event.otherid,
+          image_uploader: event.image_uploader
         }
       })
   } catch (e) {

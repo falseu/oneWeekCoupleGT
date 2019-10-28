@@ -46,7 +46,8 @@ Page({
             data: {
               myid: app.globalData.openid,
               otherid: target.openid,
-              rate: rate
+              rate: rate,
+              image_uploader: app.globalData.myData.name
             }, 
             success: res => {
               wx.cloud.callFunction({
@@ -54,18 +55,19 @@ Page({
                 data: {
                   myid: target.openid,
                   otherid: app.globalData.openid,
-                  rate: rate
+                  rate: rate,
+                  image_uploader: app.globalData.myData.name
                 },
                 success: res => {
-                  wx.hideLoading()
                   wx.showToast({
                     title: '申请成功',
                     success: () => {
+                      app.globalData.refresh_cp_info = true
                       setTimeout(function () {
                         wx.reLaunch({
                           url: '../cp_info_display/cp_info',
                         })
-                      }, 500)
+                      }, 600)
                     }
                   })
                 },
