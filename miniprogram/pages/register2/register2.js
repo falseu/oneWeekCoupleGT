@@ -175,6 +175,7 @@ Page({  /**
           expectedMerits: this.data.expectedMerits, 
           match: this.data.match, 
           cp: this.data.cp, 
+          cp_rate: -1,
           taskImages: this.data.taskImages,
           wechatId: this.data.wechatId,
           avatarUrl: this.data.avatarUrl,

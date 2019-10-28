@@ -65,24 +65,34 @@ Page({
 
   bindTap: function() {
     
+    wx.showLoading({
+      title: '上传中',
+    })
+    
     var that = this
+
+    var myDate = new Date()
 
     wx.cloud.callFunction({
       name: 'sendCpRequest',
       data: {
         openid: that.data.openid,
         name: app.globalData.myData.name,
-        myid: app.globalData.openid
+        myid: app.globalData.openid,
+        time: myDate.toLocaleString
       },
       success: res => {
         console.log(res)
-        setTimeout(function () {
-          wx.showToast({
-            title: '发送成功',
-          })
-        }, 400)
-        wx.navigateBack({
-          delta: 1
+        wx.hideLoading()
+        wx.showToast({
+          title: '发送成功',
+          success: () => {
+            setTimeout(function () {
+              wx.navigateBack({
+                delta: 1
+              })
+            }, 300)
+          }
         })
       },
       fail: e => {

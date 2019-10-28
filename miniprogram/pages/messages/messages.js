@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    messages: [], ListTouchDirection: undefined, modalName: undefined
+    messages: [], ListTouchDirection: undefined
   },
 
   /**
@@ -29,7 +29,56 @@ Page({
       success: e => {
         if (e.confirm) {
           console.log('confirm')
+          wx.showLoading({
+            title: '加载中',
+          })
           //TODO: assign two users cp, update database, relaunch to cp_info
+          var list = app.globalData.myData.match
+          var rate = undefined
+          for (var i = 0; i < list.length; i++) {
+            if (list[i]['name'] == target.name) {
+              console.log(list[i]['rate'] + '  ' + list[i]['name'])
+              rate = list[i]['rate']
+            }
+          }
+          wx.cloud.callFunction({
+            name: 'assignCp',
+            data: {
+              myid: app.globalData.openid,
+              otherid: target.openid,
+              rate: rate
+            }, 
+            success: res => {
+              wx.cloud.callFunction({
+                name: 'assignCp',
+                data: {
+                  myid: target.openid,
+                  otherid: app.globalData.openid,
+                  rate: rate
+                },
+                success: res => {
+                  wx.hideLoading()
+                  wx.showToast({
+                    title: '申请成功',
+                    success: () => {
+                      setTimeout(function () {
+                        wx.reLaunch({
+                          url: '../cp_info_display/cp_info',
+                        })
+                      }, 500)
+                    }
+                  })
+                },
+                fail: e => {
+                  console.error(e)
+                }
+              })
+            },
+            fail: e => {
+              console.error(e)
+            }
+          })
+
         } else {
           console.log('donnot confirm')
           return

@@ -138,13 +138,19 @@
   ],
   "expectedHeightUpperBound": 2.0,
   "cp": "",
+  "cp_rate": -1,
   "expectedAgeUpperBound": 2.0,
   "height": 170.0,
   "hobbies": "bzd",
   "major": "cs",
   "grade": "dasan",
   "age": 20.0,
-  "requests": [],
+  "requests": [
+    {
+      "openid": "oOEx85S-btgkYnspFMDptryiOU7k",
+      "name": "1"
+    }
+  ],
   "expectedAgeLowerBound": 1.0,
   "expectedMerits": [
     "性格",
@@ -298,6 +304,7 @@
   ],
   "grade": "1",
   "cp": "",
+  "cp_rate": -1,
   "name": "1",
   "expectedAgeLowerBound": 1.0,
   "wechatId": "1",
