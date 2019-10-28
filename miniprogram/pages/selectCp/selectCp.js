@@ -20,6 +20,8 @@ Page({
     })
     var sorted = app.globalData.myData.match
 
+    //TODO: remove users who have cp.
+
     console.log(sorted.sort(that.compare()))
     
   },

@@ -64,5 +64,6 @@
     <text>{{expectedMerits}}</text>
     </view>
 
+    <button type="primary" style="margin-top: 30rpx;" bindtap='bindTap'>申请成为TA的CP</button>
   </view>
 </view>
