@@ -1,12 +1,13 @@
 // miniprogram/pages/other_user_info/other_user_info.js
 const db = wx.cloud.database()
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    ready: false, name: '', age: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', merits: [], expectedMerits: []
+    ready: false, name: '', age: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', merits: [], expectedMerits: [], openid: '',
   },
 
   /**
@@ -44,7 +45,19 @@ Page({
           height: cp_info.height,
           weight: cp_info.weight,
           expectedMerits: cp_info.expectedMerits,
+          openid: cp_info._openid
         })
+        if (cp_info.cp != '') {
+          setTimeout(function () {
+            wx.showModal({
+              title: '错误',
+              content: cp_info.name + '已经有CP了',
+            })
+          }, 400)
+          wx.navigateBack({
+            delat: 1
+          })
+        }
         wx.hideLoading()
       }
     })
@@ -52,6 +65,30 @@ Page({
 
   bindTap: function() {
     
+    var that = this
+
+    wx.cloud.callFunction({
+      name: 'sendCpRequest',
+      data: {
+        openid: that.data.openid,
+        name: app.globalData.myData.name,
+        myid: app.globalData.openid
+      },
+      success: res => {
+        console.log(res)
+        setTimeout(function () {
+          wx.showToast({
+            title: '发送成功',
+          })
+        }, 400)
+        wx.navigateBack({
+          delta: 1
+        })
+      },
+      fail: e => {
+        console.error(e)
+      }
+    })
   },
 
   /**

@@ -30,7 +30,7 @@ Page({  /**
         name: '情商',
         checked: false
       }
-    ], match: {}, cp: '', taskImages: [], avatarUrl: ''
+    ], match: {}, cp: '', taskImages: [], avatarUrl: '', requests: []
   },  /**
    * 生命周期函数--监听页面加载
    */
@@ -178,7 +178,8 @@ Page({  /**
           taskImages: this.data.taskImages,
           wechatId: this.data.wechatId,
           avatarUrl: this.data.avatarUrl,
-          grade: this.data.grade
+          grade: this.data.grade,
+          requests: this.data.requests
         },        //  数据插入成功，调用该函数
         success: function (res) {
           console.log(res)

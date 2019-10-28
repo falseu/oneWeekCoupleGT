@@ -12,6 +12,10 @@ def main():
         for line in file:
             data.append(json.loads(line))
 
+    # delete match
+    for i in range(0, len(data)):
+        data[i]['match'] = {}
+
     # calculate match_rate for each pair of users
     for i in range(0, len(data)):
         p1 = data[i]
@@ -34,26 +38,26 @@ def main():
         data[i]['match'] = new_list
 
     # pair the users according to match_rate
-    while match:
-        tup, rate = max(match.items(), key=lambda x: x[1])
-        #if rate == 0: break
-        i, j = tup
-        p1 = data[i]
-        p2 = data[j]
-        p1['cp'] = p2['_openid']
-        p1['cp_rate'] = rate
-        p2['cp'] = p1['_openid']
-        p2['cp_rate'] = rate
-        p1['image_uploader'] = p1['name']
-        p2['image_uploader'] = p1['name']
+    # while match:
+    #     tup, rate = max(match.items(), key=lambda x: x[1])
+    #     #if rate == 0: break
+    #     i, j = tup
+    #     p1 = data[i]
+    #     p2 = data[j]
+    #     p1['cp'] = p2['_openid']
+    #     p1['cp_rate'] = rate
+    #     p2['cp'] = p1['_openid']
+    #     p2['cp_rate'] = rate
+    #     p1['image_uploader'] = p1['name']
+    #     p2['image_uploader'] = p1['name']
 
-        # print(p1['name'], ' ', p1['cp'], rate)
-        # print(p2['name'], ' ', p2['cp'], rate)
+    #     # print(p1['name'], ' ', p1['cp'], rate)
+    #     # print(p2['name'], ' ', p2['cp'], rate)
 
-        keys = list(match.keys())
-        for key in keys:
-            if i in key or j in key:
-                del match[key]
+    #     keys = list(match.keys())
+    #     for key in keys:
+    #         if i in key or j in key:
+    #             del match[key]
     
     file.close()
 

@@ -21,7 +21,8 @@
     "pages/cp_info_final/cp_info_final",
     "pages/instructions/instructions",
     "pages/selectCp/selectCp",
-    "pages/other_user_info/other_user_info"
+    "pages/other_user_info/other_user_info",
+    "pages/messages/messages"
   ],
   "window": {
     "backgroundColor": "#1ac6ff",
@@ -42,7 +43,15 @@
         "pagePath": "pages/selectCp/selectCp"
       },
       {
+        "text": "我的消息",
+        "pagePath": "pages/messages/messages"
+      },
+      {
         "text": "我的",
+        "pagePath": "pages/user_info_display/user_info_display"
+      },
+      {
+        "text": "我的CP",
         "pagePath": "pages/cp_info_display/cp_info"
       },
       {

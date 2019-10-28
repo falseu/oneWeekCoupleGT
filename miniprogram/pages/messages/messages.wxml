@@ -1,0 +1,19 @@
+<!--miniprogram/pages/messages/messages.wxml-->
+<view class="cu-list menu-avatar">
+    <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{messages}}" wx:key bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}" wx:for-item="item">
+      <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big2100{{index+1}}.jpg);"></view>
+      <view class="content">
+        <view class="text-grey">{{item.name}}</view>
+        <view class="text-gray text-sm">
+          <text class="cuIcon-infofill text-red"></text> 申请成为你的CP</view>
+      </view>
+      <view class="action">
+        <view class="text-grey text-xs">22:20</view>
+        <view class="cu-tag round bg-grey sm">5</view>
+      </view>
+      <view class="move">
+        <view class="bg-grey" bindtap="TapConfirm">同意</view>
+        <view class="bg-red" bindtap="TapDecline">拒绝</view>
+      </view>
+    </view>
+  </view>
