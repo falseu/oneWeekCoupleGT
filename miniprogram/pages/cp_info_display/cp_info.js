@@ -10,14 +10,14 @@ var cp_info = undefined;
 Page({
   data: {
     name: '', cpName: '', cpRate: '', taskArray: undefined, ready: false, myAvatarUrl: '', cpAvatarUrl: '',
-    "background-image": "../../images/cpback.png", 
+    "background": "../../images/cpback.png", 
   },
 
   onLoad: function () {
     var that = this;
     let base64 = wx.getFileSystemManager().readFileSync(this.data.background, 'base64');
     that.setData({
-      'background-image': 'data:image/jpg;base64,' + base64
+      'background': 'data:image/jpg;base64,' + base64
     });
   },
 
