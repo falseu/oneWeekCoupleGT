@@ -34,9 +34,8 @@ Page({
 
   bindViewTapUser: function(event) {
     var that = this
-    console.log(event.currentTarget.id)
     wx.navigateTo({
-      url: '../other_user_info/other_user_info?id=' + that.data.userlist[event.currentTarget.id].openid
+      url: '../other_user_info/other_user_info?id=' + that.data.userlist[event.currentTarget.id].openid + '&showButton=true'
     })
   },
 

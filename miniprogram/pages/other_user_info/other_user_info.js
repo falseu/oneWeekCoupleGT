@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    ready: false, name: '', age: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', merits: [], expectedMerits: [], openid: '',
+    ready: false, name: '', age: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', merits: [], expectedMerits: [], openid: '', showButton: false
   },
 
   /**
@@ -20,6 +20,12 @@ Page({
 
     var that = this;
     var cp_info = undefined
+
+    if (options.showButton == 'true') {
+      that.setData({
+        showButton: true
+      })
+    }
 
     that.setData({
       ready: true
@@ -85,11 +91,11 @@ Page({
               openid: that.data.openid,
               name: app.globalData.myData.name,
               myid: app.globalData.openid,
-              time: myDate.toLocaleString()
+              time: myDate.toLocaleString(),
+              avatar: app.globalData.myData.avatarUrl
             },
             success: res => {
               console.log(res)
-              wx.hideLoading()
               wx.showToast({
                 title: '发送成功',
                 success: () => {
@@ -97,7 +103,7 @@ Page({
                     wx.navigateBack({
                       delta: 1
                     })
-                  }, 600)
+                  }, 2000)
                 }
               })
             },

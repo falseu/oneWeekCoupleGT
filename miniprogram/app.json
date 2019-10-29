@@ -4,7 +4,6 @@
     "pages/register/register",
     "pages/register2/register2",
     "pages/index/index",
-    "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
     "pages/addFunction/addFunction",

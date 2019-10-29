@@ -32,60 +32,80 @@ Page({
           wx.showLoading({
             title: '加载中',
           })
-          //TODO: assign two users cp, update database, relaunch to cp_info
-          var list = app.globalData.myData.match
-          var rate = undefined
-          for (var i = 0; i < list.length; i++) {
-            if (list[i]['name'] == target.name) {
-              console.log(list[i]['rate'] + '  ' + list[i]['name'])
-              rate = list[i]['rate']
-            }
-          }
-          wx.cloud.callFunction({
-            name: 'assignCp',
-            data: {
-              myid: app.globalData.openid,
-              otherid: target.openid,
-              rate: rate,
-              image_uploader: app.globalData.myData.name
-            }, 
+          //if other user has cp, show error
+          db.collection('user').where({
+            _openid: target.openid
+          }).get({
             success: res => {
-              wx.cloud.callFunction({
-                name: 'assignCp',
-                data: {
-                  myid: target.openid,
-                  otherid: app.globalData.openid,
-                  rate: rate,
-                  image_uploader: app.globalData.myData.name
-                },
-                success: res => {
-                  wx.showToast({
-                    title: '申请成功',
-                    success: () => {
-                      app.globalData.refresh_cp_info = true
-                      setTimeout(function () {
-                        wx.reLaunch({
-                          url: '../cp_info_display/cp_info',
-                        })
-                      }, 600)
-                    }
-                  })
-                },
-                fail: e => {
-                  console.error(e)
+              if (res.data[0].cp != '') {
+                wx.showModal({
+                  title: '错误',
+                  content: target.name + '已经有CP了！',
+                })
+              } else {
+                //assign two users cp, update database, relaunch to cp_info
+                var list = app.globalData.myData.match
+                var rate = undefined
+                for (var i = 0; i < list.length; i++) {
+                  if (list[i]['name'] == target.name) {
+                    console.log(list[i]['rate'] + '  ' + list[i]['name'])
+                    rate = list[i]['rate']
+                  }
                 }
-              })
-            },
-            fail: e => {
-              console.error(e)
+                wx.cloud.callFunction({
+                  name: 'assignCp',
+                  data: {
+                    myid: app.globalData.openid,
+                    otherid: target.openid,
+                    rate: rate,
+                    image_uploader: app.globalData.myData.name
+                  },
+                  success: res => {
+                    wx.cloud.callFunction({
+                      name: 'assignCp',
+                      data: {
+                        myid: target.openid,
+                        otherid: app.globalData.openid,
+                        rate: rate,
+                        image_uploader: app.globalData.myData.name
+                      },
+                      success: res => {
+                        wx.showToast({
+                          title: '匹配成功',
+                          success: () => {
+                            app.globalData.refresh_cp_info = true
+                            setTimeout(function () {
+                              wx.reLaunch({
+                                url: '../cp_info_display/cp_info',
+                              })
+                            }, 2000)
+                          }
+                        })
+                      },
+                      fail: e => {
+                        console.error(e)
+                      }
+                    })
+                  },
+                  fail: e => {
+                    console.error(e)
+                  }
+                })
+              }
             }
           })
-
         } else {
           console.log('donnot confirm')
           return
         }
       }
+    })
+  },
+
+  bindTapUser(event) {
+    var that = this
+    wx.navigateTo({
+      url: '../other_user_info/other_user_info?id=' + that.data.messages[event.currentTarget.id].openid + '&showButton=false'
     })
   },
 
@@ -135,6 +155,38 @@ Page({
     })
   },
 
+  refresh() {
+    wx.showLoading({
+      title: '加载中',
+    })
+    db.collection('user').where({
+      _openid: app.globalData.openid
+    }).get({
+      success: res => {
+        // update mydata
+        app.globalData.myData = res.data[0]
+        // if user has cp, relaunch to cpinfodisplay
+        if (res.data[0].cp != '') {
+          wx.showToast({
+            title: '你和' + res.data[0].cp + '匹配成功！',
+            success: () => {
+              setTimeout( function () {
+                app.globalData.refresh_cp_info = true
+                wx.reLaunch({
+                  url: '../cp_info_display/cp_info',
+                })
+              }, 1500)
+            }
+          })
+        } else {
+          wx.hideLoading()
+          this.onLoad()
+          return
+        }
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -167,7 +219,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.refresh()
+    wx.stopPullDownRefresh();
   },
 
   /**

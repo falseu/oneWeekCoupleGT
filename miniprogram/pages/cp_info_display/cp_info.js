@@ -141,5 +141,6 @@ Page({
 
   onPullDownRefresh: function () {
     this.refresh()
+    wx.stopPullDownRefresh();
   },
 })

@@ -87,5 +87,6 @@ Page({
         }
       }
     )
+    wx.stopPullDownRefresh();
   }
 })

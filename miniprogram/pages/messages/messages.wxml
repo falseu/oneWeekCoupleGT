@@ -1,7 +1,7 @@
 <!--miniprogram/pages/messages/messages.wxml-->
 <view class="cu-list menu-avatar">
-    <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{messages}}" wx:key bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}" wx:for-item="item">
-      <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big2100{{index+1}}.jpg);"></view>
+    <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{messages}}" wx:key bindtap="bindTapUser"  id="{{index}}"bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}" wx:for-item="item">
+      <view class="cu-avatar round lg" style="background-image:url({{item.avatar}});"></view>
       <view class="content">
         <view class="text-grey">{{item.name}}</view>
         <view class="text-gray text-sm">
