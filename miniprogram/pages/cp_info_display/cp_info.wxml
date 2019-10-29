@@ -1,6 +1,8 @@
 <!--miniprogram/pages/cp_info_display/cp_info.wxml-->
 <!--miniprogram/pages/cp_info_display/cp_info.wxml-->
-<view  style = "background: url({{background}})" wx:if="{{ready==true}}" >
+<view  style = "background-color: rgb(246,239,243);" wx:if="{{ready==true}}" >
+
+<image style = "position: fixed; width:250rpx;top:45%;right:3%; " src = "../../images/rqq.png"></image>
 
 
 
@@ -9,8 +11,8 @@
   <view class="wrap">
   <image class="icon" style="margin-left:10rpx;" src="{{myAvatarUrl}}" mode="aspectFill" bindtap="viewInfoSelf"></image>
   <image class = "xdt" src = "../../images/xdt.png"></image>
-  <text style="margin-left:15%; color: #e20057; ">匹配度：</text>
-  <text style="color: #e20057;">{{cpRate}}</text>
+  <text style="margin-left:15%; color: rgb(246, 122, 109); ">匹配度：</text>
+  <text style="color: rgb(246, 122, 109);">{{cpRate}}</text>
   <image class="icon" style="position:absolute;right:10rpx;" src="{{cpAvatarUrl}}" mode="aspectFill" bindtap="viewInfoCP"></image>
   </view>
 
@@ -22,7 +24,9 @@
   <view class = "white">
   </view>
 
+  <view>
   
+  </view>
   <view class = "taskblock" wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" >
   
   <text style="position:relative; top:35rpx;" decode='true'>&nbsp;&nbsp;&nbsp;&nbsp;任务内容</text>
