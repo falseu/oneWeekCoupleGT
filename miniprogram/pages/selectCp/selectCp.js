@@ -1,5 +1,6 @@
 // miniprogram/pages/selectCp/selectCp.js
 const app = getApp()
+const db = wx.cloud.database()
 
 Page({
 
@@ -39,6 +40,20 @@ Page({
     })
   },
 
+  refresh(){
+    wx.showLoading({
+      title: '加载中',
+    })
+    db.collection('user').where({
+      _openid: app.globalData.openid
+    }).get({
+      success: res => {
+        app.globalData.myData = res.data[0]
+        this.onLoad()
+        wx.hideLoading()
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -71,7 +86,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.refresh()
+    wx.stopPullDownRefresh()
   },
 
   /**
