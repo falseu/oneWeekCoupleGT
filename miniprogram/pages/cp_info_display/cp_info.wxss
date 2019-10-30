@@ -19,7 +19,7 @@
   top:-10%;
 }
 
-.bluedot{
+.dot{
   position:relative;
   top: -60rpx;
   width:20rpx;

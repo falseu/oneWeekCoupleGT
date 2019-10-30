@@ -30,7 +30,7 @@
   <view class = "taskblock" wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" >
   
   <text style="position:relative; top:35rpx;" decode='true'>&nbsp;&nbsp;&nbsp;&nbsp;任务内容</text>
-  <image class = "bluedot" src = "../../images/bluedot.png"></image>
+  <image class = "dot" src = "../../images/reddot.png"></image>
   <text style="position:relative;top:-60rpx; left: -10%" >任务x</text>
  
   <button class='button' style="background-color:{{itemName.color}}; font-size:13px;" type="任务一" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
