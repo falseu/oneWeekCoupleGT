@@ -11,12 +11,12 @@
 
 
 .xdt{
-  width: 120rpx;
-  height: 120rpx;
+  width: 320rpx;
+  height: 260rpx;
   position: absolute;
   z-index: 3;
-  left: 40%;
-  top:-10%;
+  left: 20%;
+  top:-45%;
 }
 
 .dot{
@@ -24,7 +24,7 @@
   top: -60rpx;
   width:20rpx;
   height: 20rpx;
-  left: -75rpx;
+  left: -130rpx;
   z-index: 3;
 }
 
@@ -68,6 +68,12 @@
 
 .white{
   height: 40rpx;
+}
+.rate{
+  position:absolute;
+  top:180rpx;
+  margin-left:13%; 
+  color: rgb(246, 122, 109); 
 }
 
 
