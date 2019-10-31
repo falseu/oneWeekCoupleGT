@@ -1,3 +1,6 @@
+<view style = "background-color: rgb(246,239,243);">
+<image style = "position: fixed; width:250rpx;top:45%;right:3%; " src = "../../images/rqq.png"></image>
+
 <view class="wrap">
 
   <text class="h1">我的信息</text>
@@ -68,3 +71,6 @@
 
 
 </view>
+
+</view>
+

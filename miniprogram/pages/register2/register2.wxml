@@ -1,7 +1,9 @@
 <view style = "background-color: rgb(246,239,243);">
-<image style = "position: fixed; width:250rpx;top:45%;right:3%; " src = "../../images/rqq.png"></image>
+<image style = "position: fixed; width:250rpx;top:45%;right:3%;  z-index:0" src = "../../images/rqq.png"></image>
 
-  <text class="h1">我的择偶标准</text>
+
+<view style="position:relative; z-index: 0">
+<text class="h1">我的择偶标准</text>
 
   <view class='wrap'>
   <text class='h2'>TA的性别</text>
@@ -47,4 +49,6 @@
 
   <button type="primary" style="margin-top: 30rpx;" bindtap='insertData'>进入GT一周CP</button>
   </view>
+</view>
+  
 </view>
