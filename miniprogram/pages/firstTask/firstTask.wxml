@@ -11,7 +11,7 @@
   </view>
 
 
-  <image style = "height:20rpx; left:10%" src = "../../images/line.png"></image>
+  <image style = "height:20rpx; width:570rpx; left:12%" src = "../../images/line.png"></image>
   <view class = "white">
   </view>
 
@@ -29,7 +29,7 @@
   </image>
   </view>
 
-  <image style = "height:20rpx; left:10%" src = "../../images/line.png"></image>
+  <image style = "height:20rpx; width:570rpx; left:12%" src = "../../images/line.png"></image>
 
   <view wx:if="{{upload_image_button==true}}" class='wrap'>
     <button type='primary'style="margin-top: 30rpx;" bindtap='uploadPhoto'>
@@ -39,7 +39,7 @@
   
   <view wx:if="{{upload_text==true}}" class='wrap'>
     <textarea class="textarea" value="{{text}}" placeholder="请输入文字" placeholder-class="placeholder" focus="{{focus}}" maxlength="500" auto-height="{{auto-height}}" show-confirm-bar="{{show-confirm-bar}}" bindinput="bindKeyInputTextInput"></textarea>
-    <button type='primary'style='margin-top: 30rpx;' bindtap='uploadText'>上传</button>
+    <button type='primary'style='background-color: rgb(246,122,109); margin-top: 30rpx;' bindtap='uploadText'>点击提交任务</button>
   </view>
 
   <view wx:if="{{finished_text==true}}" class='wrap'>

@@ -9,16 +9,16 @@
  <text class="h1">我的CP</text>
 
   <view class="wrap">
-  <image class="icon" style="margin-left:10rpx;" src="{{myAvatarUrl}}" mode="aspectFill" bindtap="viewInfoSelf"></image>
+  <image class="icon" style="margin-left:23rpx;" src="{{myAvatarUrl}}" mode="aspectFill" bindtap="viewInfoSelf"></image>
   <image class = "xdt" src = "../../images/xdt.png"></image>
   <text class = "rate">匹配度：{{cpRate}}</text>
   
-  <image class="icon" style="position:absolute;right:10rpx;" src="{{cpAvatarUrl}}" mode="aspectFill" bindtap="viewInfoCP"></image>
+  <image class="icon" style="position:absolute;right:23rpx;" src="{{cpAvatarUrl}}" mode="aspectFill" bindtap="viewInfoCP"></image>
   </view>
 
   <view class='wrap' style="flex-wrap:no-wrap">
-  <text style="margin-left:30rpx;">{{name}}</text>
-  <text style="position:absolute;right:30rpx">{{cpName}}</text>
+  <text style="margin-left:50rpx;">{{name}}</text>
+  <text style="position:absolute;right:50rpx">{{cpName}}</text>
   </view>
 
   <view class = "white">
@@ -31,10 +31,10 @@
   
   <text style="position:relative; top:35rpx;" decode='true'>&nbsp;&nbsp;&nbsp;&nbsp;任务内容</text>
   <image class = "dot" src = "../../images/reddot.png"></image>
-  <text style="position:relative;top:-60rpx; left: -20%" >任务x</text>
+  <text style="position:relative;top:-60rpx; left: -10%" > {{itemName.title}}</text>
  
   <button class='button' style="background-color:{{itemName.color}}; font-size:13px;" type="任务一" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="bindViewTap" hover-class="other-button-hover" id="{{idx}}"> {{itemName.title}} </button>
+        disabled="{{disabled}}" bindtap="bindViewTap" hover-class="other-button-hover" id="{{idx}}"> 任务介绍 </button>
         
   </view>
   
