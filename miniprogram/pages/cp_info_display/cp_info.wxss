@@ -24,7 +24,7 @@
   top: -60rpx;
   width:20rpx;
   height: 20rpx;
-  left: -130rpx;
+  left: -140rpx;
   z-index: 3;
 }
 

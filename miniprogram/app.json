@@ -26,9 +26,9 @@
   "window": {
     "backgroundColor": "#1ac6ff",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#00bfff",
+    "navigationBarBackgroundColor": "#f6eff3",
     "navigationBarTitleText": "GT一周CP",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
