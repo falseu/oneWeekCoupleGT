@@ -1,7 +1,7 @@
 
-<view wx:if="{{ready==true}}" style = "background-color: rgb(246,239,243)">
-  <image style = "position:absolute; width:250rpx;top:45%;right:3%" src = "../../images/rqq.png"></image>
-  
+<view wx:if="{{ready==true}}" style = "background-color: rgb(246,239,243); height: 1500rpx;">
+  <image style = "position:absolute; width:250rpx;top:45%;right:3%; z-index:0" src = "../../images/rqq.png"></image>
+  <view style="position:relative; z-index:0">
   <view class = "white">
   </view>
 
@@ -42,7 +42,7 @@
     <button type='primary'style='background-color: rgb(246,122,109); margin-top: 30rpx;' bindtap='uploadText'>点击提交任务</button>
   </view>
 
-  <view wx:if="{{finished_text==true}}" class='wrap'>
+  <view wx:if="{{finished_text==true}}" class='wrap' style="height: 500rpx;">
     <view style="text-align:center; align-items:center;">
     <text class="h2" style="text-align:center; align-items:center;">我的回答\r\n</text>
     </view>
@@ -51,4 +51,5 @@
     <text>{{text}}</text>
     </view>
   </view>
+</view>
 </view>

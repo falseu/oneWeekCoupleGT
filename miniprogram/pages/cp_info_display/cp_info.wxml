@@ -1,6 +1,6 @@
 <!--miniprogram/pages/cp_info_display/cp_info.wxml-->
 <!--miniprogram/pages/cp_info_display/cp_info.wxml-->
-<view  style = "background-color: rgb(246,239,243);" wx:if="{{ready==true}}" >
+<view  style = "background-color: rgb(246,239,243); height: 1500rpx;" wx:if="{{ready==true}}" >
 
 <image style = "position: fixed; width:250rpx;top:45%;right:3%; " src = "../../images/rqq.png"></image>
 
