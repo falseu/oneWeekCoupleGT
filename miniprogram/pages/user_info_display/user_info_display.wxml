@@ -53,7 +53,7 @@
   </view>
 
   <view wx:if="{{showbutton}}">
-    <button type="primary" open-type="getUserInfo" style="margin-top:70rpx; background-color: rgb(246,122,109)" bindgetuserinfo="bindGetUserInfo">点击修改我的信息</button>
+    <button type="primary" open-type="getUserInfo" style="margin-top:70rpx; background-color: rgb(246,122,109)" bindgetuserinfo="bindGetUserInfo">点击修改我的标准</button>
   </view>
 </view>
 </view>

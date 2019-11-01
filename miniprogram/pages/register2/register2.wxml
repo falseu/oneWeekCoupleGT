@@ -1,4 +1,4 @@
-<view style = "background-color: rgb(246,239,243);">
+<view style = "background-color: rgb(246,239,243); height: 1500rpx;">
 <image style = "position: fixed; width:250rpx;top:45%;right:3%;  z-index:0" src = "../../images/rqq.png"></image>
 
 
