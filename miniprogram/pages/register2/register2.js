@@ -151,7 +151,11 @@ Page({  /**
 
       // 更新app.globaldata.myData
       app.globalData.myData = this.data
+<<<<<<< HEAD
       if (app.globalData.update_user_info != true) {
+=======
+      if (this.data.name == '') {
+>>>>>>> 8bdf96c862d9abdf6851d07ee4f6da7034883829
         //  向test数据集添加记录
         this.test.add({        // data 字段表示需新增的 JSON 数据
           data: {
