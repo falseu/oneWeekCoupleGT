@@ -41,7 +41,7 @@ Page({
     app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
     console.log(e.detail.userInfo.avatarUrl)
     wx.reLaunch({
-      url: '../register/register',
+      url: '../register2/register2',
     })
   },
 
@@ -55,7 +55,7 @@ Page({
 
       //跳转页面
       wx.redirectTo({
-        url: '../register/register'
+        url: '../register2/register2'
       })
     } catch (e) {
       wx.showModal({

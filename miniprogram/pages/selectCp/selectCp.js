@@ -50,7 +50,7 @@ Page({
       success: res => {
         app.globalData.myData = res.data[0]
         this.onLoad()
-        wx.hideLoading()
+        wx.håideLoading()
       }
     })
   },
