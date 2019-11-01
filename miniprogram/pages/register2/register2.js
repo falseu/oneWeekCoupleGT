@@ -151,7 +151,7 @@ Page({  /**
 
       // 更新app.globaldata.myData
       app.globalData.myData = this.data
-      if (this.data == '') {
+      if (this.data.name == '') {
         //  向test数据集添加记录
         this.test.add({        // data 字段表示需新增的 JSON 数据
           data: {
