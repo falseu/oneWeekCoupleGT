@@ -13,15 +13,15 @@
 
     <text class="basic1">姓名: {{name}}</text>
     <text class="basic1" style="margin-top: 40rpx">性别: {{gender}}</text>
-    <text class="basic1" style="margin-top: 80rpx">年龄: {{age}}岁</text>
+    <text class="basic1" style="margin-top: 80rpx">年龄: {{age}}</text>
     <text class="basic1" style="margin-top: 120rpx">家乡: {{homeTown}}</text>
     
     <image style = "height:15rpx; width:570rpx; top:50rpx; left:3%" src = "../../images/line.png"></image>
     </view>
 
     <view class="wrap2">
-    <text class="basic2" style="margin-top: 40rpx">身高: {{height}}cm</text>
-    <text class="basic2" style="margin-top: 80rpx">体重: {{weight}}kg</text>
+    <text class="basic2" style="margin-top: 40rpx">身高: {{height}}</text>
+    <text class="basic2" style="margin-top: 80rpx">体重: {{weight}}</text>
     <text class="basic2" style="margin-top: 120rpx">星座: {{constellations}}</text>
     <text class="basic2" style="margin-top: 160rpx">专业: {{major}}</text>
     <text class="basic2" style="margin-top: 200rpx">年级: {{grade}}</text>

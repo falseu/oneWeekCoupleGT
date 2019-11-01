@@ -20,9 +20,9 @@
  position: relative
 }
 .checked{
- color: #f67b6d;
- background: #ffc6bf;
- border: 3rpx solid #f67b6d;
+ color: white;
+ background:  rgb(246,122,109);
+ border: 3rpx solid #CECECE;
 }
 .checkbox checkbox{
  display: none

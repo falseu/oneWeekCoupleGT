@@ -26,13 +26,18 @@
   </view>
 
   <view class='wrap'>
-  <text class="h2">专业</text>
-  <input class='placeholder' placeholder="请输入专业" value="{{major}}" bindinput="bindKeyInputMajor" />
+  <text class='h2'>年龄</text>
+  <input class="placeholder" placeholder="请输入年龄" value="{{age}}" bindinput="bindKeyInputAge" />
   </view>
 
   <view class='wrap'>
-  <text class="h2">年级</text>
-  <input class='placeholder' placeholder="请输入年级（例如大三，研二）" value="{{grades}}" bindinput="bindKeyInputGrades" />
+  <text class='h2'>身高(cm)</text>
+  <input class="placeholder" placeholder="请输入身高" value="{{height}}" bindinput="bindKeyInputHeight" />
+  </view>
+
+  <view class='wrap'>
+  <text class='h2'>体重(kg)</text>
+  <input class="placeholder" placeholder="请输入体重" value="{{weight}}" bindinput="bindKeyInputWeight" />
   </view>
 
   <view class='wrap'>
@@ -51,27 +56,17 @@
   </view>
 
   <view class='wrap'>
-  <text class="h2">个人简介</text>
-  <input class='placeholder' placeholder="请输入个人简介" value="{{selfIntro}}" bindinput="bindKeyInputSelfIntro" />
+  <text class="h2">专业</text>
+  <input class='placeholder' placeholder="请输入专业" value="{{major}}" bindinput="bindKeyInputMajor" />
   </view>
 
   <view class='wrap'>
-  <text class='h2'>年龄</text>
-  <input class="placeholder" placeholder="请输入年龄" value="{{age}}" bindinput="bindKeyInputAge" />
-  </view>
-
-  <view class='wrap'>
-  <text class='h2'>身高 厘米</text>
-  <input class="placeholder" placeholder="请输入身高" value="{{height}}" bindinput="bindKeyInputHeight" />
-  </view>
-
-  <view class='wrap'>
-  <text class='h2'>体重 公斤</text>
-  <input class="placeholder" placeholder="请输入体重" value="{{weight}}" bindinput="bindKeyInputWeight" />
+  <text class="h2">年级</text>
+  <input class='placeholder' placeholder="请输入年级（例如大三，研二）" value="{{grades}}" bindinput="bindKeyInputGrades" />
   </view>
 
   <view class="wrap">
-  <text class='h2'>我最大的优点（选三个)</text>
+  <text class='h2'>我最大的三个优点</text>
   <view class='checkbox-con'>
   <radio-group bindchange="radioChange">
     <label class="{{item.checked?'checkbox checked':'checkbox'}}" wx:for="{{meritArray}}" bindtap='bindtapMerit' data-index="{{index}}" wx:key="item.name">
@@ -79,8 +74,18 @@
     </label>
   </radio-group>
   </view>
-  <button type="primary" style="margin-top: 30rpx;" bindtap='insertData'>下一步</button>
   </view>
+
+
+  <view class='wrap'>
+  <text class="h2">请简单介绍下自己吧 (两到三句话即可)</text>
+  <input class='placeholder' placeholder="请输入自我介绍" value="{{selfIntro}}" bindinput="bindKeyInputSelfIntro" />
+  <button type="primary" style="margin-top: 30rpx; background-color: rgb(246,122,109)" bindtap='insertData'>下一步</button>
+  </view>
+
+
+
+  
 </view>
   
 </view>

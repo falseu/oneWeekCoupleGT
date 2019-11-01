@@ -3,7 +3,7 @@
 
 
 <view style="position:relative; z-index: 0">
-<text class="h1">我的择偶标准</text>
+<text class="h1">我心中TA的样子</text>
 
   <view class='wrap'>
   <text class='h2'>TA的性别</text>
@@ -16,39 +16,38 @@
   </view>
   </view>
 
-  <view class="wrap">
-  <text class='h2'>你最看重的三个品质（三个） 必填</text>
-  <view class='checkbox-con'>
-  <radio-group bindchange="radioChange">
-    <label class="{{item.checked?'checkbox checked':'checkbox'}}" wx:for="{{meritArray}}" bindtap='bindtapMerit' data-index="{{index}}" wx:key="item.name">
-    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.name}}
-    </label>
-  </radio-group>
-  </view>
-
   <view class='wrap'>
-  <text class='h2'>年龄 例如10到20\r\n</text>
+  <text class='h2'>年龄(选填) 例如10到20 \r\n</text>
   <input class="placeholderLeft" placeholder="" value="{{expectedAgeLowerBound}}" bindinput="bindKeyInputExpectedAgeLowerBound" />
   <input class='placeholderMiddle' placeholder="到"></input>
   <input class='placeholderRight' value="{{expectedAgeUpperBound}}" bindinput="bindKeyInputExpectedAgeUpperBound"></input>
   </view>
 
   <view class='wrap'>
-  <text class='h2'>身高 厘米 例如170到180\r\n</text>
+  <text class='h2'>身高 厘米(选填) 例如170到180\r\n</text>
   <input class="placeholderLeft" placeholder="" value="{{expectedHeightLowerBound}}" bindinput="bindKeyInputExpectedHeightLowerBound" />
   <input class='placeholderMiddle' placeholder="到"></input>
   <input class='placeholderRight' value="{{expectedHeightUpperBound}}" bindinput="bindKeyInputExpectedHeightUpperBound"></input>
   </view>
 
   <view class='wrap'>
-  <text class='h2'>体重 公斤 例如50到60\r\n</text>
+  <text class='h2'>体重 公斤(选填) 例如50到60\r\n</text>
   <input class="placeholderLeft" placeholder="" value="{{expectedWeightLowerBound}}" bindinput="bindKeyInputExpectedWeightLowerBound" />
   <input class='placeholderMiddle' placeholder="到"></input>
   <input class='placeholderRight' value="{{expectedWeightUpperBound}}" bindinput="bindKeyInputExpectedWeightUpperBound"></input>
   </view>
+  </view>
 
-  <button type="primary" style="margin-top: 30rpx;" bindtap='insertData'>进入GT一周CP</button>
+  <view class="wrap">
+  <text class='h2'>你最看重的三个品质</text>
+  <view class='checkbox-con'>
+  <radio-group bindchange="radioChange">
+    <label class="{{item.checked?'checkbox checked':'checkbox'}}" wx:for="{{meritArray}}" bindtap='bindtapMerit' data-index="{{index}}" wx:key="item.name">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.name}}
+    </label>
+  </radio-group>
+
+  <button type="primary" style="margin-top: 30rpx; background-color: rgb(246,122,109)" bindtap='insertData'>进入GT一周CP</button>
   </view>
 </view>
-  
 </view>
