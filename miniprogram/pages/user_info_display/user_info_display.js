@@ -50,29 +50,9 @@ Page({
     var that = this
     app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
     console.log(e.detail.userInfo.avatarUrl)
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../register2/register2',
     })
-  },
-
-  // 单击“下一步”按钮调用该函数
-  insertData: function () {
-    var that = this
-    try {
-
-    //更新app.globaldata.myData
-      app.globalData.myData = this.data
-
-      //跳转页面
-      wx.redirectTo({
-        url: '../register2/register2'
-      })
-    } catch (e) {
-      wx.showModal({
-        title: '错误', content: e.message, showCancel: false
-      })
-
-    }
   },
 
   onPullDownRefresh() {
