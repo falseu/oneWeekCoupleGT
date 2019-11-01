@@ -9,7 +9,7 @@ var cp_info = undefined;
 
 Page({
   data: {
-    ready: false, name: '', age: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', merits: [], expectedMerits: []
+    ready: false, name: '', age: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', merits: [], merits: [], avatarUrl: '',
   }, 
 
   onLoad: function (options) {
@@ -48,7 +48,8 @@ Page({
           selfIntro: cp_info.selfIntro,
           height: cp_info.height,
           weight: cp_info.weight,
-          expectedMerits: cp_info.expectedMerits,
+          merits: cp_info.merits,
+          avatarUrl: cp_info.avatarUrl,
         })
         wx.hideLoading()
 
