@@ -50,7 +50,7 @@ Page({
     var that = this
     app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
     console.log(e.detail.userInfo.avatarUrl)
-    wx.reLaunch({
+    wx.redirectTo({
       url: '../register2/register2',
     })
   },

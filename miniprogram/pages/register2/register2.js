@@ -42,7 +42,7 @@ Page({  /**
       age: app.globalData.myData.age,
       gender: app.globalData.myData.gender,
       major: app.globalData.myData.major,
-      grade: app.globalData.myData.grades,
+      grade: app.globalData.myData.grade,
       constellations: app.globalData.myData.constellations,
       homeTown: app.globalData.myData.homeTown,
       hobbies: app.globalData.myData.hobbies,
@@ -151,47 +151,67 @@ Page({  /**
 
       // 更新app.globaldata.myData
       app.globalData.myData = this.data
+      if (app.globalData.update_user_info != true) {
+        //  向test数据集添加记录
+        this.test.add({        // data 字段表示需新增的 JSON 数据
+          data: {
+            name: this.data.name,
+            age: this.data.age, gender: this.data.gender,
+            height: this.data.height,
+            weight: this.data.weight,
+            major: this.data.major,
+            constellations: this.data.constellations,
+            homeTown: this.data.homeTown,
+            hobbies: this.data.hobbies,
+            selfIntro: this.data.selfIntro,
+            expectedAgeLowerBound: this.data.expectedAgeLowerBound,
+            expectedAgeUpperBound: this.data.expectedAgeUpperBound,
+            expectedHeightLowerBound: this.data.expectedHeightLowerBound,
+            expectedHeightUpperBound: this.data.expectedHeightUpperBound,
+            expectedWeightLowerBound: this.data.expectedWeightLowerBound,
+            expectedWeightUpperBound: this.data.expectedWeightUpperBound,
+            merits: this.data.merits,
+            expectedGender: this.data.expectedGender,
+            expectedMerits: this.data.expectedMerits,
+            match: this.data.match,
+            cp: this.data.cp,
+            cp_rate: -1,
+            taskImages: this.data.taskImages,
+            wechatId: this.data.wechatId,
+            avatarUrl: this.data.avatarUrl,
+            grade: this.data.grade,
+            requests: this.data.requests,
+            image_uploader: ''
+          },        //  数据插入成功，调用该函数
+          success: function (res) {
+            console.log(res)
+            // TODO： 更新database, call newUserUpdateDatabase
+            app.globalData.update_user_info = true
 
-      //  向test数据集添加记录
-      this.test.add({        // data 字段表示需新增的 JSON 数据
-        data: {
-          name: this.data.name,
-          age: this.data.age, gender: this.data.gender,
-          height: this.data.height,
-          weight: this.data.weight,
-          major: this.data.major,
-          constellations: this.data.constellations,
-          homeTown: this.data.homeTown,
-          hobbies: this.data.hobbies,
-          selfIntro: this.data.selfIntro,
-          expectedAgeLowerBound: this.data.expectedAgeLowerBound,
-          expectedAgeUpperBound: this.data.expectedAgeUpperBound,
-          expectedHeightLowerBound: this.data.expectedHeightLowerBound,
-          expectedHeightUpperBound: this.data.expectedHeightUpperBound,
-          expectedWeightLowerBound: this.data.expectedWeightLowerBound,
-          expectedWeightUpperBound: this.data.expectedWeightUpperBound,
-          merits: this.data.merits,
-          expectedGender: this.data.expectedGender,
-          expectedMerits: this.data.expectedMerits,
-          match: this.data.match,
-          cp: this.data.cp,
-          cp_rate: -1,
-          taskImages: this.data.taskImages,
-          wechatId: this.data.wechatId,
-          avatarUrl: this.data.avatarUrl,
-          grade: this.data.grade,
-          requests: this.data.requests,
-          image_uploader: ''
-        },        //  数据插入成功，调用该函数
-        success: function (res) {
-          console.log(res)
-          // TODO： 更新database, call newUserUpdateDatabase
+            wx.reLaunch({
+              url: '../user_info_display/user_info_display'
+            })
+          }
+        })
+      } else {
+        wx.cloud.callFunction({
+          name: 'update',
+          data: {
+            expectedGender: this.data.expectedGender, expectedAgeLowerBound: this.data.expectedAgeLowerBound, expectedAgeUpperBound: this.data.expectedAgeUpperBound, expectedHeightLowerBound: this.data.expectedHeightLowerBound, expectedHeightUpperBound: this.data.expectedHeightUpperBound, expectedWeightLowerBound: this.data.expectedWeightLowerBound, expectedWeightUpperBound: this.data.expectedWeightUpperBound, wechatId: this.data.wechatId, expectedMerits: this.data.expectedMerits, genderArray: this.data.genderArray,
+            openid: this.data.openid,
+          },
+          success: res => {
+            console.log(res)
+            wx.reLaunch({
+              url: '../user_info_display/user_info_display'
+            })
+          },
+          fail: e => {
+            console.error(e)
+          }
+        })
 
-          wx.reLaunch({
-            url: '../user_info_display/user_info_display'
-          })
-        }
-      })
+      }
     } catch (e) {
       wx.showModal({
         title: '错误', content: e.message, showCancel: false
