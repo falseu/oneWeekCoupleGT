@@ -1,67 +1,51 @@
-<view wx:if="{{ready==true}}">
+<view wx:if="{{ready==true}}" style = "background-color: rgb(246,239,243);">
+
+<image style = "position: fixed; width:250rpx;top:45%;right:3%; " src = "../../images/rqq.png"></image>
+
+
+
   <view class="wrap">
 
-    <text class="h1">TA的信息</text>
-
-    <view class='wrap'>
-    <text class="h2">姓名: </text>
-    <text>{{name}}</text>
-    </view>
-
-    <view class='wrap'>
-    <text class="h2">性别: </text>
-    <text>{{gender}}</text>
-    </view>
-
-    <view class='wrap'>
-    <text class='h2'>年龄: </text>
-    <text>{{age}}</text>
-    </view>
-
-    <view class='wrap'>
-    <text class='h2'>专业: </text>
-    <text>{{major}}</text>
-    </view>
-
-    <view class='wrap'>
-    <text class='h2'>年级: </text>
-    <text>{{grade}}</text>
-    </view>
-
-    <view class='wrap'>
-    <text class='h2'>家乡: </text>
-    <text>{{homeTown}}</text>
-    </view>
-
-    <view class='wrap'>
-    <text class='h2'>星座: </text>
-    <text>{{constellations}}</text>
-    </view>
-
-    <view class='wrap'>
-    <text class='h2'>兴趣: </text>
-    <text>{{hobbies}}</text>
-    </view>
-
-    <view class='wrap'>
-    <text class='h2'>自我简介: </text>
-    <text>{{selfIntro}}</text>
-    </view>
-
-    <view class='wrap'>
-    <text class='h2'>身高(厘米): </text>
-    <text>{{height}}</text>
-    </view>
-
-    <view class='wrap'>
-    <text class='h2'>体重(公斤): </text>
-    <text>{{weight}}</text>
-    </view>
+    <text class="h1">{{name}}的个人信息</text>
 
     <view class="wrap">
-    <text class='h2'>TA的标准: </text>
-    <text>{{expectedMerits}}</text>
+    <image class="icon" style="margin-left:23rpx;" src="{{avatarUrl}}" mode="aspectFill"></image>
+
+    <text class="basic1">姓名: {{name}}</text>
+    <text class="basic1" style="margin-top: 40rpx">性别: {{gender}}</text>
+    <text class="basic1" style="margin-top: 80rpx">年龄: {{age}}</text>
+    <text class="basic1" style="margin-top: 120rpx">家乡: {{homeTown}}</text>
+    
+    <image style = "height:15rpx; width:570rpx; top:50rpx; left:3%" src = "../../images/line.png"></image>
     </view>
+
+    <view class="wrap2">
+    <text class="basic2" style="margin-top: 40rpx">身高: {{height}}</text>
+    <text class="basic2" style="margin-top: 80rpx">体重: {{weight}}</text>
+    <text class="basic2" style="margin-top: 120rpx">星座: {{constellations}}</text>
+    <text class="basic2" style="margin-top: 160rpx">专业: {{major}}</text>
+    <text class="basic2" style="margin-top: 200rpx">年级: {{grade}}</text>
+    <text class="basic2" style="margin-top: 240rpx">爱好: {{hobbies}}</text>
+    </view>
+    
+    <view class="wrap2">
+    <text class="basic2" style="margin-top: 300rpx">TA的三个优点</text>
+    <text class="basic2" style="margin-top: 340rpx">{{merits}}</text>
+    <image style = "height:15rpx; width:570rpx; top:400rpx; left:3%" src = "../../images/line.png"></image>
+    <text class="basic2" style="margin-top: 460rpx">TA的自我介绍</text>
+    </view>   
+
+    <view class="wrap3">
+    <text class="basic2" style="margin-top: 60rpx">{{selfIntro}}</text>
+    </view>
+
+    <view>
+    <image style = "height:15rpx; width:570rpx; top:20rpx; left:3%" src = "../../images/line.png"></image>
+    </view>
+     
+
+
+    
 
   </view>
 </view>

@@ -26,14 +26,14 @@
   "window": {
     "backgroundColor": "#1ac6ff",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#00bfff",
+    "navigationBarBackgroundColor": "#f6eff3",
     "navigationBarTitleText": "GT一周CP",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "color": "#ccc",
-    "selectedColor": "#35495e",
+    "selectedColor": "#f67b6d",
     "borderStyle": "white",
     "backgroundColor": "#f9f9f9",
     "list": [

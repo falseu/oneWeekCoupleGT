@@ -20,9 +20,9 @@
  position: relative
 }
 .checked{
- color: #1A92EC;
- background: rgba(49,165,253,0.08);
- border: 3rpx solid #31A5FD;
+ color: white;
+ background:  rgb(246,122,109);
+ border: 3rpx solid #CECECE;
 }
 .checkbox checkbox{
  display: none
@@ -54,7 +54,7 @@
  height: 72rpx;
  line-height: 72rpx;
  font-size: 28rpx;
- color: #888888;
+ color: black;
  border: 1rpx solid #CECECE;
  border-radius: 5rpx;
  display: inline-block;
@@ -65,7 +65,7 @@
  height: 72rpx;
  line-height: 72rpx;
  font-size: 28rpx;
- color: #888888;
+ color: black;
  border: 0rpx solid #CECECE;
  border-radius: 5rpx;
  display: inline-block;
@@ -77,7 +77,7 @@
  height: 72rpx;
  line-height: 72rpx;
  font-size: 28rpx;
- color: #888888;
+ color: black;
  border: 1rpx solid #CECECE;
  border-radius: 5rpx;
  display: inline-block;

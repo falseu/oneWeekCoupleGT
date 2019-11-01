@@ -1,6 +1,6 @@
 .wrap{
  width: 550rpx;
- margin: 50rpx auto
+ margin: 50rpx auto;
 }
  
 .checkbox-con{
@@ -36,11 +36,11 @@
 }
 
 .h1{
-  margin-top: 30rpx;
+  margin-top: 20rpx;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30rpx;
+  font-size: 40rpx;
 }
 
 .h2{

@@ -5,31 +5,37 @@
 
 .wrap{
  width: 550rpx;
- margin: 50rpx auto;
+ margin: 10rpx auto;
+ position:relative;
+}
+
+.nameWrap{
+ width: 550rpx;
+ margin: 10rpx auto;
  position:relative;
 }
 
 
 .xdt{
-  width: 120rpx;
-  height: 120rpx;
+  width: 240rpx;
+  height: 180rpx;
   position: absolute;
   z-index: 3;
-  left: 40%;
-  top:-10%;
+  left: 28.5%;
+  top:-20%;
 }
 
-.bluedot{
+.dot{
   position:relative;
   top: -60rpx;
   width:20rpx;
   height: 20rpx;
-  left: -75rpx;
+  left: -105rpx;
   z-index: 3;
 }
 
 .h1{
-  margin-top: 30rpx;
+  margin: 45rpx auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,13 +43,13 @@
 }
 
 .icon{
-  width: 120rpx;
-  height: 120rpx;
+  width: 140rpx;
+  height: 140rpx;
   border-radius: 50%;
 }
 
 .user_name{
-  width: 120rpx
+  width: 120rpx;
 }
 
 .button{
@@ -56,9 +62,9 @@
 }
 
 .taskblock{
-  background-color: rgb(214, 213, 213);
-  margin-left: 110rpx;
-  margin-right:40rpx;
+  background-color: rgb(241, 240, 240);
+  margin-left: 70rpx;
+  margin-right:70rpx;
   border-radius: 5%;
   margin-top: 60rpx;
   margin-bottom: 40rpx;
@@ -68,6 +74,12 @@
 
 .white{
   height: 40rpx;
+}
+.rate{
+  position:absolute;
+  top:130rpx;
+  margin-left:7%; 
+  color: rgb(246, 122, 109); 
 }
 
 
