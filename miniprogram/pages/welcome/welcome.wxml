@@ -1,4 +1,4 @@
 <!--pages/welcome/welcome.wxml-->
-<view class="bgwrap" style="background-image: url('../../images/stage2成品UI.png');">
+<view class="bgwrap" style="background-image: url('../../images/welcome-stage2.png');">
 
 </view>

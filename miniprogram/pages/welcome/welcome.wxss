@@ -3,7 +3,7 @@
 .bgwrap{
   width: 750rpx;
   height: 1334rpx;
-  background-image: url('../../images/welcome-bg.png');
+  background-image: url('../../images/welcome-stage2.png');
   background-size: 100% 100%;
 }
 
