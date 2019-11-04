@@ -1,6 +1,7 @@
 // pages/welcome/welcome.js
 
 const app = getApp()
+var util = require('../../utils/utils.js');
 
 Page({
 
@@ -25,6 +26,22 @@ Page({
   onLoad: function (options) {
     
     var that = this
+    var time = util.formatTime(new Date());
+    // console.log(new Date('2002-01-01 00:00:00').getTime())
+    // console.log(time)
+    // var arr = time.split("/")
+    // console.log(arr[2])
+    var date = parseInt(time.substring(8, 10))
+    console.log(date)
+    //if (time > new Date('2002-01-01 00:00:00').getTime()) {
+    if (date > 0) {
+      console.log('time')
+      wx.reLaunch({
+        url: '../cantRegister/cantRegister',
+      })
+    } else {
+      console.log('notimetime')
+    
 
     //获取数据库中user信息
     setTimeout(function () {
@@ -72,7 +89,7 @@ Page({
         }
       })
     }, 1500)
-
+    }
 
     //如果user没有register, 进入register页面
   },

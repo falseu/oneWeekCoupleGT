@@ -1,0 +1,13 @@
+<view class="wrap" style = "background-color: rgb(246,239,243);">
+<image style = "position: fixed; width:250rpx;top:45%;right:3%; " src = "../../images/rqq.png"></image>
+
+  <text class="h1">一周CP流程介绍</text>
+
+  <view class='wrap'>
+  <text class="h2">姓名: </text>
+  </view>
+
+
+
+
+</view>
