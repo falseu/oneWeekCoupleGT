@@ -28,19 +28,20 @@ Page({
     var that = this
     var time = util.formatTime(new Date());
     // console.log(new Date('2002-01-01 00:00:00').getTime())
-    // console.log(time)
+    console.log(time)
     // var arr = time.split("/")
     // console.log(arr[2])
+    var month = parseInt(time.substring(5, 7))
     var date = parseInt(time.substring(8, 10))
-    console.log(date)
+    //console.log(date)
     //if (time > new Date('2002-01-01 00:00:00').getTime()) {
-    if (date > 0) {
-      console.log('time')
+    if (month > 0 && date > 0 || month > 0 && date > 0) {
+      //console.log('time')
       wx.reLaunch({
         url: '../cantRegister/cantRegister',
       })
     } else {
-      console.log('notimetime')
+      //console.log('notimetime')
     
 
     //获取数据库中user信息
