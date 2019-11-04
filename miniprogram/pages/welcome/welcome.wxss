@@ -1,7 +1,14 @@
 /* pages/welcome/welcome.wxss */
 
+.bgwrap{
+  width: 750rpx;
+  height: 1334rpx;
+  background-image: url('../../images/welcome-bg.png');
+  background-size: 100% 100%;
+}
+
 .h1 {
-  color: white;
+  color: whitea;
   font-size: 70rpx;
   text-align:center;
   align-items:center;
@@ -10,10 +17,10 @@
 }
 
 Page {
-  background-color: #03bfff;
+  background-color: #ffffff;
 }
 
 .wrap{
- width: 550rpx;
+ width: 50rpx;
  margin: 50rpx auto
 }

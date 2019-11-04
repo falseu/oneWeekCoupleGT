@@ -1,5 +1,4 @@
 <!--pages/welcome/welcome.wxml-->
-<text class="h1">GT一周CP</text>
-<view class="wrap" wx:if="{{ready==true}}">
-<button type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击寻找真爱</button>
+<view class="bgwrap" style="background-image: url('../../images/stage2成品UI.png');">
+
 </view>
