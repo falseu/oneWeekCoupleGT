@@ -55,16 +55,16 @@
     <text>{{height}}</text>
     </view>
 
-    <view class='wrap'>
+    <!-- <view class='wrap'>
     <text class='h2'>体重(公斤): </text>
     <text>{{weight}}</text>
-    </view>
+    </view> -->
 
     <view class="wrap">
     <text class='h2'>TA的标准: </text>
     <text>{{expectedMerits}}</text>
     </view>
 
-    <button wx:if="{{showButton}}" type="primary" style="margin-top: 30rpx;" bindtap='bindTap'>申请成为TA的CP</button>
+    <button wx:if="{{showButton}}" type="primary" style="margin-top: 30rpx; background-color: rgb(246,122,109);" bindtap='bindTap'>申请成为TA的CP</button>
   </view>
 </view>

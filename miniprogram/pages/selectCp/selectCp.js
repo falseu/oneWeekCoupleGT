@@ -50,8 +50,23 @@ Page({
     }).get({
       success: res => {
         app.globalData.myData = res.data[0]
-        this.onLoad()
-        wx.hideLoading()
+        if (res.data[0].cp != '') {
+          wx.showToast({
+            title: '你和' + res.data[0].cp + '匹配成功！',
+            success: () => {
+              setTimeout(function () {
+                app.globalData.refresh_cp_info = true
+                wx.reLaunch({
+                  url: '../cp_info_display/cp_info',
+                })
+              }, 1500)
+            }
+          })
+        } else {
+          wx.hideLoading()
+          this.onLoad()
+          return
+        }
       }
     })
   },

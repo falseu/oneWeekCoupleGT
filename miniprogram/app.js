@@ -34,5 +34,20 @@ App({
     if (month > that.globalData.edit_standard_deadline_month || (month >= that.globalData.edit_standard_deadline_month && date > that.globalData.edit_standard_deadline_date)) {
       that.globalData.showEditButton = false
     }
+  },
+
+  checkAssignedCp: function() {
+    const db = wx.cloud.database()
+    var that = this
+    db.collection('user')
+    .where({
+      _openid: that.globalData.openid
+    })
+    .watch({
+      onChange: snapshot => {
+        const { docs, docChanges } = snapshot
+        console.log(snapshot)
+      }
+    })
   }
 })

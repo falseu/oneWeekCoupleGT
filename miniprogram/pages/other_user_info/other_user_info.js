@@ -70,50 +70,50 @@ Page({
   },
 
   bindTap: function() {
-    wx.showModal({
-      title: '提示',
-      content: '确定向' + this.data.name + '提出申请吗',
-      success: res => {
-        if (!res.confirm) {
-          return
-        } else {
-          wx.showLoading({
-            title: '上传中',
-          })
+      wx.showModal({
+        title: '提示',
+        content: '确定向' + this.data.name + '提出申请吗',
+        success: res => {
+          if (!res.confirm) {
+            return
+          } else {
+            wx.showLoading({
+              title: '上传中',
+            })
 
-          var that = this
+            var that = this
 
-          var myDate = new Date()
+            var myDate = new Date()
 
-          wx.cloud.callFunction({
-            name: 'sendCpRequest',
-            data: {
-              openid: that.data.openid,
-              name: app.globalData.myData.name,
-              myid: app.globalData.openid,
-              time: myDate.toLocaleString(),
-              avatar: app.globalData.myData.avatarUrl
-            },
-            success: res => {
-              console.log(res)
-              wx.showToast({
-                title: '发送成功',
-                success: () => {
-                  setTimeout(function () {
-                    wx.navigateBack({
-                      delta: 1
-                    })
-                  }, 2000)
-                }
-              })
-            },
-            fail: e => {
-              console.error(e)
-            }
-          })
+            wx.cloud.callFunction({
+              name: 'sendCpRequest',
+              data: {
+                openid: that.data.openid,
+                name: app.globalData.myData.name,
+                myid: app.globalData.openid,
+                time: myDate.toLocaleString(),
+                avatar: app.globalData.myData.avatarUrl
+              },
+              success: res => {
+                console.log(res)
+                wx.showToast({
+                  title: '发送成功',
+                  success: () => {
+                    setTimeout(function () {
+                      wx.navigateBack({
+                        delta: 1
+                      })
+                    }, 2000)
+                  }
+                })
+              },
+              fail: e => {
+                console.error(e)
+              }
+            })
+          }
         }
-      }
-    })
+      })
   },
 
   /**
