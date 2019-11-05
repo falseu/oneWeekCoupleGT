@@ -53,18 +53,38 @@ Page({
           expectedMerits: cp_info.expectedMerits,
           openid: cp_info._openid
         })
+
+        // If that user has cp, go back
         if (cp_info.cp != '') {
-          setTimeout(function () {
-            wx.showModal({
-              title: '错误',
-              content: cp_info.name + '已经有CP了',
-            })
-          }, 400)
-          wx.navigateBack({
-            delat: 1
+          wx.hideLoading()
+          wx.showModal({
+            title: '错误',
+            content: cp_info.name + '已经有cp了！',
+            success: e => {
+              //TODO: delete that user from this users's match list
+              wx.showLoading({
+                title: '加载中'
+              })
+              wx.cloud.callFunction({
+                name: 'deleteUser',
+                data: {
+                  openid: app.globalData.openid,
+                  otherid: cp_info._openid
+                },
+                success: res => {
+                  console.log(res)
+                  app.globalData.refresh_other_users = true
+                  wx.hideLoading()
+                  wx.navigateBack({
+                    delat: 1
+                  })
+                }
+              })
+            }
           })
+        } else {
+          wx.hideLoading()
         }
-        wx.hideLoading()
       }
     })
   },
