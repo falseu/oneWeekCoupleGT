@@ -31,8 +31,11 @@ Page({
     var month = parseInt(time.substring(5, 7))
     var date = parseInt(time.substring(8, 10))
 
-    // TODO: change this deadline.
-    if (month > 11 || (month >= 11 && date > 11)) {
+    // user cannot update user info after deadline
+    app.checkEditStandardDeadline()
+
+    // TODO: change this deadline for register.
+    if (month > app.globalData.register_deadline_month || (month >= app.globalData.register_deadline_month && date > app.globalData.register_deadline_date)) {
       wx.reLaunch({
         url: '../cantRegister/cantRegister',
       })
@@ -58,7 +61,13 @@ Page({
                 //如果user已经register, 进入index界面, 未注册进入register界面
                 if (res.data.length) {
                   app.globalData.myData = res.data[0]
+
+                  // user should only update user info before deadline
                   app.globalData.update_user_info = true
+
+                  // user cannot update user info after deadline
+                  app.checkEditStandardDeadline()
+
                   app.globalData.images = {}
                   console.log(res.data[0])
                   if (res.data[0].cp == '') {

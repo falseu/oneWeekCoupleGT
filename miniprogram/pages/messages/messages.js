@@ -156,6 +156,7 @@ Page({
   },
 
   refresh() {
+    app.checkEditStandardDeadline()
     wx.showLoading({
       title: '加载中',
     })

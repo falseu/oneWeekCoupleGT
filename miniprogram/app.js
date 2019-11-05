@@ -2,8 +2,13 @@
 App({
   onLaunch: function () {
     
+    //TODO: edit these deadline
     this.globalData = {
-      showEditButton:true
+      showEditButton:true,
+      edit_standard_deadline_month: 11,
+      edit_standard_deadline_date: 11,
+      register_deadline_month: 11,
+      register_deadline_date: 11
     }
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
@@ -17,6 +22,17 @@ App({
         env: 'owcp-gt',
         traceUser: true,
       })
+    }
+  },
+
+  checkEditStandardDeadline: function() {
+    var that = this
+    var util = require('utils/utils.js')
+    var time = util.formatTime(new Date());
+    var month = parseInt(time.substring(5, 7))
+    var date = parseInt(time.substring(8, 10))
+    if (month > that.globalData.edit_standard_deadline_month || (month >= that.globalData.edit_standard_deadline_month && date > that.globalData.edit_standard_deadline_date)) {
+      that.globalData.showEditButton = false
     }
   }
 })

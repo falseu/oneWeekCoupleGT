@@ -47,6 +47,16 @@ Page({
   },
 
   bindGetUserInfo: function (e) {
+    app.checkEditStandardDeadline()
+    if (app.globalData.showEditButton == false) {
+      that.setData({
+        showbutton: false
+      })
+      wx.showModal({
+        title: '错误',
+        content: '修改标准已经截止',
+      })
+    }
     var that = this
     app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
     console.log(e.detail.userInfo.avatarUrl)
@@ -56,6 +66,7 @@ Page({
   },
 
   onPullDownRefresh() {
+    app.checkEditStandardDeadline()
     wx.showLoading({
       title: '加载中',
     })
