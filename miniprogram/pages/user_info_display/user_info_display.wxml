@@ -33,7 +33,7 @@
     <text class="basic2" style="margin-top: 460rpx">我的自我介绍</text>
   </view>   
 
-  <view class="wrap3">
+  <view class="wrap3" style="text-align:center; align-item:center;">
     <text class="basic3" style="margin-top: 200rpx; ">{{selfIntro}}</text>
   </view>
 

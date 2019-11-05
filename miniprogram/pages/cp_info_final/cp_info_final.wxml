@@ -2,8 +2,6 @@
 
 <image style = "position: fixed; width:250rpx;top:45%;right:3%; " src = "../../images/rqq.png"></image>
 
-
-
   <view class="wrap">
 
     <text class="h1">{{name}}的个人信息</text>
@@ -35,12 +33,12 @@
     <text class="basic2" style="margin-top: 460rpx">TA的自我介绍</text>
     </view>   
 
-    <view class="wrap3">
-    <text class="basic2" style="margin-top: 60rpx">{{selfIntro}}</text>
+    <view class="wrap3" style="text-align:center; align-items:center;">
+    <text class="basic3">{{selfIntro}}</text>
     </view>
 
     <view>
-    <image style = "height:15rpx; width:570rpx; top:20rpx; left:3%" src = "../../images/line.png"></image>
+    <image style="height:15rpx; width:570rpx; top:20rpx; left:3%" src = "../../images/line.png"></image>
     </view>
      
 
