@@ -1,6 +1,6 @@
 <view style = "background-color: rgb(246,239,243);">
 <view class="wrap" >
-<image style = "position: fixed; width:250rpx;top:45%;right:3%; " src = "../../images/rqq.png"></image>
+<image style = "position: fixed; width:415.36rpx; height: 799.04rpx; bottom:1%;right:3%;" src = "../../images/rqq.png"></image>
 
   <text class="h1">一周CP流程介绍</text>
 

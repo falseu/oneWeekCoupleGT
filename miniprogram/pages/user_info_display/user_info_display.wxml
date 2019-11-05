@@ -1,6 +1,6 @@
   
 <view style = "background-color: rgb(246,239,243);">
-<!-- <image style = "position: fixed; width:250rpx;top:45%;right:3%; " src = "../../images/rqq.png"></image> -->
+<image style = "position: fixed; width:415.36rpx; height: 799.04rpx; bottom:1%;right:3%;" src = "../../images/rqq.png"></image>
 
 <view class="wrap">
 
@@ -10,7 +10,7 @@
     <image class="icon" style="margin-left:23rpx;" src="{{avatarUrl}}" mode="aspectFill"></image>
     <text class="basic1">姓名: {{name}}\r\n</text>
     <text class="basic1" style="margin-top: 40rpx">性别: {{gender}}\r\n</text>
-    <text class="basic1" style="margin-top: 80rpx">年龄: {{age}}\r\n</text>
+    <text class="basic1" style="margin-top: 80rpx">年龄: {{age}}岁\r\n</text>
     <text class="basic1" style="margin-top: 120rpx">家乡: {{homeTown}}\r\n</text>
     <text class="basic1" style="margin-top: 160rpx">微信号: {{wechatId}}\r\n</text>
      <image style = "height:15rpx; width:570rpx; top:50rpx; left:3%" src = "../../images/line.png"></image>
@@ -18,8 +18,8 @@
 
 
   <view class="wrap2">
-    <text class="basic2" style="margin-top: 40rpx">身高: {{height}}\r\n</text>
-    <text class="basic2" style="margin-top: 80rpx">体重: {{weight}}\r\n</text>
+    <text class="basic2" style="margin-top: 40rpx">身高: {{height}}cm\r\n</text>
+    <text class="basic2" style="margin-top: 80rpx">体重: {{weight}}kg\r\n</text>
     <text class="basic2" style="margin-top: 120rpx">星座: {{constellations}}\r\n</text>
     <text class="basic2" style="margin-top: 160rpx">专业: {{major}}\r\n</text>
     <text class="basic2" style="margin-top: 200rpx">年级: {{grade}}\r\n</text>
