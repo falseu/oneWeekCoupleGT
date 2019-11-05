@@ -17,7 +17,7 @@
     "pages/first_instructions/first_instructions"
   ],
   "window": {
-    "backgroundColor": "#1ac6ff",
+    "backgroundColor": "#f67a6d",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#f6eff3",
     "navigationBarTitleText": "GT一周CP",

@@ -17,9 +17,10 @@
   align-items: center;
   justify-content: center;
   margin-top: 270rpx;
-  margin-left: 40rpx;
+  margin-left: 20rpx;
 
 }
+
 
 .basic1{
   margin-left: 10%; 

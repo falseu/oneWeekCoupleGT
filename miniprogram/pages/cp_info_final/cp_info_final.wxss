@@ -11,9 +11,9 @@
 }
 
 .wrap3{
-  width: 550rpx;
+  width: 500rpx;
   height: 240rpx;
-  display: flex;
+  display: absolute;
   align-items: center;
   justify-content: center;
   margin-top: 370rpx;
@@ -28,6 +28,13 @@
   position:absolute;
   align-items: center;
   justify-content: center;
+}
+
+.basic3{
+  position:absolute;
+  align-items: center;
+  justify-content: center;
+  width: 20rpx;
 }
 
 .h1{
