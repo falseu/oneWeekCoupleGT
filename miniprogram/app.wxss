@@ -23,7 +23,7 @@ button::after{
 
 
 page {
-  background: #f6f6f6;
+  background: rgb(246,239,243);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -33,7 +33,7 @@ page {
   margin-top: 40rpx;
   height: 140rpx;
   width: 100%;
-  background: #fff;
+  background: rgb(246,239,243);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-left: none;
   border-right: none;
@@ -49,7 +49,7 @@ page {
   margin: 20rpx;
   border-radius: 50%;
   background-size: cover;
-  background-color: white;
+  background-color: rgb(246,239,243);
 }
 
 .userinfo-avatar:after {
