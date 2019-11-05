@@ -73,6 +73,10 @@ Page({  /**
 
   // 单击“下一步”按钮调用该函数
   insertData: function () {
+    wx.showLoading({
+      title: '上传中',
+    })
+
     try {
       // 是否已经选择Expectedgender
       if (this.data.expectedGender == '') {
@@ -188,8 +192,20 @@ Page({  /**
             // TODO： 更新database, call newUserUpdateDatabase
             app.globalData.update_user_info = true
 
-            wx.reLaunch({
-              url: '../user_info_display/user_info_display'
+            wx.hideLoading()
+            wx.showToast({
+              title: '上传成功',
+              icon: 'none',
+              duration: 1500,
+              success: function () {
+                // refresh cp_info_display
+                app.globalData.refresh_cp_info = true
+                setTimeout(function () {
+                  wx.reLaunch({
+                    url: '../user_info_display/user_info_display'
+                  })
+                }, 1500) //延时时间
+              }
             })
           }
         })
@@ -202,8 +218,20 @@ Page({  /**
           },
           success: res => {
             console.log(res)
-            wx.reLaunch({
-              url: '../user_info_display/user_info_display'
+            wx.hideLoading()
+            wx.showToast({
+              title: '上传成功',
+              icon: 'none',
+              duration: 1500,
+              success: function () {
+                // refresh cp_info_display
+                app.globalData.refresh_cp_info = true
+                setTimeout(function () {
+                  wx.reLaunch({
+                    url: '../user_info_display/user_info_display'
+                  })
+                }, 1500) //延时时间
+              }
             })
           },
           fail: e => {

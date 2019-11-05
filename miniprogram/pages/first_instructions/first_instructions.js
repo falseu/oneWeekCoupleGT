@@ -1,4 +1,5 @@
-// pages/chooseLib/chooseLib.js
+// miniprogram/pages/first_instructions/first_instructions.js
+const app = getApp()
 Page({
 
   /**
@@ -13,6 +14,15 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+
+  bindGetUserInfo: function (e) {
+    console.log(e.detail)
+    app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
+    console.log(e.detail.userInfo.avatarUrl)
+    wx.reLaunch({
+      url: '../register/register',
+    })
   },
 
   /**

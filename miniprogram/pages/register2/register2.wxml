@@ -17,7 +17,7 @@
   </view>
 
   <view class='wrap'>
-  <text class='h2'>年龄(选填) 例如10到20 \r\n</text>
+  <text class='h2'>年龄(选填) 例如20到22 \r\n</text>
   <input class="placeholderLeft" placeholder="" value="{{expectedAgeLowerBound}}" bindinput="bindKeyInputExpectedAgeLowerBound" />
   <input class='placeholderMiddle' placeholder="到"></input>
   <input class='placeholderRight' value="{{expectedAgeUpperBound}}" bindinput="bindKeyInputExpectedAgeUpperBound"></input>

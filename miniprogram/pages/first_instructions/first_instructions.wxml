@@ -4,11 +4,9 @@
   <text class="h1">一周CP流程介绍</text>
 
   <view class='wrap'>
-  <text class="h2">姓名: </text>
+  <text class="h2">注册 - 匹配 - 任务 </text>
 
+  <button type="primary" open-type="getUserInfo" style="margin-top: 30rpx; background-color: rgb(246,122,109)" bindgetuserinfo='bindGetUserInfo'>开始注册</button>
   </view>
-
-
-
 
 </view>
