@@ -1,4 +1,8 @@
 <!--pages/welcome/welcome.wxml-->
-<view class="bgwrap" style="background-image: url('../../images/welcome-stage2.png');">
+<view class="bgwrap">
+
+
+<image style = "width:100%; height:100%" src = "../../images/welcome-stage2.png"></image>
+
 
 </view>
