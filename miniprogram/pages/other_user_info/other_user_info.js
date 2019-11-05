@@ -73,6 +73,7 @@ Page({
                 },
                 success: res => {
                   console.log(res)
+                  app.globalData.refresh_other_users = true
                   wx.hideLoading()
                   wx.navigateBack({
                     delat: 1
@@ -81,6 +82,8 @@ Page({
               })
             }
           })
+        } else {
+          wx.hideLoading()
         }
       }
     })

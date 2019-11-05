@@ -81,7 +81,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.refresh()
+    if (app.globalData.refresh_other_users == true) {
+      app.globalData.refresh_other_users = false
+      this.refresh()
+    }
   },
 
   /**
