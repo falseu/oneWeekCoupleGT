@@ -1,6 +1,6 @@
 <!--miniprogram/pages/other_user_info/other_user_info.wxml-->
 <view wx:if="{{ready==true}}" style = "background-color: rgb(246,239,243);">
-<image style = "position: fixed; width:250rpx;top:45%;right:3%; " src = "../../images/rqq.png"></image>
+<image style = "position: fixed; width:415.36rpx; height: 799.04rpx; bottom:1%;right:3%;" src = "../../images/rqq.png"></image>
   <view class="wrap">
 
     <text class="h1">TA的信息</text>
@@ -65,6 +65,6 @@
     <text>{{expectedMerits}}</text>
     </view>
 
-    <button wx:if="{{showButton}}" type="primary" style="margin-top: 30rpx; background-color: rgb(246,122,109);" bindtap='bindTap'>申请成为TA的CP</button>
+    <button wx:if="{{showButton}}" type="primary" style="margin-top: 30rpx; background-color: #f67a6d;" bindtap='bindTap'>申请成为TA的CP</button>
   </view>
 </view>

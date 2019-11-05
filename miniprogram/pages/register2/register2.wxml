@@ -1,5 +1,5 @@
 <view style = "background-color: rgb(246,239,243); height: 1500rpx;">
-<image style = "position: fixed; width:250rpx;top:45%;right:3%;  z-index:0" src = "../../images/rqq.png"></image>
+<image style = "position: fixed; width:415.36rpx; height: 799.04rpx; bottom:1%;right:3%;" src = "../../images/rqq.png"></image>
 
 
 <view style="position:relative; z-index: 0">
@@ -17,21 +17,21 @@
   </view>
 
   <view class='wrap'>
-  <text class='h2'>年龄(选填) 例如20到22 \r\n</text>
+  <text class='h2'>年龄 (例如20到22) \r\n</text>
   <input class="placeholderLeft" placeholder="" value="{{expectedAgeLowerBound}}" bindinput="bindKeyInputExpectedAgeLowerBound" />
   <input class='placeholderMiddle' placeholder="到"></input>
   <input class='placeholderRight' value="{{expectedAgeUpperBound}}" bindinput="bindKeyInputExpectedAgeUpperBound"></input>
   </view>
 
   <view class='wrap'>
-  <text class='h2'>身高 厘米(选填) 例如170到180\r\n</text>
+  <text class='h2'>身高 厘米(例如170到180)\r\n</text>
   <input class="placeholderLeft" placeholder="" value="{{expectedHeightLowerBound}}" bindinput="bindKeyInputExpectedHeightLowerBound" />
   <input class='placeholderMiddle' placeholder="到"></input>
   <input class='placeholderRight' value="{{expectedHeightUpperBound}}" bindinput="bindKeyInputExpectedHeightUpperBound"></input>
   </view>
 
   <view class='wrap'>
-  <text class='h2'>体重 公斤(选填) 例如50到60\r\n</text>
+  <text class='h2'>体重 公斤(例如50到60)\r\n</text>
   <input class="placeholderLeft" placeholder="" value="{{expectedWeightLowerBound}}" bindinput="bindKeyInputExpectedWeightLowerBound" />
   <input class='placeholderMiddle' placeholder="到"></input>
   <input class='placeholderRight' value="{{expectedWeightUpperBound}}" bindinput="bindKeyInputExpectedWeightUpperBound"></input>
