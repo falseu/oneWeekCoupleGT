@@ -1,10 +1,10 @@
 <view class="wrap" style = "background-color: rgb(246,239,243);">
 <image style = "position: fixed; width:250rpx;top:45%;right:3%; " src = "../../images/rqq.png"></image>
 
-  <text class="h1">一周CP流程介绍</text>
+  <text class="h1">报名已截止</text>
 
   <view class='wrap'>
-  <text class="h2">姓名: </text>
+  <text class="h2">本次CSSA一周CP的报名已经结束啦！请关注微信公众号 @佐治亚理工中国学生学者联谊会 获取更多活动信息 一起期待下一期一周CP！</text>
   </view>
 
 
