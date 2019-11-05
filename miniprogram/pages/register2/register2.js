@@ -73,9 +73,6 @@ Page({  /**
 
   // 单击“下一步”按钮调用该函数
   insertData: function () {
-    wx.showLoading({
-      title: '上传中',
-    })
 
     try {
       // 是否已经选择Expectedgender
@@ -152,6 +149,10 @@ Page({  /**
           expectedWeightUpperBound: upper
         })
       }
+
+      wx.showLoading({
+        title: '上传中',
+      })
 
       // 更新app.globaldata.myData
       app.globalData.myData = this.data
