@@ -1,13 +1,14 @@
 <view class="wrap" style = "background-color: rgb(246,239,243);">
-<image style = "position: fixed; width:415.36rpx; height: 799.04rpx; bottom:1%;right:3%;" src = "../../images/rqq.png"></image>
+<image style = "position: fixed; width:415.36rpx; height: 799.04rpx; bottom:1%;right:3%; z-index:0;" src = "../../images/rqq.png"></image>
 
+<view style="position:relative; z-index:0">
   <text class="h1">报名已截止</text>
 
   <view class='wrap'>
   <text class="h2">本次CSSA一周CP的报名已经结束啦！请关注微信公众号 @佐治亚理工中国学生学者联谊会 获取更多活动信息 一起期待下一期一周CP吧！</text>
   </view>
 
-
+</view>
 
 
 </view>
