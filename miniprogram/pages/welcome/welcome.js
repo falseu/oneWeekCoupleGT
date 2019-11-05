@@ -32,7 +32,7 @@ Page({
     var date = parseInt(time.substring(8, 10))
 
     // TODO: change this deadline.
-    if (month > 0 || (month >= 11 && date > 11)) {
+    if (month > 11 || (month >= 11 && date > 11)) {
       wx.reLaunch({
         url: '../cantRegister/cantRegister',
       })
