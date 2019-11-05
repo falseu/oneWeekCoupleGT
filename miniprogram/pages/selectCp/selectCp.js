@@ -41,6 +41,7 @@ Page({
   },
 
   refresh(){
+    app.checkEditStandardDeadline()
     wx.showLoading({
       title: '加载中',
     })
@@ -50,7 +51,7 @@ Page({
       success: res => {
         app.globalData.myData = res.data[0]
         this.onLoad()
-        wx.håideLoading()
+        wx.hideLoading()
       }
     })
   },
