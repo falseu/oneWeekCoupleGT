@@ -39,8 +39,11 @@ Page({
       wx.reLaunch({
         url: '../cantRegister/cantRegister',
       })
+    } else if (month > app.globalData.register_deadline_month || (month >= app.globalData.register_deadline_month && date > app.globalData.register_deadline_date + 7)) {
+      wx.reLaunch({
+        url: '../ba/ba',
+      })
     } else {
-    
 
     //获取数据库中user信息
     setTimeout(function () {

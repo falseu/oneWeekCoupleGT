@@ -1,0 +1,22 @@
+<view class="wrap" style = "background-color: rgb(246,239,243);">
+<image style = "position: fixed; width:415.36rpx; height: 799.04rpx; bottom:1%;right:3%; z-index:0;" src = "../../images/rqq.png"></image>
+
+<view style="position:relative; z-index:0">
+  <text class="h1">活动已结束</text>
+
+  <view class='wrap'>
+  <text class="h2">本次CSSA一周CP的活动已经结束啦！<br />
+  请关注微信公众号 @佐治亚理工中国学生学者联谊会 获取更多活动信息。 <br />
+  一起期待下一期一周CP吧！</text>
+  </view>
+
+  <view class='wrap'>
+  <text class="h2">请一定记得 不论这次结果如何 你一定也是某个人翘首以盼的惊喜。<br />
+  愿我们都可以在这匆匆人海与浩瀚宇宙中找到属于自己的星辰。<br />
+  愿所有的青春都可以被温柔对待。</text>
+  </view>
+
+</view>
+
+
+</view>
