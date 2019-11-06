@@ -24,7 +24,7 @@
     <text class="basic2" style="margin-top: 120rpx">星座: {{constellations}}</text>
     <text class="basic2" style="margin-top: 160rpx">专业: {{major}}</text>
     <text class="basic2" style="margin-top: 200rpx">年级: {{grade}}</text>
-    <text class="basic2" style="margin-top: 240rpx">爱好: {{hobbies}}</text>
+    <text class="basic2" style="margin-top: 260rpx">爱好: {{hobbies}}</text>
     </view>
     
     <view class="wrap2">
