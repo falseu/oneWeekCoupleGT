@@ -1,6 +1,7 @@
 const app = getApp()
 var idx = undefined
 const db = wx.cloud.database()
+var util = require('../../utils/utils.js');
 
 Page({
 
@@ -71,12 +72,14 @@ Page({
         content: '请输入文字',
       })
     }
+    var time = util.formatTime(new Date());
     wx.cloud.callFunction({
       name: 'uploadTaskText',
       data: {
         openid: app.globalData.openid,
         index: idx,
-        text: input
+        text: input,
+        time: time
       },
       success: (res) => {
         console.log(res.result)
@@ -111,7 +114,7 @@ Page({
   },
 
   uploadPhoto: function () {
-
+    var time = util.formatTime(new Date());
     wx.chooseImage({
       
       count: 1,
@@ -150,7 +153,8 @@ Page({
                 openid: app.globalData.openid,
                 cp: app.globalData.myData.cp,
                 index: idx,
-                id: res.fileID
+                id: res.fileID,
+                time: time
               },
               success: (res) => {
                 console.log(res.result)

@@ -97,7 +97,7 @@ Page({
           this.setData({
             taskArray: this.data.taskArray
           })
-          i = i + 2
+          i = i + 3
         }
         console.log(this.data.taskArray)
         wx.hideLoading()
@@ -131,7 +131,7 @@ Page({
           that.setData({
             taskArray: that.data.taskArray
           })
-          i = i + 2
+          i = i + 3
         }
         console.log(that.data.taskArray)
         that.onLoad()

@@ -10,6 +10,7 @@ exports.main = async (event, context) => {
     arr = []
     arr.push(event.index)
     arr.push(event.id)
+    arr.push(event.time)
     console.log(arr)
     return await db.collection('user').where({
       _openid: _.eq(event.openid).or(_.eq(event.cp))
