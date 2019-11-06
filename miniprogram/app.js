@@ -8,7 +8,9 @@ App({
       edit_standard_deadline_month: 11,
       edit_standard_deadline_date: 11,
       register_deadline_month: 11,
-      register_deadline_date: 11
+      register_deadline_date: 11,
+      activity_deadline_month: 11,
+      activity_deadline_date: 11
     }
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')

@@ -39,7 +39,9 @@ Page({
       wx.reLaunch({
         url: '../cantRegister/cantRegister',
       })
-    } else if (month > app.globalData.register_deadline_month || (month >= app.globalData.register_deadline_month && date > app.globalData.register_deadline_date + 7)) {
+
+    // change this deadline for end of activities
+    } else if (month > app.globalData.activity_deadline_month || (month >= app.globalData.register_deadline_month && date > app.globalData.register_deadline_date + 7)) {
       wx.reLaunch({
         url: '../ba/ba',
       })
