@@ -1,6 +1,6 @@
 
 <view wx:if="{{ready==true}}" style = "background-color: rgb(246,239,243); height: 1500rpx;">
-  <image style = "position: fixed; width:415.36rpx; height: 799.04rpx; bottom:1%;right:3%; z-index:0;" src = "../../images/rqq.png"></image>
+  <image style = "position: fixed; width:415.36rpx; height: 799.04rpx; bottom:1%;right:3%; z-index:0;" src = "../../images/rqq-bg.png"></image>
   <view style="position:relative; z-index:0">
   <view class = "white">
   </view>
@@ -24,12 +24,14 @@
   <view class = "white">
   </view>
 
+  <image style = "height:15rpx; width:570rpx; left:12%" src = "../../images/line.png"></image>
+
   <view wx:if="{{finished_image==true}}" class='wrap' style="text-align:center; align-items:center;">
   <image class="widget__arrow" src="{{imageUrl}}" mode="aspectFill">
   </image>
   </view>
 
-  <image style = "height:15rpx; width:570rpx; left:12%" src = "../../images/line.png"></image>
+
 
   <view wx:if="{{upload_image_button==true}}" class='wrap' style="text-align:center; align-items:center;">
     <button type='primary'style="margin-top: 30rpx; background-color: rgb(246,122,109)" bindtap='uploadPhoto'>
