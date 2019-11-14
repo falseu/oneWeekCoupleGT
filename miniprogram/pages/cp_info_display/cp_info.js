@@ -93,7 +93,7 @@ Page({
 
         var i = 0
         while (i < taskInfo.length) {
-          this.data.taskArray[taskInfo[i]].color = "#27a623"
+          this.data.taskArray[taskInfo[i]].color = "rgba(246, 123, 109, 0.6)"
           this.data.taskArray[taskInfo[i]].done = true
           this.setData({
             taskArray: this.data.taskArray
@@ -128,7 +128,7 @@ Page({
         var taskInfo = res.data[0].taskImages
         var i = 0
         while (i < taskInfo.length) {
-          that.data.taskArray[taskInfo[i]].color = "#27a623"
+          that.data.taskArray[taskInfo[i]].color = "rgb(241, 240, 240)"
           that.data.taskArray[taskInfo[i]].done = true
           that.setData({
             taskArray: that.data.taskArray

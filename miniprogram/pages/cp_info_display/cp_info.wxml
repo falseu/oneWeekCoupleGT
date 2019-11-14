@@ -37,7 +37,7 @@
         disabled="{{disabled}}" bindtap="bindViewTap" hover-class="other-button-hover" id="{{idx}}"> <view wx:if="{{itemName.done==true}}">已完成</view> <view wx:else>任务介绍</view></button>
 
         
-<image  style="position:absolute; z-index:15; width:100rpx; height:100rpx; top:-10rpx; left:40%" src = "../../images/seal.jpeg" wx:if="{{itemName.done==true}}" ></image>
+<image  style="position:absolute; z-index:15; width:120rpx; height:120rpx; top:-45rpx; left:80%" src = "../../images/heart_stamp.png" wx:if="{{itemName.done==true}}" ></image>
         
   </view>
   
