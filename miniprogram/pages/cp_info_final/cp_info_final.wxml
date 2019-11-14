@@ -15,7 +15,7 @@
     <text class="basic1" style="margin-top: 80rpx">年龄: {{age}}岁</text>
     <text class="basic1" style="margin-top: 120rpx">家乡: {{homeTown}}</text>
     
-    <image style = "height:15rpx; width:570rpx; top:50rpx; left:3%" src = "../../images/line.png"></image>
+    <image style = "height:15rpx; width:570rpx; top:50rpx;" src = "../../images/line.png"></image>
     </view>
 
     <view class="wrap2">
@@ -30,7 +30,7 @@
     <view class="wrap2">
     <text class="basic2" style="margin-top: 300rpx">TA的三个优点</text>
     <text class="basic2" style="margin-top: 340rpx">{{merits}}</text>
-    <image style = "height:15rpx; width:570rpx; top:400rpx; left:3%" src = "../../images/line.png"></image>
+    <image style = "height:15rpx; width:570rpx; top:400rpx;" src = "../../images/line.png"></image>
     <text class="basic2" style="margin-top: 460rpx">TA的自我介绍</text>
     </view>   
 
@@ -39,7 +39,7 @@
   </view>
 
     <view>
-    <image style="height:15rpx; width:570rpx; top:20rpx; left:3%" src = "../../images/line.png"></image>
+    <image style="height:15rpx; width:570rpx; top:20rpx;" src = "../../images/line.png"></image>
     </view>
      
 

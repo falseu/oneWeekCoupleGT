@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    ready: false, name: '', age: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', merits: [], expectedMerits: [], openid: '', showButton: false
+    ready: false, name: '', age: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', merits: [], expectedMerits: [], openid: '', showButton: false, avatarUrl: '', merits: []
   },
 
   /**
@@ -51,7 +51,9 @@ Page({
           height: cp_info.height,
           weight: cp_info.weight,
           expectedMerits: cp_info.expectedMerits,
-          openid: cp_info._openid
+          openid: cp_info._openid,
+          avatarUrl: cp_info.avatarUrl,
+          merits: cp_info.merits,
         })
 
         // If that user has cp, go back
