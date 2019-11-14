@@ -128,6 +128,7 @@ Page({
         var i = 0
         while (i < taskInfo.length) {
           that.data.taskArray[taskInfo[i]].color = "#27a623"
+          that.data.taskArray[taskInfo[i]].done = true
           that.setData({
             taskArray: that.data.taskArray
           })
