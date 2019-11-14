@@ -26,11 +26,11 @@
 }
 
 .dot{
-  position:relative;
-  top: -60rpx;
+  position:absolute;
+  top: -50rpx;
   width:20rpx;
   height: 20rpx;
-  left: -105rpx;
+  left: -5rpx;
   z-index: 3;
 }
 
