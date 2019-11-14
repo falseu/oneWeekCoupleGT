@@ -94,6 +94,7 @@ Page({
         var i = 0
         while (i < taskInfo.length) {
           this.data.taskArray[taskInfo[i]].color = "#27a623"
+          this.data.taskArray[taskInfo[i]].done = true
           this.setData({
             taskArray: this.data.taskArray
           })
