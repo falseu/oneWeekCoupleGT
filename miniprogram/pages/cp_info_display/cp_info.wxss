@@ -30,7 +30,7 @@
   top: -50rpx;
   width:20rpx;
   height: 20rpx;
-  left: -5rpx;
+  left: 20rpx;
   z-index: 3;
 }
 
