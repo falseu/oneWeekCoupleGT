@@ -35,6 +35,9 @@
  
   <button class='button' style="background-color:{{itemName.color}}; font-size:13px;" type="任务一" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="bindViewTap" hover-class="other-button-hover" id="{{idx}}"> 任务介绍 </button>
+
+        
+<image  style="position:absolute; z-index:15; width:100rpx; height:100rpx; top:-10rpx; left:40%" src = "../../images/seal.jpeg" wx:if="{{itemName.color != green}}" ></image>
         
   </view>
   
