@@ -1,6 +1,18 @@
 <!--miniprogram/pages/selectCp/selectCp.wxml-->
-  
-<view wx:for="{{userlist}}" wx:for-index="idx" wx:for-item="user" bindtap="bindViewTapUser" id="{{idx}}" class="cu-list menu-avatar">
+<view>
+ <view wx:if="{{!register_allow}}">
+    <view class="wrap2">
+    <image style = "height:15rpx; width:570rpx; position:relative;" src = "../../images/line.png"></image>
+    <text class="basic1" decode="{{true}}">
+    {{m}}月{{d}}日正式开放\r
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;敬请期待
+    </text>
+    <image style = "height:15rpx; width:570rpx; position: realative; top: 200rpx;" src = "../../images/line.png"></image>
+    </view>
+  </view>
+
+    <view wx:else>
+    <view wx:for="{{userlist}}" wx:for-index="idx" wx:for-item="user" bindtap="bindViewTapUser" id="{{idx}}" class="cu-list menu-avatar">
   <view class="cu-item">
     <view class="cu-avatar round lg" style="background-image:url({{user.avatar}});"></view>
     <view class="content">
@@ -16,4 +28,6 @@
       <view class="cu-tag round bg-grey sm">5</view>
     </view> -->
   </view>
+</view>
+    </view>
 </view>

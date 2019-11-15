@@ -1,5 +1,16 @@
 <!--miniprogram/pages/messages/messages.wxml-->
 <view class="cu-list menu-avatar">
+    <view wx:if="{{!register_allow}}">
+    <view class="wrap">
+    <image style = "height:15rpx; width:570rpx; position:relative;" src = "../../images/line.png"></image>
+    <text class="basic1" decode="{{true}}">
+    {{m}}月{{d}}日正式开放\r
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;敬请期待
+    </text>
+    <image style = "height:15rpx; width:570rpx; position: realative; top: 200rpx;" src = "../../images/line.png"></image>
+    </view>
+    </view>
+    
     <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{messages}}" bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}" wx:for-item="item">
       <view class="cu-avatar round lg" bindtap="bindTapUser" id="{{index}}" style="background-image:url({{item.avatar}});"></view>
       <view bindtap="bindTapUser" id="{{index}}" class="content">

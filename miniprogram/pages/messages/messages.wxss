@@ -23,3 +23,22 @@
 .switch-music::before {
   content: "\e6db";
 }
+
+.wrap{
+ width: 550rpx;
+ height: 300rpx;
+ margin-top: 50%;
+ margin-left: 100rpx;
+ align-items: center;
+ justify-content: center;
+}
+
+.basic1{ 
+  font-size: 40rpx;
+  width: 550rpx;
+  margin-top: 30rpx;
+  margin-left: -60%;
+  position:absolute;
+  align-items: center;
+  justify-content: center;
+}

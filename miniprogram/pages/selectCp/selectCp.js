@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userlist: undefined
+    userlist: undefined, register_allow: 'true', m: '', d: ''
   },
 
   /**
@@ -17,7 +17,9 @@ Page({
   onLoad: function (options) {
     var that = this
     that.setData({
-      userlist: app.globalData.myData.match
+      userlist: app.globalData.myData.match,
+       m: app.globalData.register_deadline_month,
+      d: app.globalData.register_deadline_date,
     })
     var sorted = app.globalData.myData.match
 
@@ -25,6 +27,17 @@ Page({
 
     console.log(sorted.sort(that.compare()))
     
+  },
+
+  checkRegisterDeadline: function () {
+    var that = this
+    var util = require('utils/utils.js')
+    var time = util.formatTime(new Date());
+    var month = parseInt(time.substring(5, 7))
+    var date = parseInt(time.substring(8, 10))
+    if (month > that.globalData.register_deadline_month || (month >= that.globalData.register_deadline_month && date > that.globalData.register_deadline_date)) {
+      register_allow = false
+    };
   },
 
   compare: function() {
