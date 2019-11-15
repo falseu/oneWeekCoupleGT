@@ -37,7 +37,6 @@ Page({
     if (this.upload_text) {
       this.load_text()
     }
-
   },
 
   load_text: function () {

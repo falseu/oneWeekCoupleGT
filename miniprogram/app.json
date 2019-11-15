@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/welcome/welcome",
+            "pages/summary/summary",
     "pages/register/register",
     "pages/register2/register2",
     "pages/storageConsole/storageConsole",
@@ -15,6 +16,7 @@
     "pages/other_user_info/other_user_info",
     "pages/messages/messages",
     "pages/first_instructions/first_instructions"
+
   ],
   "window": {
     "backgroundColor": "#f67a6d",

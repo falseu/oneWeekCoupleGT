@@ -1,0 +1,47 @@
+/* miniprogram/pages/cp_info_display/cp_info.wxss */
+
+.wrap{
+ width: 550rpx;
+ margin: 10rpx auto;
+ position:relative;
+}
+
+.basic1{
+  width: 550rpx;
+  position: relative;
+}
+
+.xdt{
+  width: 240rpx;
+  height: 180rpx;
+  position: absolute;
+  z-index: 3;
+  left: 28.5%;
+  top:-20%;
+}
+
+.h1{
+  margin: 45rpx auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40rpx;
+}
+
+.icon{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+}
+
+.white{
+  height: 40rpx;
+}
+.rate{
+  position:absolute;
+  top:130rpx;
+  margin-left:7%; 
+  color: rgb(246, 122, 109); 
+}
+
+
