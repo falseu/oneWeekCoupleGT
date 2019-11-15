@@ -9,7 +9,7 @@ var cp_info = undefined;
 
 Page({
   data: {
-    name: '', cpName: '', cpRate: '', taskArray: undefined, ready: false, myAvatarUrl: '', cpAvatarUrl: '', text: '任务内容',
+    name: '', cpName: '', cpRate: '', taskArray: undefined, ready: false, myAvatarUrl: '', cpAvatarUrl: '', text: '任务内容', count: '0',
     "background": "../../images/cpback.png", 
   },
 
@@ -90,13 +90,14 @@ Page({
 
         // Change the color of button if the task is finished
         var taskInfo = app.globalData.myData.taskImages
-
+      
         var i = 0
         while (i < taskInfo.length) {
           this.data.taskArray[taskInfo[i]].color = "rgba(246, 123, 109, 0.6)"
           this.data.taskArray[taskInfo[i]].done = true
           this.setData({
-            taskArray: this.data.taskArray
+            taskArray: this.data.taskArray,
+            count: parseInt(this.data.count) + 1,
           })
           i = i + 3
         }
@@ -131,7 +132,8 @@ Page({
           that.data.taskArray[taskInfo[i]].color = "rgb(241, 240, 240)"
           that.data.taskArray[taskInfo[i]].done = true
           that.setData({
-            taskArray: that.data.taskArray
+            taskArray: that.data.taskArray,
+            count: 0,
           })
           i = i + 3
         }

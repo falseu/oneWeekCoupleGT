@@ -25,8 +25,13 @@
   </view>
 
   <view>
-  
+    <image style = "width:650rpx; height: 97.5rpx; top:-20rpx; left:50rpx;" src=    "../../images/progress_0.png" wx:if="{{count==0}}"> </image>
+    <image style = "width:650rpx; height: 97.5rpx; top:-20rpx; left:50rpx;" src=    "../../images/progress_25.png" wx:if="{{count==1}}"> </image>
+      <image style = "width:650rpx; height: 97.5rpx; top:-20rpx; left:50rpx;" src=    "../../images/progress_50.png" wx:if="{{count==2}}"> </image>
+  <image style = "width:650rpx; height: 97.5rpx; top:-20rpx; left:50rpx;" src=    "../../images/progress_75.png" wx:if="{{count==3}}"> </image>
+    <image style = "width:650rpx; height: 97.5rpx; top:-20rpx; left:50rpx;" src=    "../../images/progress_100.png" wx:if="{{count==4}}"> </image>
   </view>
+
   <view class = "taskblock" wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" >
   
   <text style="position:relative; top:35rpx;" decode='true'>&nbsp;&nbsp;&nbsp;&nbsp;{{itemName.summary}}</text>
@@ -40,7 +45,6 @@
 <image  style="position:absolute; z-index:15; width:120rpx; height:120rpx; top:-45rpx; left:80%" src = "../../images/heart_stamp.png" wx:if="{{itemName.done==true}}" ></image>
         
   </view>
-  
   
 </view>
 </view>
