@@ -45,6 +45,7 @@
 <image  style="position:absolute; z-index:15; width:120rpx; height:120rpx; top:-45rpx; left:80%" src = "../../images/heart_stamp.png" wx:if="{{itemName.done==true}}" ></image>
         
   </view>
-  
+
+<text>{{count}}</text>  
 </view>
 </view>

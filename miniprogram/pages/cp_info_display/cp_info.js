@@ -17,7 +17,7 @@ Page({
     var that = this;
     let base64 = wx.getFileSystemManager().readFileSync(this.data.background, 'base64');
     that.setData({
-      'background': 'data:image/jpg;base64,' + base64
+      'background': 'data:image/jpg;base64,' + base64,
     });
   },
 
@@ -59,7 +59,8 @@ Page({
     that.setData({
       name: user_info.name,
       cpRate: user_info.cp_rate,
-      myAvatarUrl: user_info.avatarUrl
+      myAvatarUrl: user_info.avatarUrl,
+      count: '0',
     })
 
     // get cp data
