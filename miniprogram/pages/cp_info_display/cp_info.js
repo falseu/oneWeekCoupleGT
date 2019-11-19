@@ -89,6 +89,7 @@ Page({
         })
         app.globalData.tasks = res.data
 
+        
         // Change the color of button if the task is finished
         var taskInfo = app.globalData.myData.taskImages
       

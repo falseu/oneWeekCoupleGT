@@ -196,7 +196,6 @@ Page({  /**
       wx.showModal({
         title: '错误', content: e.message, showCancel: false
       })
-
     }
   },
   

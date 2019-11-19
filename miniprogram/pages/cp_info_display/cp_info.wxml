@@ -1,5 +1,4 @@
 <!--miniprogram/pages/cp_info_display/cp_info.wxml-->
-<!--miniprogram/pages/cp_info_display/cp_info.wxml-->
 <view  style = "background-color: rgb(246,239,243); height: 1500rpx;" wx:if="{{ready==true}}" >
 
 <image style = "position: fixed; width:415.36rpx; height: 799.04rpx; bottom:1%;right:3%; z-index:0;" src = "../../images/rqq-bg.png"></image>
@@ -45,7 +44,5 @@
 <image  style="position:absolute; z-index:15; width:120rpx; height:120rpx; top:-45rpx; left:80%" src = "../../images/heart_stamp.png" wx:if="{{itemName.done==true}}" ></image>
         
   </view>
-
-<text>{{count}}</text>  
 </view>
 </view>
