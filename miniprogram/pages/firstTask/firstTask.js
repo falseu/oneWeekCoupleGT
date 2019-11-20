@@ -60,9 +60,6 @@ Page({
   },
 
   uploadText: function () {
-    wx.showLoading({
-      title: '加载中',
-    })
     var that = this
     var input = this.data.text
     if (input == '') {
@@ -70,7 +67,11 @@ Page({
         title: '错误',
         content: '请输入文字',
       })
+      return
     }
+    wx.showLoading({
+      title: '加载中',
+    })
     var time = util.formatTime(new Date());
     wx.cloud.callFunction({
       name: 'uploadTaskText',
