@@ -20,23 +20,21 @@
   <text style="position:absolute;right:50rpx">{{cpName}}</text>
   </view>
 
-  <view style="width: 550rpx; height: 50rpx"></view>
 
 
   <view class="wrap" style="margin-top: 40rpx; margin-left:100rpx; justify-content:center align-items:center;" wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" >
-
+  <image src="../../images/line.png" style="height:15rpx; width:570rpx;"></image>
+  <view style="width:550rpx; height:40rpx"></view>
   <text class="basic1" decode='true'>{{itemName.title}}&nbsp;&nbsp;{{itemName.summary}}</text>
+  <view style="width:550rpx; height:20rpx;"></view>
 
 
-  <view wx:if="{{taskArray[idx].image}}">
-   
-  <view style="width: 550rpx; height: 20rpx;"></view>
+  <view wx:if="{{taskArray[idx].image}}">  
   <image class="widget__arrow" src="{{sortedArray[idx]}}" mode="aspectFill"></image>
   </view>
 
+
   <view wx:else>
-    
-    <view style="width: 550rpx; height: 20rpx;"></view>
     <view style="width:250rpx; height:200rpx;">
     <text style="width:250rpx; height:200rpx; position:relative;">{{sortedTimeArray[idx]}}\n</text>
     <text style="width:250rpx; height:200rpx; position:relative;">{{sortedArray[idx]}} </text>
@@ -45,12 +43,19 @@
     <image src="../../images/black_line.png" style="width:104rpx; height:400rpx; margin-left:220rpx; margin-top:-200rpx;"></image>
 
     <view style="width:250rpx; height:300rpx; margin-left: 300rpx; margin-top:-340rpx;">
-    <text style="width:250rpx; height:80rpx; position:relative;">{{sortedCPTimeArray[idx]}}\n</text>
-    <text style="width:250rpx; height:200rpx; position:relative;"> {{sortedCPArray[idx]}} </text>
+    <text style="width:250rpx; height:80rpx; position:relative; float: right;">{{sortedCPTimeArray[idx]}}\n</text>
+    <text style="width:250rpx; height:100rpx; margin-top:-20rpx; float: right; position:relative;"> {{sortedCPArray[idx]}} </text>    
     </view>
-    <view style="width: 550rpx; height: 80rpx;"></view>
-  </view>
-</view>
 
+    <view style="width:550rpx; height: 20rpx;"></view>
+  </view>
+
+</view>
+  <image src="../../images/line.png" style="width: 570rpx; height:15rpx; margin-left:90rpx; margin-top:40rpx;"></image>
+
+
+  <view class="wrap" style="height: 150rpx; justify-content:center; align-items:center;">
+  <text class="basic1" style="margin-top: 50rpx; justify-content:center; align-items:center;">感谢参与本次的一周CP活动</text>
+  </view>
 </view>
 </view>
