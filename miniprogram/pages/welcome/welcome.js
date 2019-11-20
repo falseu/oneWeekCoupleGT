@@ -81,7 +81,8 @@ Page({
                     })
                   } else {
                     wx.reLaunch({
-                      url: '../cp_info_display/cp_info',
+                      //url: '../cp_info_display/cp_info',
+                      url: '../summary/summary',
                     })
                   }
                 } else {
