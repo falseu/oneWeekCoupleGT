@@ -4,36 +4,47 @@
 
 <image style = "position: fixed; width:415.36rpx; height: 799.04rpx; bottom:1%;right:3%; z-index:0;" src = "../../images/rqq-bg.png"></image>
 
-
 <view style="position:relative; z-index:0">
  <text class="h1">一周CP回顾</text>
 
-  <view class="wrap">
-  <image class="icon" style="margin-left:23rpx;" src="{{myAvatarUrl}}" mode="aspectFill" bindtap="viewInfoSelf"></image>
+  <view class="wrap" style="margin-top: 50rpx;">
+  <image class="icon" style="margin-left:23rpx;" src="{{myAvatarUrl}}" mode="aspectFill"></image>
   <image class = "xdt" src = "../../images/xdt.png"></image>
   <text class = "rate">匹配度：{{cpRate}}</text>
   
-  <image class="icon" style="position:absolute;right:23rpx;" src="{{cpAvatarUrl}}" mode="aspectFill" bindtap="viewInfoCP"></image>
-  </view>
+  <image class="icon" style="position:absolute;right:23rpx;" src="{{cpAvatarUrl}}" mode="aspectFill"></image>
+</view>
 
   <view class='wrap' style="flex-wrap:no-wrap">
   <text style="margin-left:50rpx;">{{name}}</text>
   <text style="position:absolute;right:50rpx">{{cpName}}</text>
   </view>
 
-  <view>
-  
-  </view>
+  <view style="width: 550rpx; height: 50rpx"></view>
+
 
   <view class="wrap" style="margin-top: 40rpx; margin-left:100rpx;" wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" >
+
   <text class="basic1"> {{itemName.title}}</text>
   <text class="basic1" decode='true'>&nbsp;&nbsp;&nbsp;&nbsp;{{itemName.summary}}</text>
+
+  <view wx:if="{{taskArray[idx].image}}">
+  <view style="width: 550rpx; height: 20rpx;"></view>
+  <image class="widget__arrow" src="{{sortedArray[idx]}}" mode="aspectFill"></image>
   </view>
 
-  <view class="wrap" style="margin-top: 40rpx; margin-left:100rpx;" wx:for="{{taskImagesArray}}" wx:for-index="idx" wx:for-item="itemName">
-  <text class="basic1"></text>
+  <view wx:else>
+    <view style="width: 550rpx; height: 20rpx;"></view>
+    <view style="width:250rpx; height:200rpx;">
+    <text style="width:250rpx; height:200rpx; position:relative;">{{sortedArray[idx]}} </text>
+    </view>
+    
+    <view style="width:250rpx; height:200rpx; margin-left: 300rpx; margin-top: -100rpx;" >
+    <text style="width:250rpx; height:200rpx; position:relative;"> {{sortedCPArray[idx]}} </text>
+    </view>
+    
   </view>
-  
-  
+</view>
+
 </view>
 </view>

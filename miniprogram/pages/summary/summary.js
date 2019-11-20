@@ -9,7 +9,7 @@ var cp_info = undefined;
 
 Page({
   data: {
-    name: '', cpName: '', cpRate: '', taskArray: undefined, ready: false, myAvatarUrl: '', cpAvatarUrl: '', "background": "../../images/cpback.png", taskImagesArray:[], cpTaskImageArray:[],
+    name: '', cpName: '', cpRate: '', taskArray: undefined, ready: false, myAvatarUrl: '', cpAvatarUrl: '', "background": "../../images/cpback.png", taskImagesArray:[], cpTaskImagesArray:[], sortedArray: [], sortedCPArray: [],
   }, 
 
   onLoad: function () {
@@ -20,7 +20,43 @@ Page({
     });
   },
 
-  
+  sortImageArray: function () {
+    var i = 0;
+    var index = 0;
+    var new_array = []
+    while (index < 4) {
+      for (i = 0; i < this.data.taskImagesArray.length; i = i + 3) {
+        if (parseInt(this.data.taskImagesArray[i]) == index) {
+          new_array.push(this.data.taskImagesArray[i + 1]);
+        }
+      }
+      index++;
+    }
+    this.setData({
+      sortedArray: new_array
+    })
+    
+    console.log(this.data.sortedArray);
+  },
+
+
+  sortCPImageArray: function () {
+    var i = 0;
+    var index = 0;
+    var new_array_2 = [];
+    while (index < 4) {
+      for (i = 0; i < this.data.cpTaskImagesArray.length; i = i + 3) {
+        if (parseInt(this.data.cpTaskImagesArray[i]) == index) {
+          new_array_2.push(this.data.cpTaskImagesArray[i + 1]);
+        }
+      }
+      index++;
+    }
+    this.setData({
+      sortedCPArray: new_array_2
+    })
+
+  },
 
   onLoad: function (options) {
     wx.showLoading({
@@ -47,15 +83,15 @@ Page({
     }).get({
       success: res => {
         cp_info = res.data[0]
+        console.log(cp_info)
 
         that.setData({
           cpName: cp_info.name,
           cpAvatarUrl: cp_info.avatarUrl,
-          cpTaskImageArray: cp_info.taskImages
+          cpTaskImagesArray: cp_info.taskImages,
         })
-
-        app.globalData.cpData = res.data[0]
-        console.log(globalData.cpData)
+        
+        that.sortCPImageArray()
       }
     })
 
@@ -66,11 +102,12 @@ Page({
           taskArray: res.data,
           ready: true
         })
-        app.globalData.tasks = res.data
 
         wx.hideLoading()
       },
     )
+    that.sortImageArray()
+    console.log(this.cpTaskImagesArray)
     
   },
 
