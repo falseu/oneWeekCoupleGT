@@ -9,6 +9,9 @@
 .basic1{
   width: 550rpx;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .xdt{

@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    task: undefined, title: '', description: '', imageUrl: '', finished_image: false, upload_image: false, ready: false, image_uploader: '', upload_text: false, text: '', finished_text: false, upload_text: false, upload_image_button: false
+    task: undefined, title: '', description: '', imageUrl: '', finished_image: false, upload_image: false, ready: false, image_uploader: '', upload_text: false, text: '', finished_text: false, upload_text: false, upload_image_button: false, current: 0, max: 50
   },
 
   /**
@@ -107,9 +107,19 @@ Page({
   },
 
   bindKeyInputTextInput: function (e) {
+    var value = e.detail.value;
+    var length = parseInt(value.length);
+
+    if (length > this.data.noteMaxLen) {
+      wx.showModal({
+        title: '错误', content: '字数超过规定值', showCancel: false
+      })
+      return;
+    }
+
     this.setData({
-      text: e.detail.value
-    })
+      current: length,
+    });
   },
 
   uploadPhoto: function () {
