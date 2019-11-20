@@ -24,7 +24,7 @@
       </view>
       <view class="move">
         <view class="bg-grey" bindtap="TapConfirm" id="{{index}}">同意</view>
-        <view class="bg-red" bindtap="TapDecline" id="{{index}}">拒绝</view>
+        <!-- <view class="bg-red" bindtap="TapDecline" id="{{index}}">拒绝</view> -->
       </view>
     </view>
   </view>
