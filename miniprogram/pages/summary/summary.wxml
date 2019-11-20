@@ -27,22 +27,28 @@
 
   <text class="basic1" decode='true'>{{itemName.title}}&nbsp;&nbsp;{{itemName.summary}}</text>
 
+
   <view wx:if="{{taskArray[idx].image}}">
+   
   <view style="width: 550rpx; height: 20rpx;"></view>
   <image class="widget__arrow" src="{{sortedArray[idx]}}" mode="aspectFill"></image>
   </view>
 
   <view wx:else>
+    
     <view style="width: 550rpx; height: 20rpx;"></view>
     <view style="width:250rpx; height:200rpx;">
+    <text style="width:250rpx; height:200rpx; position:relative;">{{sortedTimeArray[idx]}}\n</text>
     <text style="width:250rpx; height:200rpx; position:relative;">{{sortedArray[idx]}} </text>
     </view>
     
-    <image src="../../images/black_line_modified.png" style="width:104rpx; height:286rpx; margin-left:220rpx; margin-top:-200rpx;"></image>
+    <image src="../../images/black_line.png" style="width:104rpx; height:400rpx; margin-left:220rpx; margin-top:-200rpx;"></image>
 
-    <view style="width:250rpx; height:200rpx; margin-left: 300rpx; margin-top: -200rpx;" >
+    <view style="width:250rpx; height:300rpx; margin-left: 300rpx; margin-top:-340rpx;">
+    <text style="width:250rpx; height:80rpx; position:relative;">{{sortedCPTimeArray[idx]}}\n</text>
     <text style="width:250rpx; height:200rpx; position:relative;"> {{sortedCPArray[idx]}} </text>
     </view>
+    <view style="width: 550rpx; height: 80rpx;"></view>
   </view>
 </view>
 

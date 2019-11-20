@@ -9,7 +9,7 @@ var cp_info = undefined;
 
 Page({
   data: {
-    name: '', cpName: '', cpRate: '', taskArray: undefined, ready: false, myAvatarUrl: '', cpAvatarUrl: '', "background": "../../images/cpback.png", taskImagesArray:[], cpTaskImagesArray:[], sortedArray: [], sortedCPArray: [],
+    name: '', cpName: '', cpRate: '', taskArray: undefined, ready: false, myAvatarUrl: '', cpAvatarUrl: '', "background": "../../images/cpback.png", taskImagesArray:[], cpTaskImagesArray:[], sortedArray: [], sortedCPArray: [], sortedTimeArray: [], sortedCPTimeArray: [],
   }, 
 
   onLoad: function () {
@@ -24,19 +24,20 @@ Page({
     var i = 0;
     var index = 0;
     var new_array = []
+    var new_array_1 = []
     while (index < 4) {
       for (i = 0; i < this.data.taskImagesArray.length; i = i + 3) {
         if (parseInt(this.data.taskImagesArray[i]) == index) {
           new_array.push(this.data.taskImagesArray[i + 1]);
+          new_array_1.push(this.data.taskImagesArray[i + 2]);
         }
       }
       index++;
     }
     this.setData({
-      sortedArray: new_array
+      sortedArray: new_array,
+      sortedTimeArray: new_array_1
     })
-    
-    console.log(this.data.sortedArray);
   },
 
 
@@ -44,16 +45,19 @@ Page({
     var i = 0;
     var index = 0;
     var new_array_2 = [];
+    var new_array_3 = [];
     while (index < 4) {
       for (i = 0; i < this.data.cpTaskImagesArray.length; i = i + 3) {
         if (parseInt(this.data.cpTaskImagesArray[i]) == index) {
           new_array_2.push(this.data.cpTaskImagesArray[i + 1]);
+          new_array_3.push(this.data.cpTaskImagesArray[i + 2]);
         }
       }
       index++;
     }
     this.setData({
-      sortedCPArray: new_array_2
+      sortedCPArray: new_array_2,
+      sortedCPTimeArray: new_array_3
     })
 
   },
