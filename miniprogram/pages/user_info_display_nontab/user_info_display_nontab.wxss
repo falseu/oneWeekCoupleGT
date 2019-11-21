@@ -1,0 +1,54 @@
+.wrap{
+ width: 550rpx;
+ margin: 50rpx auto
+}
+
+.wrap2{
+  width: 550rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrap3{
+  width: 500rpx;
+  height: 450rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 270rpx;
+  margin-left: 20rpx;
+
+}
+
+
+.basic1{
+  margin-left: 10%; 
+  position:absolute;
+}
+
+.basic2{
+  position:absolute;
+  align-items: center;
+  justify-content: center;
+}
+
+.basic3{
+  width: 500rpx;
+  align-items: center;
+  justify-content: center; 
+}
+
+.h1{
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40rpx;
+}
+
+.icon{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}

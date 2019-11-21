@@ -17,7 +17,8 @@
     "pages/first_instructions/first_instructions",
     "pages/summary/summary",
     "pages/email_verify/email_verify",
-    "pages/email_verify_2/email_verify_2"
+    "pages/email_verify_2/email_verify_2",
+    "pages/user_info_display_nontab/user_info_display_nontab"
   ],
   "window": {
     "backgroundColor": "#f67a6d",

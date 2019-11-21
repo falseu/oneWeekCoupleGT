@@ -38,7 +38,7 @@ Page({
     app.globalData.showEditButton = false
     console.log(app.globalData.showEditButton)
     wx.navigateTo({
-      url: '../user_info_display/user_info_display',
+      url: '../user_info_display_nontab/user_info_display_nontab',
     })
   },
 
