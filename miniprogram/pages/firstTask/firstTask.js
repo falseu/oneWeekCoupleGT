@@ -41,6 +41,8 @@ Page({
 
   load_text: function () {
     var that = this
+    // if is in local storage, display text
+
     wx.getStorage({
       key: 'task' + idx.toString(),
       success: function(res) {
@@ -50,11 +52,40 @@ Page({
           ready: true
         })
       },
+      // if not in local storage
       fail: e => {
-        that.setData({
-          upload_text: true,
-          ready: true
+        wx.showLoading({
+          title: '加载中',
         })
+        var arr = []
+        var text = undefined
+        // download task_images from my database
+        arr = app.globalData.myData.taskImages
+        console.log(app.globalData.taskImages)
+        for (var i = 0; i < arr.length; i++) {
+          if (parseInt(arr[i]) == idx) {
+            text = arr[i + 1]
+          }
+        }
+        // never uploaded, let the user upload
+        if (text == undefined) {
+          that.setData({
+            upload_text: true,
+            ready: true
+          })
+          wx.hideLoading()
+        } else {
+          wx.setStorage({
+            key: 'task' + idx.toString(),
+            data: text
+          })
+          that.setData({
+            text: text,
+            finished_text: true,
+            ready: true
+          })
+          wx.hideLoading()
+        }
       }
     })
   },
@@ -208,7 +239,7 @@ Page({
 
   load_image: function () {
     var that = this
-    // if image is in app.globalData.images, load this image to the page
+    // if image is in local storage, load this image to the page
     wx.getStorage({
       key: "task" + idx.toString(),
       success: function (res) {
@@ -219,7 +250,7 @@ Page({
         })
       },
 
-      // if image is not in app.globalData.images
+      // if image is not in local storage
       fail: e => {
         wx.showLoading({
           title: '加载中',
@@ -271,7 +302,6 @@ Page({
                   data: res.tempFilePath,
                 })
 
-                //app.globalData.images["task" + idx.toString()] = res.tempFilePath
                 that.setData({
                   imageUrl: res.tempFilePath,
                   finished_image: true,
