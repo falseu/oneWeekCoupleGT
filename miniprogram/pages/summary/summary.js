@@ -38,6 +38,21 @@ Page({
       sortedArray: new_array,
       sortedTimeArray: new_array_1
     })
+    this.loadLocalStorage()
+  },
+
+  loadLocalStorage: function() {
+    var arr = this.data.sortedArray
+    var length = arr.length
+    for (var i = 0; i < length; i++) {
+      wx.getStorage({
+        key: 'task' + i.toString(),
+        success: function(res) {
+          console.log(i-1)
+          arr[i-1] = res.data
+        },
+      })
+    }
   },
 
   sortCPImageArray: function () {
@@ -86,7 +101,6 @@ Page({
     }).get({
       success: res => {
         cp_info = res.data[0]
-        console.log(cp_info)
 
         that.setData({
           cpName: cp_info.name,
@@ -110,7 +124,6 @@ Page({
       },
     )
     that.sortImageArray()
-    console.log(this.cpTaskImagesArray)
     
   },
 
