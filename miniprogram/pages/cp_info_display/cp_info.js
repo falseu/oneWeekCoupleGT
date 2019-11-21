@@ -28,7 +28,7 @@ Page({
   },
 
   buttonPressed: function () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../summary/summary'
     })
   },
