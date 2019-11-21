@@ -55,6 +55,7 @@ Page({
                   title: '错误',
                   content: target.name + '已经有CP了！',
                 })
+                wx.hideLoading()
               } else {
                 //assign two users cp, update database, relaunch to cp_info
                 var list = app.globalData.myData.match
