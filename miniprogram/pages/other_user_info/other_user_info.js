@@ -73,12 +73,23 @@ Page({
                   openid: app.globalData.openid,
                   otherid: cp_info._openid
                 },
-                success: res => {
-                  console.log(res)
-                  app.globalData.refresh_other_users = true
-                  wx.hideLoading()
-                  wx.navigateBack({
-                    delat: 1
+                complete: res => {
+
+                  // delete message
+                  wx.cloud.callFunction({
+                    name: 'deleteMessage',
+                    data: {
+                      openid: app.globalData.openid,
+                      otherid: cp_info._openid
+                    },
+                    complete: res => {
+                      console.log(res)
+                      app.globalData.refresh_other_users = true
+                      wx.hideLoading()
+                      wx.navigateBack({
+                        delat: 1
+                      })
+                    }
                   })
                 }
               })
