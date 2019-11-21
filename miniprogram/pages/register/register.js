@@ -5,7 +5,7 @@ Page({  /**
    */
   db: undefined, test: undefined, data: {
     name: '', age: '', gender: '', height: '', weight: '', major: '', grade:'', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', wechatId: '', merits: [], expectedMerits: [],
-    genderArray: [{name:'男', value:'男', checked: false}, {name:'女', value:'女', checked: false}],
+    genderArray: [{name:'男', value:'男', checked: false}, {name:'女', value:'女', checked: false}], num_merits: 0,
     meritArray: [
       {
         name: '颜值',
@@ -264,8 +264,13 @@ Page({  /**
       var checkboxArr = this.data.meritArray;//选项集合
       if (checkboxArr[index].checked) {
         checkboxArr[index].checked = false
+        this.data.num_merits--
       } else {
+        if (this.data.num_merits >= 3) {
+          return
+        }
         checkboxArr[index].checked = true
+        this.data.num_merits++
       }
       this.setData({
         meritArray: checkboxArr,

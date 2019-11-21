@@ -4,7 +4,7 @@ Page({  /**
    * init
    */
   db: undefined, test: undefined, data: {
-    name: '', age: '', recordId: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAgeLowerBound: '', expectedAgeUpperBound: '', expectedHeightLowerBound: '', expectedHeightUpperBound: '', expectedWeightLowerBound: '', expectedWeightUpperBound: '', wechatId: '', merits: [], expectedMerits: [], genderArray: [{ name: '男', value: '男', checked: false }, { name: '女', value: '女', checked: false }],
+    name: '', age: '', recordId: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAgeLowerBound: '', expectedAgeUpperBound: '', expectedHeightLowerBound: '', expectedHeightUpperBound: '', expectedWeightLowerBound: '', expectedWeightUpperBound: '', wechatId: '', merits: [], expectedMerits: [], genderArray: [{ name: '男', value: '男', checked: false }, { name: '女', value: '女', checked: false }], num_merits: 0,
     meritArray: [
       {
         name: '颜值',
@@ -273,10 +273,15 @@ Page({  /**
   bindtapMerit: function (e) {
     var index = e.currentTarget.dataset.index;//获取当前点击的下标
     var checkboxArr = this.data.meritArray;//选项集合
-    if (checkboxArr[index].checked) {
+    if (checkboxArr[index].checked) { // cancel a selected item
       checkboxArr[index].checked = false
-    } else {
-      checkboxArr[index].checked = true
+      this.data.num_merits--
+    } else { // select an item
+      if (this.data.num_merits >= 3) { // cannot select
+        return
+      }
+      checkboxArr[index].checked = true // can select
+      this.data.num_merits++
     }
     this.setData({
       meritArray: checkboxArr,
