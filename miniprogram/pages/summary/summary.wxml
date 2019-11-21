@@ -44,7 +44,7 @@
 
     <view style="width:250rpx; height:300rpx; margin-left: 300rpx; margin-top:-340rpx;">
     <text style="width:250rpx; height:80rpx; position:relative; float: right;">{{sortedCPTimeArray[idx]}}\n</text>
-    <text style="width:250rpx; height:100rpx; margin-top:-20rpx; float: right; position:relative;"> {{sortedCPArray[idx]}} </text>    
+    <text style="width:250rpx; height:100rpx; margin-top:-10rpx; float: right; position:relative;"> {{sortedCPArray[idx]}} </text>    
     </view>
 
     <view style="width:550rpx; height: 20rpx;"></view>

@@ -44,5 +44,7 @@
 <image  style="position:absolute; z-index:15; width:120rpx; height:120rpx; top:-45rpx; left:80%" src = "../../images/heart_stamp.png" wx:if="{{itemName.done==true}}" ></image>
         
   </view>
+  
 </view>
+<button type="primary" style="width: 550rpx; margin-left:100rpx; margin-top: 30rpx; background-color: rgb(246,122,109)" wx:if="{{count==4}}" bindtap="buttonPressed">进入一周CP回顾</button>
 </view>

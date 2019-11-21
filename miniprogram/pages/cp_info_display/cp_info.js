@@ -27,6 +27,12 @@ Page({
     })
   },
 
+  buttonPressed: function () {
+    wx.redirectTo({
+      url: '../summary/summary'
+    })
+  },
+
   //前往个人信息界面
   viewInfoSelf: function () {
     app.globalData.showEditButton = false

@@ -40,7 +40,6 @@ Page({
     })
   },
 
-
   sortCPImageArray: function () {
     var i = 0;
     var index = 0;
