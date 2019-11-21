@@ -44,6 +44,8 @@ Page({
 
   //前往CP信息界面
   viewInfoCP: function () {
+    // 可以看到TA的微信号
+    app.globalData.showWechatId = true
     wx.navigateTo({
       url: '../cp_info_final/cp_info_final',
     })

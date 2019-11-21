@@ -9,7 +9,7 @@ var cp_info = undefined;
 
 Page({
   data: {
-    ready: false, name: '', age: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', merits: [], merits: [], avatarUrl: '',
+    ready: false, name: '', age: '', gender: '', height: '', weight: '', major: '', grade: '', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', merits: [], merits: [], avatarUrl: '', wechatId: ''
   }, 
 
   onLoad: function (options) {
@@ -50,6 +50,7 @@ Page({
           weight: cp_info.weight,
           merits: cp_info.merits,
           avatarUrl: cp_info.avatarUrl,
+          wechatId: cp_info.wechatId
         })
         wx.hideLoading()
 

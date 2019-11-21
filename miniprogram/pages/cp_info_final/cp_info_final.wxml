@@ -14,6 +14,7 @@
     <text class="basic1" style="margin-top: 40rpx">性别: {{gender}}</text>
     <text class="basic1" style="margin-top: 80rpx">年龄: {{age}}岁</text>
     <text class="basic1" style="margin-top: 120rpx">家乡: {{homeTown}}</text>
+    <text class="basic1" style="margin-top: 160rpx">微信号: {{wechatId}}</text>
     
     <image style = "height:15rpx; width:570rpx; top:50rpx;" src = "../../images/line.png"></image>
     </view>

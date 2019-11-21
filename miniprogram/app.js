@@ -5,6 +5,7 @@ App({
     //TODO: edit these deadline
     this.globalData = {
       showEditButton:true,
+      showWechatId: false,
       edit_standard_deadline_month: 12,
       edit_standard_deadline_date: 12,
       register_deadline_month: 12,
