@@ -51,11 +51,28 @@ Page({
           }).get({
             success: res => {
               if (res.data[0].cp != '') {
+                wx.hideLoading()
                 wx.showModal({
                   title: '错误',
                   content: target.name + '已经有CP了！',
+                  complete: res => {
+                    wx.showLoading({
+                      title: '加载中',
+                    })
+                  }
                 })
-                wx.hideLoading()
+                // delete this message
+                wx.cloud.callFunction({
+                  name: "deleteMessage",
+                  data: {
+                    openid: app.globalData.openid,
+                    otherid: target.openid
+                  },
+                  success: res => {
+                    this.refresh()
+                  }
+                })
+
               } else {
                 //assign two users cp, update database, relaunch to cp_info
                 var list = app.globalData.myData.match
@@ -124,6 +141,7 @@ Page({
   },
 
   TapDecline(e) {
+    var target = this.data.messages[e.currentTarget.id]
     wx.showModal({
       title: '提示',
       content: '确认要拒绝吗',
@@ -131,6 +149,20 @@ Page({
         if (e.confirm) {
           //TODO: mark as declined, delete from requests list, update database
           console.log('decline')
+          wx.showLoading({
+            title: '加载中',
+          })
+          wx.cloud.callFunction({
+            name: "deleteMessage",
+            data: {
+              openid: app.globalData.openid,
+              otherid: target.openid
+            },
+            success: res => {
+              wx.hideLoading()
+              this.refresh()
+            }
+          })
         } else {
           console.log('donot decline')
           return
