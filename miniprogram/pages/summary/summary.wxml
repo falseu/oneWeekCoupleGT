@@ -26,11 +26,11 @@
   <image src="../../images/line.png" style="height:15rpx; width:570rpx;"></image>
   <view style="width:550rpx; height:40rpx"></view>
   <text class="basic1" decode='true'>{{itemName.title}}&nbsp;&nbsp;{{itemName.summary}}</text>
-  <view style="width:550rpx; height:20rpx;"></view>
+  <view style="width:550rpx; height:40rpx;"></view>
 
 
   <view wx:if="{{taskArray[idx].image}}">  
-  <image class="widget__arrow" src="{{sortedArray[idx]}}" mode="aspectFill"></image>
+  <image class="widget__arrow" src="{{sortedArray[idx]}}" mode="aspectFit" style="width:550rpx"></image>
   </view>
 
 
@@ -47,7 +47,7 @@
     <text style="width:250rpx; height:100rpx; margin-top:-10rpx; float: right; position:relative;"> {{sortedCPArray[idx]}} </text>    
     </view>
 
-    <view style="width:550rpx; height: 20rpx;"></view>
+    <view style="width:550rpx; height: 40rpx;"></view>
   </view>
 
 </view>
@@ -56,6 +56,8 @@
 
   <view class="wrap" style="height: 150rpx; justify-content:center; align-items:center;">
   <text class="basic1" style="margin-top: 50rpx; justify-content:center; align-items:center;">感谢参与本次的一周CP活动</text>
+  <text class="basic1" style="margin-top: 0rpx; justify-content:center; align-items:center;">或其他结束语</text>
+  
   </view>
 </view>
 </view>
