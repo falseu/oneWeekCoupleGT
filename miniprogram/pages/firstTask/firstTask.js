@@ -111,15 +111,13 @@ Page({
     var value = e.detail.value;
     var length = parseInt(value.length);
 
-    if (length > this.data.noteMaxLen) {
-      wx.showModal({
-        title: '错误', content: '字数超过规定值', showCancel: false
-      })
+    if (length > this.data.max) {
       return;
     }
 
     this.setData({
       current: length,
+      text: value
     });
   },
 

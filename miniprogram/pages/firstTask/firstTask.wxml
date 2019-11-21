@@ -40,7 +40,7 @@
   </view>
   
   <view wx:if="{{upload_text==true}}" class='wrap' style="text-align:center; align-items:center;">
-    <textarea class="textarea" value="{{text}}" placeholder="请输入文字" placeholder-class="placeholder" focus="{{focus}}" maxlength='50' auto-height="{{auto-height}}" show-confirm-bar="{{show-confirm-bar}}" maxlength='100' value="{{text}}" bindinput="bindKeyInputTextInput">
+    <textarea class="textarea" value="{{text}}" placeholder="请输入文字" placeholder-class="placeholder" auto-focus maxlength="{{max}}" auto-height="{{auto-height}}" show-confirm-bar="{{show-confirm-bar}}" value="{{text}}" bindinput="bindKeyInputTextInput">
     <view class="clear" style="float: right; margin-right: 2%; margin-top: 28%">{{current}} / {{max}} (最多可写50字)</view>
     </textarea>
     <button type='primary'style='background-color: rgb(246,122,109); margin-top: 30rpx;' bindtap='uploadText'>点击提交任务</button>
