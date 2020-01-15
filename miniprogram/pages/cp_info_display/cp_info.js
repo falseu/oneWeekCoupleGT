@@ -9,7 +9,7 @@ var cp_info = undefined;
 
 Page({
   data: {
-    name: '', cpName: '', cpRate: '', taskArray: undefined, ready: false, myAvatarUrl: '', cpAvatarUrl: '', text: '任务内容', count: '0',
+    name: '', cpName: '', cpRate: '', taskArray: undefined, ready: false, myAvatarUrl: '', cpAvatarUrl: '', text: '任务内容', count: '0', cpCount: '0',
     "background": "../../images/cpback.png", 
   },
 
@@ -80,7 +80,8 @@ Page({
 
         that.setData({
           cpName: cp_info.name,
-          cpAvatarUrl: cp_info.avatarUrl
+          cpAvatarUrl: cp_info.avatarUrl,
+          cpCount: cp_info.count
         })
 
         app.globalData.cpData = res.data[0]
