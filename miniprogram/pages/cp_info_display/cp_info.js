@@ -81,8 +81,18 @@ Page({
         that.setData({
           cpName: cp_info.name,
           cpAvatarUrl: cp_info.avatarUrl,
-          cpCount: cp_info.count
+          cpCount: 0
         })
+
+        var j = 0
+        var cpTaskList = cp_info.taskImages
+
+        while (j < cpTaskList.length) {
+          that.setData({
+            cpCount: parseInt(this.data.cpCount) + 1
+          })
+          j = j + 3
+        }
 
         app.globalData.cpData = res.data[0]
         console.log(globalData.cpData)
@@ -114,6 +124,8 @@ Page({
         }
         console.log(this.data.taskArray)
         wx.hideLoading()
+        console.log(this.data.count)
+        console.log(this.data.cpCount)
       },
     )
   },
@@ -139,17 +151,41 @@ Page({
         // Change the color of button if the task is finished
         var taskInfo = res.data[0].taskImages
         var i = 0
+        that.setData({
+          count: 0
+        })
         while (i < taskInfo.length) {
           that.data.taskArray[taskInfo[i]].color = "rgb(241, 240, 240)"
           that.data.taskArray[taskInfo[i]].done = true
+          // count should ++
           that.setData({
-            taskArray: that.data.taskArray,
-            count: 0,
+            count: parseInt(this.data.count) + 1,
           })
           i = i + 3
         }
         console.log(that.data.taskArray)
-        that.onLoad()
+
+        db.collection('user').where({
+          _openid: cp_info._openid
+        }).get().then(
+          res =>{
+            console.log(res.data)
+            cp_info = res.data[0]
+            that.setData({
+              cpCount: 0
+            })
+            var j = 0
+            var cpTaskInfo = res.data[0].taskImages
+            while (j < cpTaskInfo.length) {
+              that.setData({
+                cpCount: parseInt(this.data.cpCount) + 1
+              })
+              j = j + 3
+            }
+            console.log(that.data.cpCount)
+            that.onLoad()
+          }
+        )
       }
     )
   },
