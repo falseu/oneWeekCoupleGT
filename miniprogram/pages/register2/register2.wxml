@@ -19,21 +19,21 @@
   <view class='wrap'>
   <text class='h2'>年龄 (例如20到22) \r\n</text>
   <input class="placeholderLeft" placeholder="" value="{{expectedAgeLowerBound}}" bindinput="bindKeyInputExpectedAgeLowerBound" />
-  <input class='placeholderMiddle' placeholder="到"></input>
+  <input class='placeholderMiddle' placeholder="到" disabled="false"></input>
   <input class='placeholderRight' value="{{expectedAgeUpperBound}}" bindinput="bindKeyInputExpectedAgeUpperBound"></input>
   </view>
 
   <view class='wrap'>
   <text class='h2'>身高 厘米(例如170到180)\r\n</text>
   <input class="placeholderLeft" placeholder="" value="{{expectedHeightLowerBound}}" bindinput="bindKeyInputExpectedHeightLowerBound" />
-  <input class='placeholderMiddle' placeholder="到"></input>
+  <input class='placeholderMiddle' placeholder="到" disabled="false"></input>
   <input class='placeholderRight' value="{{expectedHeightUpperBound}}" bindinput="bindKeyInputExpectedHeightUpperBound"></input>
   </view>
 
   <view class='wrap'>
   <text class='h2'>体重 公斤(例如50到60)\r\n</text>
   <input class="placeholderLeft" placeholder="" value="{{expectedWeightLowerBound}}" bindinput="bindKeyInputExpectedWeightLowerBound" />
-  <input class='placeholderMiddle' placeholder="到"></input>
+  <input class='placeholderMiddle' placeholder="到" disabled="false"></input>
   <input class='placeholderRight' value="{{expectedWeightUpperBound}}" bindinput="bindKeyInputExpectedWeightUpperBound"></input>
   </view>
   </view>
