@@ -86,6 +86,8 @@
       - firstTask.uploadImage, 更新本地的taskImage信息
   - app.globalData.openid
 
+# 需要更改的数据
+
 
 - 上传云函数
   - 安装node.js到本地，网址：nodejs.org/en
