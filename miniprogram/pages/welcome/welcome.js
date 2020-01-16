@@ -2,6 +2,7 @@
 
 const app = getApp()
 var util = require('../../utils/utils.js');
+const db = wx.cloud.database()
 
 Page({
 
@@ -31,79 +32,132 @@ Page({
     var month = parseInt(time.substring(5, 7))
     var date = parseInt(time.substring(8, 10))
 
+    var count = 0
     // user cannot update user info after deadline
     app.checkEditStandardDeadline()
+    // exports.main = async (event, context) => {
+    //   return await db.collection('user').where({
+        
+    //   }).count()
+    // }
 
-    // TODO: change this deadline for register.
-    if (month > app.globalData.register_deadline_month || (month >= app.globalData.register_deadline_month && date > app.globalData.register_deadline_date)) {
-      wx.reLaunch({
-        url: '../cantRegister/cantRegister',
-      })
 
-    // change this deadline for end of activities
-    } else if (month > app.globalData.activity_deadline_month || (month >= app.globalData.register_deadline_month && date > app.globalData.register_deadline_date + 7)) {
-      wx.reLaunch({
-        url: '../ba/ba',
-      })
-    } else {
+    // wx.cloud.callFunction({
+    //   name: 'countTotalUser', data: {}, success: res => {
+    //     console.log(count)
+    //     count = res.result
+    //     // that.db = wx.cloud.database()
+    //     // that.test = that.db.collection('user')
+    //     console.log(count)
+    //   }, fail: err => {
+    //     console.error('[云函数] [login] 调用失败', err)
+    //     wx.navigateTo({
+    //       url: '../deployFunctions/deployFunctions',
+    //     })
+    //   }
+    // })
+    db.collection('user').where({
+      _openid: options.id
+    }).count({
+      success: res => {
+        count = res.total
+        console.log('current user', count)
 
-    //获取数据库中user信息
-    setTimeout(function () {
-      wx.cloud.callFunction({
-        name: 'login', data: {}, success: res => {
-          console.log('[云函数] [login] user openid: ', res.result.openid)
 
-          // 初始化app.globaldata
-          app.globalData.openid = res.result.openid
 
-          const db = wx.cloud.database()
-          db.collection('user').where({
-            _openid: app.globalData.openid
+
+
+        //count is the current current user
+        if (count > 80) {
+          console.log('count > 0')
+          wx.reLaunch({
+            url: '../cantRegister/cantRegister',
           })
-            .get({
-              success: function (res) {
+          // TODO: change this deadline for register.
+        } else if (month > app.globalData.register_deadline_month || (month >= app.globalData.register_deadline_month && date > app.globalData.register_deadline_date)) {
+          wx.reLaunch({
+            url: '../cantRegister/cantRegister',
+          })
 
-                //如果user已经register, 进入index界面, 未注册进入register界面
-                if (res.data.length) {
-                  app.globalData.myData = res.data[0]
+          // change this deadline for end of activities
+        } else if (month > app.globalData.activity_deadline_month || (month >= app.globalData.register_deadline_month && date > app.globalData.register_deadline_date + 7)) {
+          wx.reLaunch({
+            url: '../cantRegister/cantRegister',
+          })
+        } else {
 
-                  // user should only update user info before deadline
-                  app.globalData.update_user_info = true
+          //获取数据库中user信息
+          setTimeout(function () {
+            wx.cloud.callFunction({
+              name: 'login', data: {}, success: res => {
+                console.log('[云函数] [login] user openid: ', res.result.openid)
 
-                  // user cannot update user info after deadline
-                  app.checkEditStandardDeadline()
+                // 初始化app.globaldata
+                app.globalData.openid = res.result.openid
 
-                  app.globalData.images = {}
-                  console.log(res.data[0])
-                  if (res.data[0].cp == '') {
-                    wx.reLaunch({
-                      url: '../user_info_display/user_info_display',
-                    })
-                  } else {
-                    wx.reLaunch({
-                      url: '../cp_info_display/cp_info',
-                      //url: '../summary/summary',
-                    })
-                  }
-                } else {
-                  that.setData({
-                    ready: true
+                const db = wx.cloud.database()
+                db.collection('user').where({
+                  _openid: app.globalData.openid
+                })
+                  .get({
+                    success: function (res) {
+
+                      //如果user已经register, 进入index界面, 未注册进入register界面
+                      if (res.data.length) {
+                        app.globalData.myData = res.data[0]
+
+                        // user should only update user info before deadline
+                        app.globalData.update_user_info = true
+
+                        // user cannot update user info after deadline
+                        app.checkEditStandardDeadline()
+
+                        app.globalData.images = {}
+                        console.log(res.data[0])
+                        if (res.data[0].cp == '') {
+                          wx.reLaunch({
+                            url: '../user_info_display/user_info_display',
+                          })
+                        } else {
+                          wx.reLaunch({
+                            url: '../cp_info_display/cp_info',
+                            //url: '../summary/summary',
+                          })
+                        }
+                      } else {
+                        that.setData({
+                          ready: true
+                        })
+                        wx.reLaunch({
+                          url: '../first_instructions/first_instructions',
+                        })
+                      }
+                    }
                   })
-                  wx.reLaunch({
-                    url: '../first_instructions/first_instructions',
-                  })
-                }
+              }, fail: err => {
+                console.error('[云函数] [login] 调用失败', err)
+                wx.navigateTo({
+                  url: '../deployFunctions/deployFunctions',
+                })
               }
             })
-        }, fail: err => {
-          console.error('[云函数] [login] 调用失败', err)
-          wx.navigateTo({
-            url: '../deployFunctions/deployFunctions',
-          })
+          }, 1500)
         }
-      })
-    }, 1500)
-    }
+
+
+
+
+
+
+
+
+
+
+      }
+    })
+
+
+
 
     //如果user没有register, 进入register页面
   },
