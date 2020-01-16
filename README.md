@@ -29,6 +29,17 @@
 - firstTask: 任务界面，根据用户点击历史显示相应的任务内容，显示/上传任务图片
 - summary: 全部任务完成，解锁summary
 
+# 云函数
+- assignCp: 用户接受邀请，两个用户成为cp
+- countTotalUser：数据库用户数量
+- deleteMessage: 删除用户收到的的某个邀请
+- deleteUser:　其他用户的列表中删除已经匹配的用户
+- getUserInfo: 获取用户信息
+- sendCpRequest:　用户ａ向用户ｂ发送ｃｐ邀请
+- sendEmail: 发送验证邮件
+- uploadTaskImage: 上传任务图片
+- uploadTaskText:　上传任务文字
+
 # 数据库结构
 - 云端数据库 env: owcp-gt
   - user:
