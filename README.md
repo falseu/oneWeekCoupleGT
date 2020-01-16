@@ -29,6 +29,17 @@
 - firstTask: 任务界面，根据用户点击历史显示相应的任务内容，显示/上传任务图片
 - summary: 全部任务完成，解锁summary
 
+# 云函数
+- assignCp: 用户接受邀请，两个用户成为cp
+- countTotalUser：数据库用户数量
+- deleteMessage: 删除用户收到的的某个邀请
+- deleteUser:　其他用户的列表中删除已经匹配的用户
+- getUserInfo: 获取用户信息
+- sendCpRequest:　用户ａ向用户ｂ发送ｃｐ邀请
+- sendEmail: 发送验证邮件
+- uploadTaskImage: 上传任务图片
+- uploadTaskText:　上传任务文字
+
 # 数据库结构
 - 云端数据库 env: owcp-gt
   - user:
@@ -58,6 +69,15 @@
     - avatarUrl: 头像url
     - image_uploader: 做任务的时候，上传照片的人（1 per cp）
 
+  - task:
+    - description: 任务介绍 (string)
+    - extra_description: 任务介绍二 (string)
+    - image: 上传照片 (boolean)
+    - reminder_text:　任务完成条件 (string)
+    - summary: 任务标题 (string)
+    - text: 上传文字 (boolean)
+    - title: 任务编号 (string)
+
 - 本地数据库
 	- app.globalData.myData: 数据库的user信息
 		- 更新时间：
@@ -66,6 +86,14 @@
       - firstTask.uploadImage, 更新本地的taskImage信息
   - app.globalData.openid
 
+# 需要更改的数据
+  - app.globalData.
+    - edit_standard_deadline_month: 可以更改标cp标准deadline月份
+    - edit_standard_deadline_date: 可以更改cp标准deadline日
+    - register_deadline_month: 注册deadline月份
+    - register_deadline_date: 注册deadline日
+    - activity_deadline_month: 整个活动deadline月份
+    - activity_deadline_date：整个活动deadline日
 
 - 上传云函数
   - 安装node.js到本地，网址：nodejs.org/en
