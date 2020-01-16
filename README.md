@@ -13,13 +13,21 @@
 - https://share.proto.io/DTZHCD/
 
 # Pages结构
-- welcome: 初始界面，判断用户是否注册
+- welcome: 初始界面，判断人数是否超过上限，用户是否注册
+- first_instructions: 未注册用户第一页，一周cp简介
+- email_verify: 邮箱验证第一页
+- email_verify_2: 邮箱验证第二页
 - register: 修改用户本人的信息
 - register2: 修改用户对TA的要求的信息
-- user_info_display: 没有CP时，显示本人信息
+- user_info_display: 显示本人信息
+- selectCp: 选择cp
+- other_user_info: 其他用户的信息，发送邀请
+- messages: 消息管理，接受/拒绝邀请
+- cantRegister: 
+- cp_info_final: 有CP时，点击对方头像查看CP的信息
 - cp_info_display: 有CP时，显示本人和TA的名字以及任务完成度
-- introductions：活动简介
 - firstTask: 任务界面，根据用户点击历史显示相应的任务内容，显示/上传任务图片
+- summary: 全部任务完成，解锁summary
 
 # 数据库结构
 - 云端数据库 env: owcp-gt
@@ -45,7 +53,7 @@
       - export database json file to /db_manipulation, run db_manipulation/calculate_match_rate.py, import output.json to database
     - cp: 用户的cp的openid
     - cp_rate: 用户和cp的匹配度
-    - taskImages: [tasknumber, imageUrl]
+    - taskImages: [tasknumber, imageUrl/text, time]
     - wechatId: 微信号 (加好友用)
     - avatarUrl: 头像url
     - image_uploader: 做任务的时候，上传照片的人（1 per cp）
