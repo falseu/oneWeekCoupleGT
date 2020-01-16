@@ -35,37 +35,13 @@ Page({
     var count = 0
     // user cannot update user info after deadline
     app.checkEditStandardDeadline()
-    // exports.main = async (event, context) => {
-    //   return await db.collection('user').where({
-        
-    //   }).count()
-    // }
 
-
-    // wx.cloud.callFunction({
-    //   name: 'countTotalUser', data: {}, success: res => {
-    //     console.log(count)
-    //     count = res.result
-    //     // that.db = wx.cloud.database()
-    //     // that.test = that.db.collection('user')
-    //     console.log(count)
-    //   }, fail: err => {
-    //     console.error('[云函数] [login] 调用失败', err)
-    //     wx.navigateTo({
-    //       url: '../deployFunctions/deployFunctions',
-    //     })
-    //   }
-    // })
     db.collection('user').where({
       _openid: options.id
     }).count({
       success: res => {
         count = res.total
         console.log('current user', count)
-
-
-
-
 
         //count is the current current user
         if (count > 80) {
@@ -143,15 +119,7 @@ Page({
             })
           }, 1500)
         }
-
-
-
-
-
-
-
-
-
+        
 
       }
     })
