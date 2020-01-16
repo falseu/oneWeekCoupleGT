@@ -60,7 +60,7 @@ Page({
     var index = 0;
     var new_array_2 = [];
     var new_array_3 = [];
-    while (index < 4) {
+    while (index < parseInt(this.data.cpTaskImagesArray.length / 3)) {
       for (i = 0; i < this.data.cpTaskImagesArray.length; i = i + 3) {
         if (parseInt(this.data.cpTaskImagesArray[i]) == index) {
           new_array_2.push(this.data.cpTaskImagesArray[i + 1]);
