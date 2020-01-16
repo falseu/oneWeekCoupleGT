@@ -10,7 +10,7 @@ function countDown(that, time) {
   }
 
   that.setData({
-    count: time + "秒"
+    count: time
   })
   var second = setTimeout(function () {
     time = time - 1
