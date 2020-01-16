@@ -26,7 +26,7 @@
   <view>
     <image style = "width:650rpx; height: 97.5rpx; top:-20rpx; left:50rpx;" src=    "../../images/progress_0.png" wx:if="{{count==0}}"> </image>
     <image style = "width:650rpx; height: 97.5rpx; top:-20rpx; left:50rpx;" src=    "../../images/progress_25.png" wx:if="{{count==1 || count==2}}"> </image>
-      <image style = "width:650rpx; height: 97.5rpx; top:-20rpx; left:50rpx;" src=    "../../images/progress_50.png" wx:if="{{count==2 || count==4}}"> </image>
+      <image style = "width:650rpx; height: 97.5rpx; top:-20rpx; left:50rpx;" src=    "../../images/progress_50.png" wx:if="{{count==3 || count==4}}"> </image>
   <image style = "width:650rpx; height: 97.5rpx; top:-20rpx; left:50rpx;" src=    "../../images/progress_75.png" wx:if="{{count==5 || count==6}}"> </image>
     <image style = "width:650rpx; height: 97.5rpx; top:-20rpx; left:50rpx;" src=    "../../images/progress_100.png" wx:if="{{count==7}}"> </image>
   </view>

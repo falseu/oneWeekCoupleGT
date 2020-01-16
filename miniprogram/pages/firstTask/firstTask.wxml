@@ -15,7 +15,7 @@
   </view>
 
   <view class='wrap' style="text-align:center; align-items:center;">
-    <text> {{description}} \r\n\n {{extra_description}} \r\n\n {{reminder_text}} \r\n\n </text>
+    <text> {{description}} \r\n\n {{extra_description}} \r\n\n {{reminder_text}} \r\n </text>
     <text wx:if="{{upload_image==true}}"> 请{{image_uploader}}上传照片 </text>
   </view>
   
