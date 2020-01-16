@@ -14,11 +14,11 @@
   </view>
 
   <view wx:if="{{can_send}}" class="right">
-  <button type="primary" style="width: 150rpx; height: 72rpx; margin-top: -78rpx; background-color: rgb(246,122,109)" bindtap="resend">重发</button>
+  <button type="primary" style="width: 150rpx; height: 72rpx; margin-top: -78rpx; background-color: rgb(246,122,109)" bindtap="resend"><text style="position: relative; top:-8rpx;">重发</text></button>
   </view>
 
   <view wx:if="{{can_send==false}}" class="right">
-  <button type="primary" style="width: 150rpx; height: 72rpx; margin-top: -78rpx; background-color: rgb(246,122,109)" bindtap="resend">{{count}}</button>
+  <button type="primary" style="width: 150rpx; height: 72rpx; margin-top: -78rpx; background-color: rgb(246,122,109)" bindtap="resend"><text style="position:relative; top:-8rpx;">{{count}}</text></button>
   </view>
 
   <view>
