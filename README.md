@@ -69,6 +69,15 @@
     - avatarUrl: 头像url
     - image_uploader: 做任务的时候，上传照片的人（1 per cp）
 
+  - task:
+    - description: 任务介绍 (string)
+    - extra_description: 任务介绍二 (string)
+    - image: 上传照片 (boolean)
+    - reminder_text:　任务完成条件 (string)
+    - summary: 任务标题 (string)
+    - text: 上传文字 (boolean)
+    - title: 任务编号 (string)
+
 - 本地数据库
 	- app.globalData.myData: 数据库的user信息
 		- 更新时间：
