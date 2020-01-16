@@ -20,8 +20,8 @@ Page({
     console.log(e.detail)
     app.globalData.avatarUrl = e.detail.userInfo.avatarUrl
     console.log(e.detail.userInfo.avatarUrl)
-    wx.reLaunch({
-      url: '../register/register',
+    wx.navigateTo({
+      url: '../email_verify/email_verify',
     })
   },
 

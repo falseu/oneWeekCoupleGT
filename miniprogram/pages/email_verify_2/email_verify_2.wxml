@@ -10,11 +10,15 @@
   </view>
 
   <view class="left">
-  <input class="placeholder" style="margin-top:120rpx; margin-left:100rpx;" placeholder="" value="{{email}}" bindinput="bindKeyInputEmail" />
+  <input class="placeholder" style="margin-top:120rpx; margin-left:100rpx;" placeholder="" value="{{email}}" bindinput="bindKeyInputCode" />
   </view>
 
-  <view class="right">
+  <view wx:if="{{can_send}}" class="right">
   <button type="primary" style="width: 150rpx; height: 72rpx; margin-top: -78rpx; background-color: rgb(246,122,109)" bindtap="resend">重发</button>
+  </view>
+
+  <view wx:if="{{can_send==false}}" class="right">
+  <button type="primary" style="width: 150rpx; height: 72rpx; margin-top: -78rpx; background-color: rgb(246,122,109)" bindtap="resend">{{count}}</button>
   </view>
 
   <view>
