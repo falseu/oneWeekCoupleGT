@@ -5,33 +5,30 @@
   <view class = "white">
   </view>
 
-  <text class='h1'> {{title}} </text>
+  <text class='h1'> {{summary}} </text>
 
   <view class = "white">
   </view>
 
-
   <image style = "height:15rpx; width:570rpx; left:12%" src = "../../images/line.png"></image>
-  <view class = "white">
+  <view class = "white2">
   </view>
 
   <view class='wrap' style="text-align:center; align-items:center;">
-    <text> {{description}} \r\n</text>
+    <text> {{description}} \r\n\n {{extra_description}} \r\n\n {{reminder_text}} \r\n\n </text>
     <text wx:if="{{upload_image==true}}"> 请{{image_uploader}}上传照片 </text>
   </view>
-  <view class = "white">
-  </view>
-  <view class = "white">
-  </view>
+  
 
   <image style = "height:15rpx; width:570rpx; left:12%" src = "../../images/line.png"></image>
+
+  <view class = "white2">
+  </view>
 
   <view wx:if="{{finished_image==true}}" class='wrap' style="text-align:center; align-items:center;">
   <image class="widget__arrow" src="{{imageUrl}}" mode="aspectFill">
   </image>
   </view>
-
-
 
   <view wx:if="{{upload_image_button==true}}" class='wrap' style="text-align:center; align-items:center;">
     <button type='primary'style="margin-top: 30rpx; background-color: rgb(246,122,109)" bindtap='uploadPhoto'>
@@ -40,7 +37,7 @@
   </view>
   
   <view wx:if="{{upload_text==true}}" class='wrap' style="text-align:center; align-items:center;">
-    <textarea class="textarea" value="{{text}}" placeholder="请输入文字" placeholder-class="placeholder" auto-focus maxlength="{{max}}" auto-height="{{auto-height}}" show-confirm-bar="{{show-confirm-bar}}" value="{{text}}" bindinput="bindKeyInputTextInput">
+    <textarea class="textarea" value="{{text}} " placeholder="请输入文字" placeholder-class="placeholder" auto-focus maxlength="{{max}}" auto-height="{{auto-height}}" show-confirm-bar="{{show-confirm-bar}}" value="{{text}}" bindinput="bindKeyInputTextInput">
     <view class="clear" style="float: right; margin-right: 2%; margin-top: 28%">{{current}} / {{max}} (最多可写50字)</view>
     </textarea>
     <button type='primary'style='background-color: rgb(246,122,109); margin-top: 30rpx;' bindtap='uploadText'>点击提交任务</button>

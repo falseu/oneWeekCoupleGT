@@ -46,5 +46,5 @@
   </view>
   
 </view>
-<button type="primary" style="width: 550rpx; margin-left:100rpx; margin-top: 30rpx; background-color: rgb(246,122,109)" wx:if="{{count==4 && cpCount==4}}" bindtap="buttonPressed">进入一周CP回顾</button>
+<button type="primary" style="width: 550rpx; margin-left:100rpx; margin-top: 30rpx; background-color: rgb(246,122,109)" wx:if="{{count==7 && cpCount==7}}" bindtap="buttonPressed">进入一周CP回顾</button>
 </view>

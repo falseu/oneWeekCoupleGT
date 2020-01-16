@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    task: undefined, title: '', description: '', imageUrl: '', finished_image: false, upload_image: false, ready: false, image_uploader: '', upload_text: false, text: '', finished_text: false, upload_text: false, upload_image_button: false, current: 0, max: 50
+    task: undefined, title: '', description: '', imageUrl: '', finished_image: false, upload_image: false, ready: false, image_uploader: '', upload_text: false, text: '', finished_text: false, upload_text: false, upload_image_button: false, current: 0, max: 50, extra_description: '', reminder_text: '', summary: '',
   },
 
   /**
@@ -23,7 +23,10 @@ Page({
     this.setData({
       title: this.task.title,
       description: this.task.description,
-      image_uploader: this.image_uploader
+      image_uploader: this.image_uploader,
+      extra_description: this.task.extra_description,
+      reminder_text: this.task.reminder_text,
+      summary: this.task.summary,
     })
     this.upload_text = this.task.text
     this.upload_image = this.task.image
