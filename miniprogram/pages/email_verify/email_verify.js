@@ -6,7 +6,7 @@ Page({
    * Page initial data
    */
   data: {
-    email_address: undefined, list: [712974, 255089, 202204, 206761, 795864, 463840, 124397, 238487, 660739, 903137]
+    email_address: undefined, list: [712974, 255089, 202204, 598041, 795864, 463840, 124397, 238487, 660739, 903137, 748395, 562199, 432096, 367921, 887693, 932154, 347721, 186943, 130584, 336741 ]
   },
 
   /**
@@ -25,7 +25,7 @@ Page({
       })
       return
     }
-    var index = parseInt(Math.random() * 10)
+    var index = parseInt(Math.random() * 20)
     var password = this.data.list[index]
     console.log(password)
     wx.showLoading({

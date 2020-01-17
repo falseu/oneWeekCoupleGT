@@ -105,6 +105,7 @@ Page({
                           title: '匹配成功',
                           success: () => {
                             app.globalData.refresh_cp_info = true
+                            app.globalData.myData.cp = target.openid
                             setTimeout(function () {
                               wx.reLaunch({
                                 url: '../cp_info_display/cp_info',

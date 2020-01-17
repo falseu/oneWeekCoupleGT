@@ -51,7 +51,8 @@ Page({  /**
       weight: app.globalData.myData.weight,
       height: app.globalData.myData.height,
       wechatId: app.globalData.myData.wechatId,
-      avatarUrl: app.globalData.avatarUrl
+      avatarUrl: app.globalData.avatarUrl,
+      openid: app.globalData.openid
     })
     var that = this
     //  调用login云函数获取openid

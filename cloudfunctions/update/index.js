@@ -1,4 +1,3 @@
-
 const cloud = require('wx-server-sdk')
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
@@ -8,9 +7,10 @@ const _ = db.command
 
 exports.main = async (event, context) => {
   try {
-    oopenid: event.openid;
+    //oopenid: event.openid;
+    console.log(event.expectedAgeUpperBound)
     return await db.collection('user').where({
-      _openid: event.openid
+      _openid: _.eq(event.openid)
     })
       .update({
         data: {

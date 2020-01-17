@@ -24,7 +24,7 @@ Page({
    * Page initial data
    */
   data: {
-    count: '', can_send: false, code: undefined, list: [712974,255089,202204,206761,795864,463840,124397,238487,660739,903137]
+    count: '', can_send: false, code: undefined, list: [712974, 255089, 202204, 598041, 795864, 463840, 124397, 238487, 660739, 903137, 748395, 562199, 432096, 367921, 887693, 932154, 347721, 186943, 130584, 336741]
   },
 
   /**
@@ -68,7 +68,7 @@ Page({
     wx.showLoading({
       title: '发送中',
     })
-    var index = parseInt(Math.random() * 10)
+    var index = parseInt(Math.random() * 20)
     var password = this.data.list[index]
     wx.cloud.callFunction({
       name: "sendEmail",

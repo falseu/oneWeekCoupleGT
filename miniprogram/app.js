@@ -1,7 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
-    
+       
     //TODO: edit these deadline
     this.globalData = {
       showEditButton:true,

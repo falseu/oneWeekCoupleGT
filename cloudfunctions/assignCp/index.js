@@ -8,7 +8,7 @@ const _ = db.command
 
 exports.main = async (event, context) => {
   try {
-    return await db.collection('user').where({
+    return await db.collection('user').where({   
       _openid: _.eq(event.myid)
     })
       .update({
