@@ -1,247 +1,93 @@
 {
-  "_id": "7d44a8205dd484fe018ae172426c2560",
-  "expectedHeightLowerBound": 175.0,
-  "name": "陈盛康",
-  "homeTown": "佛山",
-  "image_uploader": "杨程凯",
-  "taskImages": [],
-  "requests": [
-    {
-      "avatar": "https://wx.qlogo.cn/mmopen/vi_32/KHdD5nYzLBAibq5jycX1XddjePy4iafukk1AWaas5Tag0ywZYWO5C1IXjwuoibOoJ5EYEbRs3QUsHyN7wtZFAZu3g/132",
-      "name": "王百川",
-      "openid": "oOEx85cLIKxy_Hs7hMJIPlW2_-uY",
-      "time": "11/19/2019, 7:31:03 PM"
-    },
-    {
-      "name": "Frank",
-      "openid": "oOEx85SSOfAaidacYtvmUoqxwNe4",
-      "time": "11/19/2019, 7:30:46 PM",
-      "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJ2OAQ9FiatF3ibgyYw8yfZwwibbZTlj4U8NVS3JCW5eHNxiazJick4GxmGtZNY3iaJnfa2CcnPMSEhpaNg/132"
-    },
-    {
-      "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJfoY0dTdZiconPWbVcATC2V7xbVnXFq5GHfqPz4txaqqL597ofRicRYYFvtJmZIL5oicYte2mCD5YtQ/132",
-      "name": "Cody",
-      "openid": "oOEx85SFvIxKntWfG-0o7nRpn21c",
-      "time": "11/19/2019, 7:27:38 PM"
-    }
-  ],
-  "wechatId": "billyskc",
-  "gender": "男",
-  "height": 178.0,
-  "grade": "博一",
-  "cp_rate": 55,
-  "_openid": "oOEx85aArRD-FP18WFxfVRIo_Vek",
-  "hobbies": "锻炼",
-  "expectedAgeUpperBound": 21.0,
-  "avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/FCCaqviaPVpdNybjGzvqsEVq8Cib1YqVqLs1LTsdEgVBwwpWGcJicMVN71AS8Jg7VWibVNKaiadwO9dkeUV0FIVaevw/132",
-  "constellations": "白羊",
-  "expectedAgeLowerBound": 18.0,
-  "match": {
-    "王百川": 0,
-    "杨程凯": 55,
-    "小苏打": 25
-  },
-  "selfIntro": "hi",
-  "age": 26.0,
-  "weight": 72.0,
-  "merits": [
-    "性格",
-    "聪明",
-    "情商"
-  ],
-  "cp": "oOEx85VhS6HKoo-4woNpgp38QcD4",
-  "expectedWeightLowerBound": 50.0,
-  "expectedHeightUpperBound": 195.0,
-  "expectedWeightUpperBound": 70.0,
-  "major": "ece",
-  "expectedMerits": [
-    "责任感",
-    "聪明",
-    "情商"
-  ],
-  "expectedGender": "男",
-  "cp_name": "杨程凯"
-}{
-  "_id": "7d44a8205dd487a0018b50560f2f1a0c",
-  "expectedAgeUpperBound": 100.0,
-  "cp_rate": 0,
-  "expectedWeightUpperBound": 60.0,
-  "wechatId": "b",
-  "grade": "大二",
-  "weight": 65.0,
-  "expectedHeightUpperBound": 180.0,
-  "expectedMerits": [
-    "性格",
-    "聪明",
-    "情商"
-  ],
-  "image_uploader": "小苏打",
-  "taskImages": [],
-  "match": {
-    "陈盛康": 0,
-    "杨程凯": 0,
-    "小苏打": 0
-  },
-  "major": "mse",
-  "requests": [
-    {
-      "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKtbmW4uR85sUIe5xiafE1ibzqibdE5ibHEBfN9Hrk7sUMRjMzfRYzRXdgV1K5ngkRsYUJyEhHsXlPLQw/132",
-      "name": "蔡雨䶮",
-      "openid": "oOEx85bbyQ6Iqa3hy3bn2ngsT55E",
-      "time": "11/19/2019, 7:33:47 PM"
-    },
-    {
-      "name": "美羊羊",
-      "openid": "oOEx85XFsp9x0ZbcjNMb6Lq_WrUs",
-      "time": "11/19/2019, 7:28:00 PM",
-      "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKwXgBI8iaKWnwARYBbOfxfNbObvYLiaPXdgs9a9NsSq4NYibetX8f6LgoPiafRpJAZ5t4PnFIapHhYyQ/132"
-    }
-  ],
-  "expectedHeightLowerBound": 150.0,
-  "expectedWeightLowerBound": 40.0,
-  "age": 19.0,
-  "selfIntro": "哈哈哈哈哈",
-  "merits": [
-    "性格",
-    "责任感",
-    "经济条件"
-  ],
-  "avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/KHdD5nYzLBAibq5jycX1XddjePy4iafukk1AWaas5Tag0ywZYWO5C1IXjwuoibOoJ5EYEbRs3QUsHyN7wtZFAZu3g/132",
-  "height": 181.0,
-  "_openid": "oOEx85cLIKxy_Hs7hMJIPlW2_-uY",
-  "hobbies": "看剧",
-  "constellations": "白羊",
-  "gender": "男",
-  "homeTown": "上海",
-  "name": "王百川",
-  "expectedAgeLowerBound": 1.0,
-  "expectedGender": "女",
-  "cp": "oOEx85RmlItwCm0zr6-Ow0Yvihf4",
-  "cp_name": "小苏打"
-}{
-  "_id": "fe42f4e05dd484cc018cb2db2992cb6d",
-  "age": 20.0,
-  "hobbies": "敲代码",
-  "major": "cs",
-  "constellations": "双鱼",
-  "expectedGender": "男",
-  "match": {
-    "陈盛康": 55,
-    "王百川": 0,
-    "小苏打": 50
-  },
-  "selfIntro": "123",
-  "expectedHeightUpperBound": 195.0,
-  "expectedWeightLowerBound": 50.0,
-  "expectedAgeUpperBound": 21.0,
-  "grade": "大三",
-  "merits": [
-    "颜值",
-    "性格",
-    "聪明"
-  ],
-  "taskImages": [],
-  "_openid": "oOEx85VhS6HKoo-4woNpgp38QcD4",
-  "name": "杨程凯",
-  "wechatId": "coinonly",
-  "expectedAgeLowerBound": 18.0,
-  "expectedHeightLowerBound": 175.0,
-  "expectedWeightUpperBound": 70.0,
-  "image_uploader": "杨程凯",
-  "cp": "oOEx85aArRD-FP18WFxfVRIo_Vek",
-  "homeTown": "上海",
-  "requests": [
-    {
-      "name": "Lisa",
-      "openid": "oOEx85av_KPygC8tlqanxifA2TpI",
-      "time": "11/19/2019, 7:31:08 PM",
-      "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIibHplsbM8iao3elpZ3BzmELnTyEEEq0d7OchNNuhhTDnAoIledrMYlVIzib1KjO4swOnchCYLnzUIw/132"
-    },
-    {
-      "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJ2OAQ9FiatF3ibgyYw8yfZwwibbZTlj4U8NVS3JCW5eHNxiazJick4GxmGtZNY3iaJnfa2CcnPMSEhpaNg/132",
-      "name": "Frank",
-      "openid": "oOEx85SSOfAaidacYtvmUoqxwNe4",
-      "time": "11/19/2019, 7:29:52 PM"
-    },
-    {
-      "openid": "oOEx85XFsp9x0ZbcjNMb6Lq_WrUs",
-      "time": "11/19/2019, 7:28:21 PM",
-      "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKwXgBI8iaKWnwARYBbOfxfNbObvYLiaPXdgs9a9NsSq4NYibetX8f6LgoPiafRpJAZ5t4PnFIapHhYyQ/132",
-      "name": "美羊羊"
-    },
-    {
-      "avatar": "https://wx.qlogo.cn/mmopen/vi_32/FCCaqviaPVpdNybjGzvqsEVq8Cib1YqVqLs1LTsdEgVBwwpWGcJicMVN71AS8Jg7VWibVNKaiadwO9dkeUV0FIVaevw/132",
-      "name": "陈盛康",
-      "openid": "oOEx85aArRD-FP18WFxfVRIo_Vek",
-      "time": "11/19/2019, 7:27:36 PM"
-    }
-  ],
-  "weight": 57.0,
-  "expectedMerits": [
-    "责任感",
-    "聪明",
-    "情商"
-  ],
-  "cp_rate": 55,
-  "gender": "男",
-  "height": 170.0,
-  "avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJKkThulMFj6EfOqY66NCDDdyWlNGXpsFhibKf7gXXwvSBU37rvoKb83LDeyf2ASGYrU1bzPY1gSgg/132",
-  "cp_name": "陈盛康"
-}{
-  "_id": "fe42f4e05dd4878a018d263409a0f67f",
-  "cp": "oOEx85cLIKxy_Hs7hMJIPlW2_-uY",
-  "homeTown": "来来来",
-  "name": "小苏打",
-  "expectedWeightLowerBound": 50.0,
-  "expectedGender": "男",
-  "hobbies": "没有",
-  "major": "八点半计算机",
-  "selfIntro": "啊哈哈哈哈",
+  "_id": "d68532785e20f40202a629092508a925",
+  "image_uploader": "",
   "grade": "大一",
-  "gender": "男",
+  "height": 172.0,
+  "hobbies": "篮球 古风 桌游",
+  "expectedHeightUpperBound": 195.0,
+  "merits": [
+    "性格",
+    "责任感",
+    "情商"
+  ],
+  "taskImages": [],
+  "expectedWeightLowerBound": 50.0,
+  "cp": "",
+  "gender": "女",
+  "expectedWeightUpperBound": 70.0,
+  "constellations": "双子座",
+  "expectedGender": "男",
+  "name": "高瑞仪",
+  "major": "Computer Science",
+  "homeTown": "吉林长春",
+  "weight": 50.0,
+  "cp_rate": -1.0,
+  "expectedAgeLowerBound": 18.0,
+  "expectedMerits": [
+    "责任感",
+    "聪明",
+    "情商"
+  ],
+  "requests": [],
+  "expectedHeightLowerBound": 170.0,
+  "wechatId": "gry20010601",
+  "match": [
+    {
+      "rate": 30,
+      "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJKkThulMFj6EfOqY66NCDDdyWlNGXpsFhibKf7gXXwvSBU37rvoKb83FQO9hXPOBLJmTMwnjG2dpw/132",
+      "openid": "oOEx85VhS6HKoo-4woNpgp38QcD4",
+      "name": "杨程凯"
+    }
+  ],
+  "avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/CCMqKBZEjcJnCmoQlMPmtsmpdDPSicoTJJoySduN8TJhhuT1hCfsu1nQs7O1ow0OBicZfCwmnhBlicaHNQMj83Oibg/132",
+  "expectedAgeUpperBound": 22.0,
+  "age": 18.0,
+  "_openid": "oOEx85RD0yW7aS_-f9YOOxyr9xSM",
+  "selfIntro": "这是我的自我介绍 这是我的自我介绍 这是我的自我介绍 这是我的自我介绍 这是我的自我介绍"
+}{
+  "_id": "d9ea35c25e20f3d102a5bbbe564c55ba",
+  "homeTown": "1",
+  "requests": [],
+  "expectedAgeUpperBound": 21.0,
+  "major": "1",
+  "age": 20.0,
+  "avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJKkThulMFj6EfOqY66NCDDdyWlNGXpsFhibKf7gXXwvSBU37rvoKb83FQO9hXPOBLJmTMwnjG2dpw/132",
+  "cp": "",
+  "expectedWeightLowerBound": 10.0,
+  "hobbies": "1",
+  "name": "杨程凯",
+  "match": [
+    {
+      "rate": 30,
+      "avatar": "https://wx.qlogo.cn/mmopen/vi_32/CCMqKBZEjcJnCmoQlMPmtsmpdDPSicoTJJoySduN8TJhhuT1hCfsu1nQs7O1ow0OBicZfCwmnhBlicaHNQMj83Oibg/132",
+      "openid": "oOEx85RD0yW7aS_-f9YOOxyr9xSM",
+      "name": "高瑞仪"
+    }
+  ],
+  "image_uploader": "",
+  "taskImages": [],
+  "height": 1.0,
   "merits": [
     "颜值",
     "责任感",
     "经济条件"
   ],
-  "cp_rate": 0,
-  "weight": 100.0,
-  "image_uploader": "小苏打",
+  "expectedHeightUpperBound": 22.0,
+  "expectedWeightUpperBound": 40.0,
+  "weight": 1.0,
+  "selfIntro": "1",
+  "expectedHeightLowerBound": 18.0,
+  "_openid": "oOEx85VhS6HKoo-4woNpgp38QcD4",
+  "expectedGender": "女",
+  "constellations": "1",
   "expectedMerits": [
     "颜值",
     "责任感",
     "经济条件"
   ],
-  "expectedWeightUpperBound": 60.0,
-  "_openid": "oOEx85RmlItwCm0zr6-Ow0Yvihf4",
-  "height": 200.0,
-  "match": {
-    "陈盛康": 25,
-    "王百川": 0,
-    "杨程凯": 50
-  },
-  "expectedHeightLowerBound": 170.0,
+  "cp_rate": -1.0,
   "expectedAgeLowerBound": 20.0,
-  "expectedHeightUpperBound": 180.0,
-  "expectedAgeUpperBound": 22.0,
-  "wechatId": "abd",
-  "constellations": "哈哈哈",
-  "taskImages": [],
-  "age": 12.0,
-  "requests": [
-    {
-      "openid": "oOEx85SSOfAaidacYtvmUoqxwNe4",
-      "time": "11/19/2019, 7:31:05 PM",
-      "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJ2OAQ9FiatF3ibgyYw8yfZwwibbZTlj4U8NVS3JCW5eHNxiazJick4GxmGtZNY3iaJnfa2CcnPMSEhpaNg/132",
-      "name": "Frank"
-    },
-    {
-      "time": "11/19/2019, 7:30:20 PM",
-      "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIibHplsbM8iao3elpZ3BzmELnTyEEEq0d7OchNNuhhTDnAoIledrMYlVIzib1KjO4swOnchCYLnzUIw/132",
-      "name": "Lisa",
-      "openid": "oOEx85av_KPygC8tlqanxifA2TpI"
-    }
-  ],
-  "avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLxhWB0kkS0x1wCbGj8qb4WqmPL20SCqZmwc36qnMicWaXmLVVCP7vYXbqY2MKVJ4afI6r1lsviaovg/132",
-  "cp_name": "王百川"
+  "grade": "大三",
+  "gender": "男",
+  "wechatId": "coinonly"
 }
