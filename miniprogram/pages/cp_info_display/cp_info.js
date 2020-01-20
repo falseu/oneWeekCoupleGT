@@ -9,7 +9,7 @@ var cp_info = undefined;
 
 Page({
   data: {
-    name: '', cpName: '', cpRate: '', taskArray: undefined, ready: false, myAvatarUrl: '', cpAvatarUrl: '', text: '任务内容', count: '0', cpCount: '0',
+    name: '', cpName: '', cpRate: '', taskArray: undefined, ready: false, myAvatarUrl: '', cpAvatarUrl: '', text: '任务内容', count: '0', cpCount: '0', totalTask: 0, 
     "background": "../../images/cpback.png", 
   },
 
@@ -104,7 +104,8 @@ Page({
       res => {
         that.setData({
           taskArray: res.data,
-          ready: true
+          ready: true,
+          totalTask: res.data.length
         })
         app.globalData.tasks = res.data
 
@@ -126,6 +127,7 @@ Page({
         wx.hideLoading()
         console.log(this.data.count)
         console.log(this.data.cpCount)
+        console.log(this.data.totalTask)
       },
     )
   },
@@ -152,7 +154,7 @@ Page({
         var taskInfo = res.data[0].taskImages
         var i = 0
         that.setData({
-          count: 0
+          count: 0,
         })
         while (i < taskInfo.length) {
           that.data.taskArray[taskInfo[i]].color = "rgb(241, 240, 240)"

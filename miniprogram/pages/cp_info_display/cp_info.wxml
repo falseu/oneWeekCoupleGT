@@ -20,16 +20,17 @@
   <text style="position:absolute;right:50rpx">{{cpName}}</text>
   </view>
 
-  <view class = "white">
+  <view class = "white" style="height:10rpx;">
   </view>
 
-  <view>
-    <image style = "width:650rpx; height: 97.5rpx; top:-20rpx; left:50rpx;" src=    "../../images/progress_0.png" wx:if="{{count==0}}"> </image>
-    <image style = "width:650rpx; height: 97.5rpx; top:-20rpx; left:50rpx;" src=    "../../images/progress_25.png" wx:if="{{count==1 || count==2}}"> </image>
-      <image style = "width:650rpx; height: 97.5rpx; top:-20rpx; left:50rpx;" src=    "../../images/progress_50.png" wx:if="{{count==3 || count==4}}"> </image>
-  <image style = "width:650rpx; height: 97.5rpx; top:-20rpx; left:50rpx;" src=    "../../images/progress_75.png" wx:if="{{count==5 || count==6}}"> </image>
-    <image style = "width:650rpx; height: 97.5rpx; top:-20rpx; left:50rpx;" src=    "../../images/progress_100.png" wx:if="{{count==7}}"> </image>
+
+  <view class="cu-progress round margin-top" style="margin-left: 100rpx;" >
+    <view class="bg-red" style="width:{{count/totalTask*100|Int}}%;" wx:if="{{count!=0}}">{{count/totalTask*100|Int}}%</view>
   </view>
+ 
+   <view class = "white">
+  </view>
+
 
   <view class = "taskblock" wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" >
   
@@ -46,5 +47,5 @@
   </view>
   
 </view>
-<button type="primary" style="width: 550rpx; margin-left:100rpx; margin-top: 30rpx; background-color: rgb(246,122,109)" wx:if="{{count==7 && cpCount==7}}" bindtap="buttonPressed">进入一周CP回顾</button>
+<button type="primary" style="width: 550rpx; margin-left:100rpx; margin-top: 30rpx; background-color: rgb(246,122,109)" wx:if="{{count == totalTask && cpCount == totalTask}}" bindtap="buttonPressed">进入一周CP回顾</button>
 </view>
