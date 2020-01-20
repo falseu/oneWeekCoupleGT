@@ -22,7 +22,7 @@
 
 
 
-  <view class="wrap" style="margin-top: 40rpx; margin-left:100rpx; justify-content:center align-items:center;" wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" >
+  <view class="wrap" style="margin-top: 40rpx; margin-left:100rpx; justify-content:center; align-items:center;" wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" >
   <image src="../../images/line.png" style="height:15rpx; width:570rpx;"></image>
   <view style="width:550rpx; height:40rpx"></view>
   <text class="basic1" decode='true'>{{itemName.title}}&nbsp;&nbsp;{{itemName.summary}}</text>

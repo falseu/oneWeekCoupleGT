@@ -25,7 +25,7 @@ Page({
     var index = 0;
     var new_array = []
     var new_array_1 = []
-    while (index < 7) {
+    while (index < this.data.taskImagesArray.length / 3) {
       for (i = 0; i < this.data.taskImagesArray.length; i = i + 3) {
         if (parseInt(this.data.taskImagesArray[i]) == index) {
           new_array.push(this.data.taskImagesArray[i + 1]);
@@ -61,7 +61,7 @@ Page({
     var index = 0;
     var new_array_2 = [];
     var new_array_3 = [];
-    while (index < 7) {
+    while (index < this.data.cpTaskImagesArray.length / 3) {
       for (i = 0; i < this.data.cpTaskImagesArray.length; i = i + 3) {
         if (parseInt(this.data.cpTaskImagesArray[i]) == index) {
           new_array_2.push(this.data.cpTaskImagesArray[i + 1]);
