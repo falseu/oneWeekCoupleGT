@@ -15,6 +15,10 @@
 
   <text class="h1">我的信息</text>
 
+  <view class="wrap">
+    <text class="h2">温馨提示：请注意您的填写真实信息，所有信息提交之后将不能修改</text>  
+  </view>
+
   <view class='wrap'>
   <text class="h2">姓名</text>
   <input class='placeholder' placeholder="请输入姓名" value="{{name}}" bindinput="bindKeyInputName" />
@@ -80,6 +84,11 @@
   <view class='wrap'>
   <text class="h2">请简单介绍下自己吧 (两到三句话即可)</text>
   <input class='placeholder' placeholder="请输入自我介绍" value="{{selfIntro}}" bindinput="bindKeyInputSelfIntro" />
+
+  <view class="wrap">
+    <text class="h2">温馨提示：请再次检查所有信息准确无误，提交之后您将不能修改自己的信息</text>
+  </view>
+
   <button type="primary" style="margin-top: 30rpx; background-color: rgb(246,122,109)" bindtap='insertData'>下一步</button>
   </view>
 
