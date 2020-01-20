@@ -30,7 +30,8 @@
  
    <view class = "white">
   </view>
-
+   <view class = "white">
+  </view>
 
   <view class = "taskblock" wx:for="{{taskArray}}" wx:for-index="idx" wx:for-item="itemName" >
   

@@ -79,7 +79,7 @@
   color: rgb(246, 122, 109); 
 }
 
-//Color UI settings
+/*Color UI settings*/
 .cu-progress {
 	overflow: hidden;
 	height: 40rpx;
@@ -117,7 +117,7 @@
 .cu-progress text {
 	align-items: center;
 	display: flex;
-	font-size: 20rpx;
+	font-size: 30rpx;
 	color: var(--black);
 	text-indent: 10rpx;
 }
