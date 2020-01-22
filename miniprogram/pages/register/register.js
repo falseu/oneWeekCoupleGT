@@ -185,6 +185,16 @@ Page({  /**
         return
       }
 
+      //信息准确无误checkbox
+      if (this.data.checkbox == false){
+        wx.showModal({
+          title: '错误',
+          content: '请确认信息准确无误',
+          showCancel: false
+        })
+        return
+      }
+
       //更新app.globaldata.myData
       app.globalData.myData = this.data
 
@@ -253,6 +263,11 @@ Page({  /**
         gender: checkboxArr[index].name
       });
   }, 
+  bindtapCheckbox: function (e){
+    this.setData({
+      checkbox: true
+    })
+  },
   radioChange: function (e) {
       var checkValue = e.detail.value;
       this.setData({
