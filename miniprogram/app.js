@@ -6,12 +6,13 @@ App({
     this.globalData = {
       showEditButton:true,
       showWechatId: false,
-      edit_standard_deadline_month: 12,
-      edit_standard_deadline_date: 12,
-      register_deadline_month: 12,
-      register_deadline_date: 12,
+      edit_standard_deadline_month: 1,
+      edit_standard_deadline_date: 22,
+      register_deadline_month: 1,
+      register_deadline_date: 22,
       activity_deadline_month: 12,
-      activity_deadline_date: 12
+      activity_deadline_date: 12,
+      maximum_user:  3
     }
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')

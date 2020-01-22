@@ -1,5 +1,6 @@
 // miniprogram/pages/email_verify/email_verify.js
 const app = getApp()
+var util = require('../../utils/utils.js');
 Page({
 
   /**
@@ -13,7 +14,22 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    var time = util.formatTime(new Date());
 
+    var month = parseInt(time.substring(5, 7))
+    var date = parseInt(time.substring(8, 10))
+    
+    //count is the current current user
+    if (app.globalData.db_user_count >= app.globalData.maximum_user) {
+      wx.reLaunch({
+        url: '../cantRegister/cantRegister',
+      })
+      // TODO: change this deadline for register.
+    } else if (month > app.globalData.register_deadline_month || (month >= app.globalData.register_deadline_month && date > app.globalData.register_deadline_date)) {
+      wx.reLaunch({
+        url: '../cantRegister/cantRegister',
+      })
+    }
   },
 
   buttonPressed: function(){

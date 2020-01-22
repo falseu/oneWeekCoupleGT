@@ -40,23 +40,12 @@ Page({
       _openid: options.id
     }).count({
       success: res => {
+        // count = number of users in db
         count = res.total
         console.log('current user', count)
+        app.globalData.db_user_count = count
 
-        //count is the current current user
-        if (count > 80) {
-          console.log('count > 0')
-          wx.reLaunch({
-            url: '../cantRegister/cantRegister',
-          })
-          // TODO: change this deadline for register.
-        } else if (month > app.globalData.register_deadline_month || (month >= app.globalData.register_deadline_month && date > app.globalData.register_deadline_date)) {
-          wx.reLaunch({
-            url: '../cantRegister/cantRegister',
-          })
-
-          // change this deadline for end of activities
-        } else if (month > app.globalData.activity_deadline_month || (month >= app.globalData.register_deadline_month && date > app.globalData.register_deadline_date + 7)) {
+        if (month > app.globalData.activity_deadline_month || (month >= app.globalData.activity_deadline_month && date > app.globalData.activity_deadline_date + 7)) {
           wx.reLaunch({
             url: '../cantRegister/cantRegister',
           })
