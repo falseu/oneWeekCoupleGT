@@ -1,6 +1,5 @@
 {
   "pages": [
-        "pages/unfinished/unfinished",
     "pages/welcome/welcome",
     "pages/register/register",
     "pages/register2/register2",
@@ -20,7 +19,8 @@
     "pages/email_verify/email_verify",
     "pages/email_verify_2/email_verify_2",
     "pages/user_info_display_nontab/user_info_display_nontab",
-    "pages/no_possible_cp/no_possible_cp"
+    "pages/no_possible_cp/no_possible_cp",
+    "pages/unfinished/unfinished"
 
 
   ],
