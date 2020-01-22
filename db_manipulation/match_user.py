@@ -32,7 +32,8 @@ def main():
     # pair the users according to match_rate
     while match:
         tup, rate = max(match.items(), key=lambda x: x[1])
-        #if rate == 0: break
+        if rate == 0: 
+            break
         i, j = tup
         p1 = data[i]
         p2 = data[j]
