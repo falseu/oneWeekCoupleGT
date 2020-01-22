@@ -86,7 +86,7 @@
   <input class='placeholder' placeholder="请输入自我介绍" value="{{selfIntro}}" bindinput="bindKeyInputSelfIntro" />
 
   <view class="wrap">
-    <checkbox checked="{{checkbox}}"></checkbox>
+    <checkbox checked="{{checkbox}}" bindtap="bindtapCheckbox"></checkbox>
     <text class="h2" decode="true">&nbsp;&nbsp;我已检查所有信息准确无误</text>
   </view>
 
