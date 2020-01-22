@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userlist: undefined, register_allow: 'true', m: '', d: ''
+    userlist: undefined, pairing_allow: false, m: '', d: ''
   },
 
   /**
@@ -25,7 +25,7 @@ Page({
 
     //TODO: remove users who have cp.
 
-    console.log(sorted.sort(that.compare()))
+    //console.log(sorted.sort(that.compare()))
     
   },
 
@@ -36,7 +36,7 @@ Page({
     var month = parseInt(time.substring(5, 7))
     var date = parseInt(time.substring(8, 10))
     if (month > that.globalData.register_deadline_month || (month >= that.globalData.register_deadline_month && date > that.globalData.register_deadline_date)) {
-      register_allow = false
+      pairing_allow = true
     };
   },
 
