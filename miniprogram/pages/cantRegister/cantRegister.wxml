@@ -5,9 +5,13 @@
   <text class="h1">报名已截止</text>
 
   <view class='wrap'>
-  <text class="h2">本次CSSA一周CP的报名已经结束啦！<br />
+  <text class="h2" style="font-size: 30rpx;">本次CSSA一周CP的报名已经结束啦！\r\n
+  您可能会看到这页的原因：<br />
+  1.人数已达到上限 <br />
+  2.报名时间已经截止 \r\n
   请关注微信公众号 @佐治亚理工中国学生学者联谊会 获取更多活动信息 <br />
-  一起期待下一期一周CP吧！</text>
+  一起期待下一期一周CP吧 <br /> \r\n
+  </text>
   </view>
 
 </view>

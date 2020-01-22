@@ -20,7 +20,8 @@
     "pages/email_verify_2/email_verify_2",
     "pages/user_info_display_nontab/user_info_display_nontab",
     "pages/no_possible_cp/no_possible_cp",
-    "pages/unfinished/unfinished"
+    "pages/unfinished/unfinished",
+    "pages/cantRegister/cantRegister"
 
 
   ],
