@@ -65,7 +65,7 @@ Page({
         app.globalData.myData = res.data[0]
         if (res.data[0].cp != '') {
           wx.showToast({
-            title: '你和' + res.data[0].cp + '匹配成功！',
+            title: '你和' + res.data[0].cp_name + '匹配成功！',
             success: () => {
               setTimeout(function () {
                 app.globalData.refresh_cp_info = true
