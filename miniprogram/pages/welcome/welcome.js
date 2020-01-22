@@ -45,7 +45,6 @@ Page({
         console.log('current user', count)
         app.globalData.db_user_count = count
 
-
         //获取数据库中user信息
         setTimeout(function () {
           wx.cloud.callFunction({
@@ -65,6 +64,16 @@ Page({
                     //如果user已经register, 进入index界面, 未注册进入register界面
                     if (res.data.length) {
                       app.globalData.myData = res.data[0]
+
+                      // if the user does not have cp after activity starts, go to no_possible_cp
+                      if (month > app.globalData.activity_start_month || (month == app.globalData.activity_start_month && date > app.globalData.activity_start_date)) {
+                        if (res.data[0].cp_rate == -1) {
+                          wx.reLaunch({
+                            url: '../no_possible_cp/no_possible_cp',
+                          })
+                          return
+                        }
+                      }
 
                       // user should only update user info before deadline
                       app.globalData.update_user_info = true

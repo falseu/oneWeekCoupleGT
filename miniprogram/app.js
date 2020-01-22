@@ -12,6 +12,8 @@ App({
       register_deadline_date: 22,
       activity_deadline_month: 12,
       activity_deadline_date: 12,
+      activity_start_month: 1,
+      activity_start_date: 22,
       maximum_user:  3
     }
     if (!wx.cloud) {
