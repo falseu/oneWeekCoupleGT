@@ -4,7 +4,7 @@ Page({  /**
    * init
    */
   db: undefined, test: undefined, data: {
-    name: '', age: '', gender: '', height: '', weight: '', major: '', grade:'', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', wechatId: '', merits: [], expectedMerits: [],
+    name: '', age: '', gender: '', height: '', weight: '', major: '', grade:'', constellations: '', homeTown: '', hobbies: '', selfIntro: '', expectedGender: '', expectedAge: '', expectedHeight: '', expectedWeight: '', wechatId: '', merits: [], expectedMerits: [], checkbox: false,
     genderArray: [{name:'男', value:'男', checked: false}, {name:'女', value:'女', checked: false}], num_merits: 0,
     meritArray: [
       {

@@ -86,10 +86,12 @@
   <input class='placeholder' placeholder="请输入自我介绍" value="{{selfIntro}}" bindinput="bindKeyInputSelfIntro" />
 
   <view class="wrap">
-    <text class="h2">温馨提示：请再次检查所有信息准确无误，提交之后您将不能修改自己的信息</text>
+    <checkbox checked="{{checkbox}}"></checkbox>
+    <text class="h2" decode="true">&nbsp;&nbsp;我已检查所有信息准确无误</text>
   </view>
 
   <button type="primary" style="margin-top: 30rpx; background-color: rgb(246,122,109)" bindtap='insertData'>下一步</button>
+  
   </view>
 
 
