@@ -45,73 +45,65 @@ Page({
         console.log('current user', count)
         app.globalData.db_user_count = count
 
-        if (month > app.globalData.activity_deadline_month || (month >= app.globalData.activity_deadline_month && date > app.globalData.activity_deadline_date + 7)) {
-          wx.reLaunch({
-            url: '../cantRegister/cantRegister',
-          })
-        } else {
 
-          //获取数据库中user信息
-          setTimeout(function () {
-            wx.cloud.callFunction({
-              name: 'login', data: {}, success: res => {
-                console.log('[云函数] [login] user openid: ', res.result.openid)
+        //获取数据库中user信息
+        setTimeout(function () {
+          wx.cloud.callFunction({
+            name: 'login', data: {}, success: res => {
+              console.log('[云函数] [login] user openid: ', res.result.openid)
 
-                // 初始化app.globaldata
-                app.globalData.openid = res.result.openid
+              // 初始化app.globaldata
+              app.globalData.openid = res.result.openid
 
-                const db = wx.cloud.database()
-                db.collection('user').where({
-                  _openid: app.globalData.openid
-                })
-                  .get({
-                    success: function (res) {
+              const db = wx.cloud.database()
+              db.collection('user').where({
+                _openid: app.globalData.openid
+              })
+                .get({
+                  success: function (res) {
 
-                      //如果user已经register, 进入index界面, 未注册进入register界面
-                      if (res.data.length) {
-                        app.globalData.myData = res.data[0]
+                    //如果user已经register, 进入index界面, 未注册进入register界面
+                    if (res.data.length) {
+                      app.globalData.myData = res.data[0]
 
-                        // user should only update user info before deadline
-                        app.globalData.update_user_info = true
+                      // user should only update user info before deadline
+                      app.globalData.update_user_info = true
 
-                        // user cannot update user info after deadline
-                        app.checkEditStandardDeadline()
+                      // user cannot update user info after deadline
+                      app.checkEditStandardDeadline()
 
-                        app.globalData.images = {}
-                        console.log(res.data[0])
-                        if (res.data[0].cp == '') {
-                          wx.reLaunch({
-                            url: '../user_info_display/user_info_display',
-                          })
-                        } else {
-                          wx.reLaunch({
-                            url: '../cp_info_display/cp_info',
-                            //url: '../summary/summary',
-                          })
-                        }
-                      } else {
-                        that.setData({
-                          ready: true
-                        })
+                      app.globalData.images = {}
+                      console.log(res.data[0])
+                      if (res.data[0].cp == '') {
                         wx.reLaunch({
-                          url: '../first_instructions/first_instructions',
+                          url: '../user_info_display/user_info_display',
+                        })
+                      } else {
+                        wx.reLaunch({
+                          url: '../cp_info_display/cp_info',
+                          //url: '../summary/summary',
                         })
                       }
+                    } else {
+                      that.setData({
+                        ready: true
+                      })
+                      wx.reLaunch({
+                        url: '../first_instructions/first_instructions',
+                      })
                     }
-                  })
-              }, fail: err => {
-                console.error('[云函数] [login] 调用失败', err)
-                wx.navigateTo({
-                  url: '../deployFunctions/deployFunctions',
+                  }
                 })
-              }
-            })
-          }, 1500)
-        }
-        
-
-      }
-    })
+            }, fail: err => {
+              console.error('[云函数] [login] 调用失败', err)
+              wx.navigateTo({
+                url: '../deployFunctions/deployFunctions',
+              })
+            }
+          })
+        }, 1500)
+    }
+  })
 
 
 

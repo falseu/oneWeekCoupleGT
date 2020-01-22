@@ -1,5 +1,7 @@
 //https://cloud.tencent.com/developer/article/1380912
 
+var util = require('../../utils/utils.js');
+
 const db = wx.cloud.database({});
 const cont = db.collection('user');
 var app = getApp()
@@ -123,11 +125,21 @@ Page({
           })
           i = i + 3
         }
-        console.log(this.data.taskArray)
         wx.hideLoading()
-        console.log(this.data.count)
-        console.log(this.data.cpCount)
-        console.log(this.data.totalTask)
+        var time = util.formatTime(new Date());
+        var month = parseInt(time.substring(5, 7))
+        var date = parseInt(time.substring(8, 10))
+        if (month > app.globalData.activity_deadline_month || (month == app.globalData.activity_deadline_month && date > app.globalData.activity_deadline_date)) {
+          if (this.data.cpCount >= 7 && this.data.count >= 7) {
+            wx.reLaunch({
+              url: '../summary/summary',
+            })
+          } else {
+            wx.reLaunch({
+              url: '../unfinished/unfinished',
+            })
+          }
+        }
       },
     )
   },
