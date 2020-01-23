@@ -30,7 +30,9 @@ Page({
     var month = parseInt(time.substring(5, 7))
     var date = parseInt(time.substring(8, 10))
     if (month > that.globalData.register_deadline_month || (month >= that.globalData.register_deadline_month && date > that.globalData.register_deadline_date)) {
-      pairing_allow = true
+      this.setData({
+        pairing_allow: true
+      })
     };
   },
 
