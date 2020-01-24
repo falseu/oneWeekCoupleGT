@@ -265,7 +265,7 @@ Page({  /**
   }, 
   bindtapCheckbox: function (e){
     this.setData({
-      checkbox: true
+      checkbox: !checkbox
     })
   },
   radioChange: function (e) {

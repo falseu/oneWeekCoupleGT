@@ -1,27 +1,39 @@
+
 .wrap{
  width: 550rpx;
- margin: 50rpx auto
+ height: 300rpx;
+ margin-top: 25%;
+ align-items: center;
+ justify-content: center;
+ margin-left: 7%;
 }
 
-.wrap3{
-  width: 500rpx;
-  height: 450rpx;
-  display: flex;
+.picwrap{
+ width: 550rpx;
+ height: 50rpx;
+ align-items: center;
+ justify-content: center;
+}
+
+.wrap1{
+ width: 550rpx;
+ height: 130rpx;
+ align-items: center;
+ justify-content: center;
+ margin-left: 10%;
+}
+
+.basic1{ 
+  font-size: 40rpx;
+  width: 550rpx;
+  margin-top: 30rpx;
+  position:relative;
   align-items: center;
   justify-content: center;
-  margin-left: 20rpx;
-
-}
-
-.basic3{
-  width: 500rpx;
-  align-items: center;
-  justify-content: center; 
-  font-size: 40rpx;
 }
 
 .h1{
-  margin-top: 30rpx;
+  margin: 45rpx auto;
   display: flex;
   justify-content: center;
   align-items: center;

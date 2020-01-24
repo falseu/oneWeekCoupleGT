@@ -1,20 +1,23 @@
 <view class="wrap" style = "background-color: rgb(246,239,243);">
 <image style = "position: fixed; width:415.36rpx; height: 799.04rpx; bottom:1%;right:3%; z-index:0;" src = "../../images/rqq-bg.png"></image>
 
-<view style="position:relative; z-index:0">
-  <text class="h1">报名已截止</text>
-
-  <view class='wrap'>
-  <text class="h2" style="font-size: 30rpx;">本次CSSA一周CP的报名已经结束啦！\r\n
-  您可能会看到这页的原因：<br />
-  1.人数已达到上限 <br />
-  2.报名时间已经截止 \r\n
-  请关注微信公众号 @佐治亚理工中国学生学者联谊会 获取更多活动信息 <br />
-  一起期待下一期一周CP吧 <br /> \r\n
-  </text>
-  </view>
-
-</view>
+ <view class="wrap">
+    <view style="height: 100rpx; font-size:40rpx; align-items: center; justify-content: center; margin-left:35%;">报名已结束</view>
+    <view class="picwrap"><image style = "height:15rpx; width:570rpx; position:relative; margin-left:" src = "../../images/line.png"></image></view>
+    
+    <view class="wrap1"> 
+    <text class="basic1">
+    本次CSSA一周CP的报名已经结束啦！\r\n
+    您可能会看到这页的原因：<br />
+    1.人数已达到上限 <br />
+    2.报名时间已经截止 \r\n
+    请关注微信公众号 @佐治亚理工中国学生学者联谊会 获取更多活动信息 <br />
+    一起期待下一期一周CP吧 <br /> \r\n
+    </text></view>
+   
+   <view class="picwrap"> <image style = "height:15rpx; width:570rpx; position: realative; top: 200rpx;" src = "../../images/line.png"></image></view>
+   
+    </view>
 
 
 </view>

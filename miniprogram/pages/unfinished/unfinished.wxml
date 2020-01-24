@@ -1,19 +1,18 @@
-<view style = "background-color: rgb(246,239,243);">
-<view class="wrap" >
+<view class="wrap" style = "background-color: rgb(246,239,243);">
 <image style = "position: fixed; width:415.36rpx; height: 799.04rpx; bottom:1%;right:3%; z-index:0;" src = "../../images/rqq-bg.png"></image>
 
+ <view class="wrap">
+    <view style="height: 100rpx; font-size:40rpx; align-items: center; justify-content: center; margin-left:37%;">温馨提示</view>
+    <view class="picwrap"><image style = "height:15rpx; width:570rpx; position:relative; margin-left:" src = "../../images/line.png"></image></view>
+    
+    <view class="wrap1"> 
+    <text class="basic1">
+    本次活动已经全部结束\r\n相信这一定是难忘的一周\r\n不过很遗憾的通知您\r\n您并没有完成所有任务\r\n期待下次活动再见
+    </text></view>
+   
+   <view class="picwrap"> <image style = "height:15rpx; width:570rpx; position: realative; top: 200rpx;" src = "../../images/line.png"></image></view>
+   
+    </view>
 
-  <view class="wrap">
-  <text class="h1" style="margin-top: 50rpx;">温馨提示</text>
 
-  <view class="wrap3" style="text-align:center; align-item:center;">
-    <text class="basic3">本次活动已经全部结束\r\n希望您和您的CP相处得愉快\r\n很遗憾的通知您\r\n您并没有完成所有任务\r\n期待下次活动再见</text>
-  </view>
-
-
-  
-
-  
-  </view>
-</view>
 </view>
