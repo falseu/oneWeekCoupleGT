@@ -1,6 +1,6 @@
 <!--miniprogram/pages/selectCp/selectCp.wxml-->
 <view style="height: 100vh">
- <view wx:if="{{!register_allow}}">
+ <view wx:if="{{!pairing_allow}}">
     <view class="wrap2">
     <image style = "height:15rpx; width:570rpx; position:relative;" src = "../../images/line.png"></image>
     <text class="basic1" decode="{{true}}">

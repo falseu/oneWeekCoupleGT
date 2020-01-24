@@ -22,9 +22,6 @@
     "pages/no_possible_cp/no_possible_cp",
     "pages/unfinished/unfinished",
     "pages/cantRegister/cantRegister"
-
-
-
   ],
   "window": {
     "backgroundColor": "#f67a6d",
