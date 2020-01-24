@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userlist: undefined, register_allow: 'true', m: '', d: ''
+    userlist: undefined, register_allow: 'true', m: '', d: '', currentPage: 0, pageSize: 2, showList: undefined, loadAll: false
   },
 
   /**
@@ -16,11 +16,22 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    // read 1 pagesize of items in match list.
+    var readSize = that.data.pageSize
+    var read = app.globalData.myData.match.slice(0, readSize)
     that.setData({
       userlist: app.globalData.myData.match,
-       m: app.globalData.register_deadline_month,
+      m: app.globalData.register_deadline_month,
       d: app.globalData.register_deadline_date,
+      showList: read,
+      currentPage: 1,
+      loadAll: false
     })
+    if (that.data.userlist.length <= readSize) {
+      that.setData({
+        loadAll: true
+      })
+    }
     var sorted = app.globalData.myData.match
 
     //TODO: remove users who have cp.
@@ -126,7 +137,35 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    var that = this
+    // all data loaded, do nothing
+    if (!that.data.loadAll) { 
+      // load pageSize more data to showList
+      wx.showLoading({
+        title: '加载中',
+      })
+      setTimeout(function () {
+        // all data loaded for the first time, show a toast
+        var loadedSize = that.data.currentPage * that.data.pageSize
+        if (that.data.userlist.length <= loadedSize) {
+          that.setData({
+            loadAll: true
+          })
+          wx.hideLoading()
+          wx.showToast({
+            title: '没有更多',
+          })
+        } else {
+          var readSize = (that.data.currentPage + 1) * that.data.pageSize
+          var read = app.globalData.myData.match.slice(0, readSize)
+          that.setData({
+            showList: read,
+            currentPage: that.data.currentPage + 1,
+          })
+          wx.hideLoading()
+        }
+      }, 1000)
+    }
   },
 
   /**

@@ -1,5 +1,5 @@
 <!--miniprogram/pages/selectCp/selectCp.wxml-->
-<view>
+<view style="height: 100vh">
  <view wx:if="{{!register_allow}}">
     <view class="wrap2">
     <image style = "height:15rpx; width:570rpx; position:relative;" src = "../../images/line.png"></image>
@@ -12,7 +12,7 @@
   </view>
 
     <view wx:else>
-    <view wx:for="{{userlist}}" wx:for-index="idx" wx:for-item="user" bindtap="bindViewTapUser" id="{{idx}}" class="cu-list menu-avatar" style="margin-top: 20rpx">
+    <view wx:for="{{showList}}" wx:for-index="idx" wx:for-item="user" bindtap="bindViewTapUser" id="{{idx}}" class="cu-list menu-avatar" style="margin-top: 20rpx; height: 50vh">
   <view class="cu-item">
     <view class="cu-avatar round lg" style="background-image:url({{user.avatar}});"></view>
     <view class="content">
