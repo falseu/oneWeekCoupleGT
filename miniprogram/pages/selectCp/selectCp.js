@@ -16,6 +16,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    that.checkRegisterDeadline()
     // read 1 pagesize of items in match list.
     var readSize = that.data.pageSize
     var read = app.globalData.myData.match.slice(0, readSize)
@@ -42,11 +43,11 @@ Page({
 
   checkRegisterDeadline: function () {
     var that = this
-    var util = require('utils/utils.js')
+    var util = require('../../utils/utils.js')
     var time = util.formatTime(new Date());
     var month = parseInt(time.substring(5, 7))
     var date = parseInt(time.substring(8, 10))
-    if (month > that.globalData.register_deadline_month || (month >= that.globalData.register_deadline_month && date > that.globalData.register_deadline_date)) {
+    if (month > app.globalData.register_deadline_month || (month >= app.globalData.register_deadline_month && date > app.globalData.register_deadline_date)) {
       this.setData({
         pairing_allow: true
       })

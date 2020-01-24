@@ -2,6 +2,7 @@
 const db = wx.cloud.database()
 const app = getApp()
 
+
 Page({
 
   /**
@@ -16,6 +17,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    that.checkRegisterDeadline()
     that.setData({
       messages: app.globalData.myData.requests,
       m: app.globalData.register_deadline_month,
@@ -25,11 +27,11 @@ Page({
 
   checkRegisterDeadline: function () {
     var that = this
-    var util = require('utils/utils.js')
+    var util = require('../../utils/utils.js')
     var time = util.formatTime(new Date());
     var month = parseInt(time.substring(5, 7))
     var date = parseInt(time.substring(8, 10))
-    if (month > that.globalData.register_deadline_month || (month >= that.globalData.register_deadline_month && date > that.globalData.register_deadline_date)) {
+    if (month > app.globalData.register_deadline_month || (month >= app.globalData.register_deadline_month && date > app.globalData.register_deadline_date)) {
       this.setData({
         pairing_allow: true
       })
