@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userlist: undefined, register_allow: 'true', m: '', d: '', currentPage: 0, pageSize: 2, showList: undefined, loadAll: false
+    userlist: undefined, pairing_allow: false, m: '', d: '', currentPage: 0, pageSize: 2, showList: undefined, loadAll: false
   },
 
   /**
@@ -27,12 +27,14 @@ Page({
       currentPage: 1,
       loadAll: false
     })
+
     if (that.data.userlist.length <= readSize) {
       that.setData({
         loadAll: true
       })
     }
     var sorted = app.globalData.myData.match
+    
 
     //TODO: remove users who have cp.
 
