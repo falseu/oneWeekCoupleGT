@@ -8,11 +8,11 @@ App({
       showWechatId: false,
       edit_standard_deadline_month: 1,
       edit_standard_deadline_date: 22,
-      register_deadline_month: 1,
+      register_deadline_month: 2,
       register_deadline_date: 22,
-      activity_deadline_month: 1,
+      activity_deadline_month: 2,
       activity_deadline_date: 24,
-      activity_start_month: 1,
+      activity_start_month: 2,
       activity_start_date: 23,
       maximum_user:  17
     }

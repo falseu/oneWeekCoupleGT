@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userlist: undefined, pairing_allow: false, m: '', d: '', currentPage: 0, pageSize: 2, showList: undefined, loadAll: false
+    userlist: undefined, pairing_allow: true, m: '', d: '', currentPage: 0, pageSize: 2, showList: undefined, loadAll: false
   },
 
   /**
@@ -16,7 +16,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    that.checkRegisterDeadline()
+    //that.checkRegisterDeadline()
     // read 1 pagesize of items in match list.
     var readSize = that.data.pageSize
     var read = app.globalData.myData.match.slice(0, readSize)
@@ -70,7 +70,7 @@ Page({
   },
 
   refresh(){
-    app.checkEditStandardDeadline()
+    //app.checkEditStandardDeadline()
     wx.showLoading({
       title: '加载中',
     })
