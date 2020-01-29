@@ -87,15 +87,15 @@
   - app.globalData.openid
 
 # 需要更改的数据
-  - app.globalData.
+  - db.collection('deadline')
     - edit_standard_deadline_month: 可以更改标cp标准deadline月份 √
     - edit_standard_deadline_date: 可以更改cp标准deadline日 （应该跟register_deadline相同， 当天可以更改，第二日不能更改）√
     - register_deadline_month: 注册deadline月份  √
     - register_deadline_date: 注册deadline日  当日可以注册，第二天不行 √
-    - activity_deadline_month: 整个活动deadline月份
-    - activity_deadline_date：整个活动deadline日
-    - activity_start_month: 自动匹配结束，活动开始，没有cp的退出
-    - activity_start_date: 同上
+    - activity_deadline_month: 整个活动deadline月份: 当日可以做任务。第二天进入程序只能看到unfinished或者summary √
+    - activity_deadline_date：整个活动deadline日 √
+    - activity_start_month: 自动匹配结束，活动开始，没有cp的退出  √
+    - activity_start_date: 同上 √
 
 - 上传云函数
   - 安装node.js到本地，网址：nodejs.org/en
