@@ -80,7 +80,7 @@ Page({
                       app.globalData.myData = res.data[0]
 
                       // if the user does not have cp after activity starts, go to no_possible_cp
-                      if (month > app.globalData.activity_start_month || (month == app.globalData.activity_start_month && date > app.globalData.activity_start_date)) {
+                      if (month > app.globalData.activity_start_month || (month == app.globalData.activity_start_month && date >= app.globalData.activity_start_date)) {
                         if (res.data[0].cp_rate == -1) {
                           wx.reLaunch({
                             url: '../no_possible_cp/no_possible_cp',
