@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userlist: undefined, pairing_allow: true, m: '', d: '', currentPage: 0, pageSize: 10, showList: undefined, loadAll: false
+    userlist: undefined, pairing_allow: false, m: '', d: '', currentPage: 0, pageSize: 10, showList: undefined, loadAll: false
   },
 
   /**
@@ -16,10 +16,13 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    //that.checkRegisterDeadline()
+    that.checkRegisterDeadline()
     // read 1 pagesize of items in match list.
     var readSize = that.data.pageSize
-    var read = app.globalData.myData.match.slice(0, readSize)
+    var read = undefined
+    if (Object.keys(app.globalData.myData.match).length != 0) {
+      read = app.globalData.myData.match.slice(0, readSize)
+    }
     that.setData({
       userlist: app.globalData.myData.match,
       m: app.globalData.register_deadline_month,
@@ -54,6 +57,7 @@ Page({
         pairing_allow: true
       })
     };
+    console.log(this.data.pairing_allow)
   },
 
   compare: function() {

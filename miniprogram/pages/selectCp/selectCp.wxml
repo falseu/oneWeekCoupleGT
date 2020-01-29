@@ -5,7 +5,7 @@
     <view class="wrap2">
     <image style = "height:15rpx; width:570rpx; position:relative;" src = "../../images/line.png"></image>
     <text class="basic1" decode="{{true}}">
-    {{m}}月{{d+1}}日正式开放\r
+    &nbsp;&nbsp;{{m}}月{{d+1}}日正式开放\r
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;敬请期待
     </text>
     <image style = "height:15rpx; width:570rpx; position: realative; top: 200rpx;" src = "../../images/line.png"></image>

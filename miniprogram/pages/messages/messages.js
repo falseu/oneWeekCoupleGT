@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    messages: [], ListTouchDirection: undefined, pairing_allow: true, m: '', d: ''
+    messages: [], ListTouchDirection: undefined, pairing_allow: false, m: '', d: ''
   },
 
   /**
@@ -17,7 +17,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    //that.checkRegisterDeadline()
+    that.checkRegisterDeadline()
     that.setData({
       messages: app.globalData.myData.requests,
       m: app.globalData.register_deadline_month,
@@ -35,6 +35,7 @@ Page({
       this.setData({
         pairing_allow: true
       })
+      console.log(this.data.pairing_allow)
     };
   },
 
