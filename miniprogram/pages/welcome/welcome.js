@@ -36,6 +36,19 @@ Page({
     // user cannot update user info after deadline
     app.checkEditStandardDeadline()
 
+    db.collection('deadline').get({
+      success: res => {
+        var deadlines = res.data[0]
+        app.globalData.activity_deadline_date = deadlines.activity_deadline_date
+        app.globalData.activity_deadline_month = deadlines.activity_deadline_month
+        app.globalData.activity_start_date = daedlines.activity_start_date
+        app.globalData.activity_start_month = deadlines.activity_start_month
+        app.globalData.edit_standard_deadline_date = deadlines.edit_standard_deadline_date
+        app.globalData.edit_standard_deadline_month = deadlines.edit_standard_deadline_month
+        app.globalData.register_deadline_date = deadlines.register_deadline_date
+        app.globalData.register_deadline_month = deadlines.register_deadline_month
+      }
+    })
     db.collection('user').where({
       _openid: options.id
     }).count({

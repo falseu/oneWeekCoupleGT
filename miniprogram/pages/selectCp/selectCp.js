@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userlist: undefined, pairing_allow: true, m: '', d: '', currentPage: 0, pageSize: 2, showList: undefined, loadAll: false
+    userlist: undefined, pairing_allow: true, m: '', d: '', currentPage: 0, pageSize: 10, showList: undefined, loadAll: false
   },
 
   /**
