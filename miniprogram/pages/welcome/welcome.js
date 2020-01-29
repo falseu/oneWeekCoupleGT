@@ -41,12 +41,13 @@ Page({
         var deadlines = res.data[0]
         app.globalData.activity_deadline_date = deadlines.activity_deadline_date
         app.globalData.activity_deadline_month = deadlines.activity_deadline_month
-        app.globalData.activity_start_date = daedlines.activity_start_date
+        app.globalData.activity_start_date = deadlines.activity_start_date
         app.globalData.activity_start_month = deadlines.activity_start_month
         app.globalData.edit_standard_deadline_date = deadlines.edit_standard_deadline_date
         app.globalData.edit_standard_deadline_month = deadlines.edit_standard_deadline_month
         app.globalData.register_deadline_date = deadlines.register_deadline_date
         app.globalData.register_deadline_month = deadlines.register_deadline_month
+        console.log(deadlines.register_deadline_date)
       }
     })
     db.collection('user').where({
@@ -107,6 +108,12 @@ Page({
                         })
                       }
                     } else {
+                      if (month > app.globalData.register_deadline_month || (month == app.globalData.register_deadline_month && date > app.globalData.register_deadline_date)) {
+                        wx.reLaunch({
+                          url: '../cantRegister/cantRegister',
+                        })
+                        return
+                      }
                       that.setData({
                         ready: true
                       })
