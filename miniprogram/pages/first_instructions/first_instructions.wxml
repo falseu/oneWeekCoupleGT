@@ -1,5 +1,5 @@
 <view style = "background-color: rgb(246,239,243);">
-<view class="wrap" style="margin-top: 15%" >
+<view class="wrap">
 <image style = "position: fixed; width:415.36rpx; height: 799.04rpx; bottom:1%;right:3%; z-index:0;" src = "../../images/rqq-bg.png"></image>
 
   <view class='wrap'>
@@ -15,7 +15,7 @@
   欢迎参加GTCSSA一周CP活动！ <br />
   请仔细阅读流程介绍，并点击“开始注册” \r\n
   【注册】 <br />
-	1.点击开始注册，输入邮箱并验证 \r\n
+	1.点击“开始注册”，输入邮箱并验证 \r\n
   【填写信息】 <br />
 	1.请填写个人信息，建议写的尽量详细一些哦，这会让有幸遇到你的TA更加了解你~ <br />
   （注意：所有个人信息提交后将无法修改） <br />
