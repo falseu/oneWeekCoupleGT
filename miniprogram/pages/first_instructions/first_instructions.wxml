@@ -1,15 +1,34 @@
 <view style = "background-color: rgb(246,239,243);">
-<view class="wrap" >
+<view class="wrap" style="margin-top: 15%" >
 <image style = "position: fixed; width:415.36rpx; height: 799.04rpx; bottom:1%;right:3%; z-index:0;" src = "../../images/rqq-bg.png"></image>
 
+  <view class='wrap'>
+    <image style = "height:15rpx; width:570rpx; position:relative;" src = "../../images/line.png"></image>
+  </view>
 
   <view style="position:relative; z-index:0">
   <text class="h1">一周CP流程介绍</text>
 
-  <view class='wrap'>
-  <text class="h2">注册 - 匹配 - 任务 </text>
+  <view class='wrap' style="margin-top:30rpx;">
 
-  <button type="primary" open-type="getUserInfo" style="margin-top: 30rpx; background-color: rgb(246,122,109)" bindgetuserinfo='bindGetUserInfo'>开始注册</button>
+  <text class='h2'>
+  欢迎参加GTCSSA一周CP活动！ <br />
+  请仔细阅读流程介绍，并点击“开始注册” \r\n
+  【注册】 <br />
+	1.点击开始注册，输入邮箱并验证 \r\n
+  【填写信息】 <br />
+	1.请填写个人信息，建议写的尽量详细一些哦，这会让有幸遇到你的TA更加了解你~ <br />
+  （注意：所有个人信息提交后将无法修改） <br />
+	2.点击“下一步”，根据希望匹配到的TA填写信息 \r\n
+  【配对及完成任务】 <br />
+	1.通过“搜索”界面找到中意的TA并发出申请 <br />
+  2.匹配成功后，你将和TA一起完成7个任务 <br />
+	3.完成所有任务后有神秘大礼等着你哦 \r\n
+  最后，CSSA预祝大家情人节快乐！！\r\n
+  </text>
+  <image style = "margin-top: 30rpx;height:15rpx; width:570rpx; position:relative;" src = "../../images/line.png"></image>
+
+  <button type="primary" open-type="getUserInfo" style="margin-top: 60rpx; background-color: rgb(246,122,109)" bindgetuserinfo='bindGetUserInfo'>开始注册</button>
   </view>
 </view>
 </view>

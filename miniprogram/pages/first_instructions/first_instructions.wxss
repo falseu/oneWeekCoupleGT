@@ -8,5 +8,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40rpx;
+  font-size: 35rpx;
+  margin-left: -20rpx;
+}
+
+.h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 29rpx;
 }
