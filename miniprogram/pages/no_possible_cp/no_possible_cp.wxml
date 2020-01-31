@@ -8,7 +8,7 @@
     
     <view class="wrap1"> 
     <text class="basic1">
-    本次匹配已经全部结束\r\n很遗憾的通知您\r\n您没有匹配到合适的CP\r\n期待下次再见
+    本次匹配已经全部结束\r\n很遗憾的通知您\r\n没有为您匹配到合适的CP\r\n期待下次再见
     </text></view>
    
    <view class="picwrap"> <image style = "height:15rpx; width:570rpx; position: realative; top: 200rpx;" src = "../../images/line.png"></image></view>
